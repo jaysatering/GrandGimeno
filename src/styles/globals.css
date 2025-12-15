@@ -566,7 +566,7 @@ p {
 
 /* ===== FORM SECTION ===== */
 .form-section {
-  padding: 48px 0 32px;
+  padding: 80px 0 60px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -587,7 +587,7 @@ p {
 
 .form-content h2 {
   margin-bottom: 12px;
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 .form-subtitle {
@@ -619,7 +619,7 @@ p {
 }
 
 .hubspot-form-wrapper .hs-form-field {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 1024px) {
@@ -708,8 +708,8 @@ p {
 
 .hubspot-form-wrapper .hs-submit {
   text-align: center !important;
-  padding-top: 32px !important;
-  margin-top: 16px !important;
+  padding-top: 24px !important;
+  margin-top: 8px !important;
 }
 
 @media (min-width: 1024px) {
@@ -995,7 +995,7 @@ p {
   width: 100%;
   height: auto;
   display: block;
-  min-height: 500px;
+  min-height: 100vh;
   object-fit: cover;
 }
 
@@ -1196,7 +1196,7 @@ p {
   width: 100%;
   height: auto;
   display: block;
-  min-height: 500px;
+  min-height: 100vh;
   object-fit: cover;
 }
 
