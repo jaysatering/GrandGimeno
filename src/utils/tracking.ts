@@ -1,6 +1,6 @@
 /**
  * Grand Gimeno Tracking Utility
- * Handles GCLID (Google Ads) and FBCLID (Meta) tracking for conversion attribution
+ * Handles GCLID (Google Ads), FBCLID (Meta), UTM parameters, and attribution tracking
  */
 
 // Cookie helper functions
@@ -31,6 +31,13 @@ function getQueryParam(param: string): string | null {
 }
 
 /**
+ * Generate a unique event ID for CAPI deduplication
+ */
+function generateEventId(): string {
+  return `gg_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
+}
+
+/**
  * Captures tracking parameters from URL and stores them in cookies
  */
 function captureTrackingParameters(): void {
@@ -49,6 +56,25 @@ function captureTrackingParameters(): void {
     const newFbc = `fb.1.${timestamp}.${fbclid}`;
     setCookie('_fbc', newFbc, 90);
   }
+
+  // 3. UTM Parameters - Store for session
+  const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  utmParams.forEach(param => {
+    const value = getQueryParam(param);
+    if (value) {
+      setCookie(param, value, 30); // 30 day attribution window
+    }
+  });
+
+  // 4. Landing Page - Capture on first visit
+  if (!getCookie('landing_page')) {
+    setCookie('landing_page', window.location.href, 30);
+  }
+
+  // 5. Referrer - Capture on first visit
+  if (!getCookie('referrer') && document.referrer) {
+    setCookie('referrer', document.referrer, 30);
+  }
 }
 
 /**
@@ -60,16 +86,29 @@ function waitForFormAndFill(): void {
   let attempts = 0;
 
   const fillFormFields = (): boolean => {
+    // Ad platform tracking fields
     const gclidField = document.querySelector('input[name="gclid"]') as HTMLInputElement;
     const fbcField = document.querySelector('input[name="meta_fbc"]') as HTMLInputElement;
     const fbpField = document.querySelector('input[name="meta_fbp"]') as HTMLInputElement;
 
+    // UTM parameter fields
+    const utmSourceField = document.querySelector('input[name="utm_source"]') as HTMLInputElement;
+    const utmMediumField = document.querySelector('input[name="utm_medium"]') as HTMLInputElement;
+    const utmCampaignField = document.querySelector('input[name="utm_campaign"]') as HTMLInputElement;
+    const utmContentField = document.querySelector('input[name="utm_content"]') as HTMLInputElement;
+    const utmTermField = document.querySelector('input[name="utm_term"]') as HTMLInputElement;
+
+    // Attribution fields
+    const landingPageField = document.querySelector('input[name="landing_page"]') as HTMLInputElement;
+    const referrerField = document.querySelector('input[name="referrer"]') as HTMLInputElement;
+    const eventIdField = document.querySelector('input[name="event_id"]') as HTMLInputElement;
+
     // Check if at least one field exists
-    if (!gclidField && !fbcField && !fbpField) {
+    if (!gclidField && !fbcField && !fbpField && !utmSourceField && !landingPageField) {
       return false;
     }
 
-    // Fill fields with cookie values
+    // Fill ad platform tracking fields
     const finalGclid = getCookie('gclid') || getQueryParam('gclid');
     const finalFbc = getCookie('_fbc');
     const finalFbp = getCookie('_fbp');
@@ -87,6 +126,58 @@ function waitForFormAndFill(): void {
     if (finalFbp && fbpField) {
       fbpField.value = finalFbp;
       console.log('[Tracking] Meta FBP field populated:', finalFbp);
+    }
+
+    // Fill UTM parameter fields
+    const utmSource = getCookie('utm_source') || getQueryParam('utm_source');
+    const utmMedium = getCookie('utm_medium') || getQueryParam('utm_medium');
+    const utmCampaign = getCookie('utm_campaign') || getQueryParam('utm_campaign');
+    const utmContent = getCookie('utm_content') || getQueryParam('utm_content');
+    const utmTerm = getCookie('utm_term') || getQueryParam('utm_term');
+
+    if (utmSource && utmSourceField) {
+      utmSourceField.value = utmSource;
+      console.log('[Tracking] UTM Source field populated:', utmSource);
+    }
+
+    if (utmMedium && utmMediumField) {
+      utmMediumField.value = utmMedium;
+      console.log('[Tracking] UTM Medium field populated:', utmMedium);
+    }
+
+    if (utmCampaign && utmCampaignField) {
+      utmCampaignField.value = utmCampaign;
+      console.log('[Tracking] UTM Campaign field populated:', utmCampaign);
+    }
+
+    if (utmContent && utmContentField) {
+      utmContentField.value = utmContent;
+      console.log('[Tracking] UTM Content field populated:', utmContent);
+    }
+
+    if (utmTerm && utmTermField) {
+      utmTermField.value = utmTerm;
+      console.log('[Tracking] UTM Term field populated:', utmTerm);
+    }
+
+    // Fill attribution fields
+    const landingPage = getCookie('landing_page');
+    const referrer = getCookie('referrer');
+    const eventId = generateEventId();
+
+    if (landingPage && landingPageField) {
+      landingPageField.value = landingPage;
+      console.log('[Tracking] Landing Page field populated:', landingPage);
+    }
+
+    if (referrer && referrerField) {
+      referrerField.value = referrer;
+      console.log('[Tracking] Referrer field populated:', referrer);
+    }
+
+    if (eventIdField) {
+      eventIdField.value = eventId;
+      console.log('[Tracking] Event ID field populated:', eventId);
     }
 
     return true;
