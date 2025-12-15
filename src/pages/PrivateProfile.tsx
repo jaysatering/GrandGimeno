@@ -1,9 +1,7 @@
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import GgLogo from '../imports/GgLogo6';
 import { ChevronDown } from 'lucide-react';
-import oliveGroveAerial from 'figma:asset/70a63a86057ecdc10a10ef186184d504f07ebd8a.png';
 
 // Placeholder images from Unsplash
 const image_spanishCourtyard = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -15,6 +13,7 @@ const image_c35727a90159d087a9e56d733b68c098e3f119cd = "https://images.unsplash.
 const image_96f784d215fdb2dafc0538f61064c2adef28e0fd = "https://images.unsplash.com/photo-1759730840961-09faa5731a3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwYmFsbHJvb20lMjBjZWlsaW5nfGVufDF8fHx8MTc2NTc0NjM4M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const image_oliveTrees = "https://images.unsplash.com/photo-1722228097356-bd0202d99367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMGdyb3ZlJTIwc3Vuc2V0fGVufDF8fHx8MTc2NTc2NjQzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const image_132849be8bad78b6d89d4aadacdafbccad992ce1 = "https://images.unsplash.com/photo-1757190412618-a52ad13f6759?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFuZCUyMGhhbGwlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjY2Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const oliveGroveAerial = "https://images.unsplash.com/photo-1763231575952-98244918f99b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBldmVudCUyMHNwYWNlJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY1NzY4OTIwfDA&ixlib=rb-4.1.0&q=80&w=1080";
 
 export function PrivateProfile() {
   const navigate = useNavigate();
@@ -104,7 +103,7 @@ export function PrivateProfile() {
           transition={{ duration: 1.4 }}
           className="w-full h-[80vh]"
         >
-          <ImageWithFallback
+          <img
             src={oliveGroveAerial}
             alt="Grand Central Hall"
             className="w-full h-full object-cover"
@@ -486,7 +485,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-7"
             >
               <div className="aspect-[3/2] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_spanishCourtyard}
                   alt="The Courtyard"
                   className="w-full h-full object-cover"
@@ -502,7 +501,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-5"
             >
               <div className="aspect-[4/5] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_chandelier}
                   alt="Wrought Iron Chandeliers"
                   className="w-full h-full object-cover object-top"
@@ -521,7 +520,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-5"
             >
               <div className="aspect-square overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_historicInterior}
                   alt="Historic Building Detail"
                   className="w-full h-full object-cover"
@@ -537,7 +536,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-7"
             >
               <div className="aspect-[16/9] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_outdoorDining}
                   alt="Olive Grove Dining"
                   className="w-full h-full object-cover"
@@ -556,7 +555,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-4"
             >
               <div className="aspect-[3/4] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_wroughtIron}
                   alt="Architectural Details"
                   className="w-full h-full object-cover"
@@ -572,7 +571,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-4"
             >
               <div className="aspect-[3/4] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_c35727a90159d087a9e56d733b68c098e3f119cd}
                   alt="Event Setup"
                   className="w-full h-full object-cover"
@@ -588,7 +587,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-4"
             >
               <div className="aspect-[3/4] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_96f784d215fdb2dafc0538f61064c2adef28e0fd}
                   alt="Ballroom Ceiling"
                   className="w-full h-full object-cover"
@@ -607,7 +606,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-8"
             >
               <div className="aspect-[21/9] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_oliveTrees}
                   alt="The Olive Grove at Dusk"
                   className="w-full h-full object-cover"
@@ -623,7 +622,7 @@ export function PrivateProfile() {
               className="col-span-12 lg:col-span-4"
             >
               <div className="aspect-[3/4] overflow-hidden">
-                <ImageWithFallback
+                <img
                   src={image_132849be8bad78b6d89d4aadacdafbccad992ce1}
                   alt="Grand Central Hall"
                   className="w-full h-full object-cover object-center"

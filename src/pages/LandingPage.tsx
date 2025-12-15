@@ -1,13 +1,8 @@
-import image_f6a2ad092cee1d6e9dc3124d7ab0c09316fb4e86 from 'figma:asset/f6a2ad092cee1d6e9dc3124d7ab0c09316fb4e86.png';
-import oliveGroveAerial from 'figma:asset/70a63a86057ecdc10a10ef186184d504f07ebd8a.png';
-import image_3803d145ad74e97ee8f3b71a8444d177e600d7e1 from 'figma:asset/3803d145ad74e97ee8f3b71a8444d177e600d7e1.png';
-import heroPhoto from 'figma:asset/95febfac84472c08a078fc09edad3c36f0dc9c68.png';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from '../imports/GgLogo6';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function LandingPage() {
   const [showCTA, setShowCTA] = useState(false);
@@ -180,8 +175,8 @@ export function LandingPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="relative overflow-hidden h-screen"
           >
-            <ImageWithFallback
-              src={heroPhoto}
+            <img
+              src="https://images.unsplash.com/photo-1750178943403-d95117c47595?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMGdyb3ZlJTIwd2VkZGluZyUyMHJlY2VwdGlvbnxlbnwxfHx8fDE3NjU3Njg5MTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
               alt="Olive Grove reception at Grand Gimeno with 100-year-old olive trees"
               className="w-full h-full object-cover absolute inset-0"
             />
@@ -280,8 +275,8 @@ export function LandingPage() {
               className="order-1"
             >
               <div className="aspect-[4/5] lg:aspect-[5/6] overflow-hidden">
-                <ImageWithFallback
-                  src={image_f6a2ad092cee1d6e9dc3124d7ab0c09316fb4e86}
+                <img
+                  src="https://images.unsplash.com/photo-1689150911817-3e27168ab6a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwZmlyZWQlMjBwaXp6YSUyMG92ZW58ZW58MXx8fHwxNzY1NzY4OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="Wood-fired pizza oven at Grand Gimeno"
                   className="w-full h-full object-cover"
                 />
@@ -339,6 +334,24 @@ export function LandingPage() {
             <div id="hubspot-form-container" className="hubspot-form-wrapper"></div>
           </motion.div>
         </div>
+      </section>
+
+      {/* Final Editorial Image - Full Bleed, Edge to Edge */}
+      <section>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+        >
+          <div className="h-screen overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1689958270296-0874646defbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY29sb25pYWwlMjBjb3VydHlhcmQlMjBjZXJlbW9ueXxlbnwxfHx8fDE3NjU3Njg5MjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              alt="Olive Grove ceremony at Grand Gimeno"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
       </section>
     </div>
   );
