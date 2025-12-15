@@ -42,11 +42,14 @@ module.exports = {
     'gap-8',
     'gap-12',
     'gap-20',
+    'lg:gap-20',
     
     // Text alignment
     'text-center',
     'text-left',
     'text-right',
+    'md:text-left',
+    'lg:text-left',
     
     // Grid layout
     'grid',
@@ -54,6 +57,8 @@ module.exports = {
     'grid-cols-2',
     'grid-cols-3',
     'grid-cols-12',
+    'md:grid-cols-2',
+    'md:grid-cols-3',
     'lg:grid-cols-2',
     'lg:grid-cols-3',
     'lg:grid-cols-4',
@@ -80,6 +85,7 @@ module.exports = {
     '-translate-x-1/2',
     
     // Spacing
+    'mb-2',
     'mb-12',
     'mb-16',
     'mb-20',
