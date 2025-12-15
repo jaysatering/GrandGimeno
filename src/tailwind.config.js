@@ -2,13 +2,14 @@
 export default {
   content: [
     "./index.html",
-    "./.tailwind-test.html",
     "./App.tsx",
     "./main.tsx",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./pages/LandingPage.tsx",
+    "./pages/ThankYou.tsx",
+    "./pages/PrivateProfile.tsx",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./imports/**/*.{js,ts,jsx,tsx}",
+    "./**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
