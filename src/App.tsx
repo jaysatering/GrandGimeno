@@ -4,10 +4,10 @@ import { ChevronDown } from 'lucide-react';
 import GgLogo from './components/GgLogo';
 
 // Unsplash Images
-const oliveGroveAerial = "https://images.unsplash.com/photo-1496123630896-5374cc9e8233?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMGdyb3ZlJTIwYWVyaWFsfGVufDF8fHx8MTc2NTc3NTg5OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const pizzaOven = "https://images.unsplash.com/photo-1689150911817-3e27168ab6a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwZmlyZWQlMjBwaXp6YSUyMG92ZW58ZW58MXx8fHwxNzY1NzY4OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const oliveGroveAerial = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780333/3J4A8985_qzhoes.jpg";
+const pizzaOven = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780827/_AJB3193_turfsf.jpg";
 const spanishCourtyard = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const oliveCeremony = "https://images.unsplash.com/photo-1761047726992-4e47b1dda7a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwY2VyZW1vbnklMjBvbGl2ZSUyMHRyZWVzfGVufDF8fHx8MTc2NTc3OTk0N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const oliveCeremony = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780355/3J4A0229_cpnpow.jpg";
 
 export default function App() {
   const [showCTA, setShowCTA] = useState(true);
