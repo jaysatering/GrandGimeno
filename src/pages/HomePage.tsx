@@ -11,7 +11,9 @@ const oliveCeremony = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v176578
 export default function HomePage() {
   const [showCTA, setShowCTA] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [heroInView, setHeroInView] = useState(true);
   const formRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   // Show CTA after user scrolls
   useEffect(() => {
@@ -23,6 +25,29 @@ export default function HomePage() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Track hero visibility
+  useEffect(() => {
+    if (!heroRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setHeroInView(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px'
+      }
+    );
+
+    observer.observe(heroRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   useEffect(() => {
@@ -91,7 +116,7 @@ export default function HomePage() {
   };
 
   const ctaClassDesktop = showCTA ? "cta-fixed cta-fixed-desktop" : "cta-fixed cta-fixed-desktop cta-hidden";
-  const ctaClassMobile = showCTA ? "cta-fixed cta-fixed-mobile" : "cta-fixed cta-fixed-mobile cta-hidden";
+  const ctaClassMobile = hasScrolled && showCTA && !heroInView ? "cta-fixed cta-fixed-mobile" : "cta-fixed cta-fixed-mobile cta-hidden";
 
   return (
     <div className="page-wrapper">
@@ -111,7 +136,7 @@ export default function HomePage() {
         </button>
       </div>
 
-      <section className="hero-section">
+      <section className="hero-section" ref={heroRef}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
