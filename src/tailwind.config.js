@@ -2,8 +2,10 @@
 export default {
   content: [
     "./index.html",
+    "./.tailwind-test.html",
     "./App.tsx",
     "./main.tsx",
+    "./src/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./imports/**/*.{js,ts,jsx,tsx}",
