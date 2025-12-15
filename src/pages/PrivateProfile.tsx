@@ -27,33 +27,21 @@ export function PrivateProfile() {
 
       {/* Hero */}
       <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', marginBottom: '0', marginTop: '-128px', paddingTop: '128px' }}>
-        <div className="container-wide text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
-          >
-            <p className="mono text-primary mb-16">PRIVATE VENUE PROFILE</p>
-            <h1 className="mb-24">
-              THE LANDMARK<br />IS YOURS.
-            </h1>
-            <p className="text-foreground/60 max-w-2xl mx-auto">
-              We do not split the venue.<br />
-              You secure the entire building and grounds.
-            </p>
-          </motion.div>
-
-          {/* Scroll indicator - mobile only */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 1 }}
-            className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
-          >
-            <p className="mono">SCROLL</p>
-            <ChevronDown className="w-4 h-4 animate-bounce" />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
+          className="container-wide text-center"
+        >
+          <p className="mono text-primary mb-16">PRIVATE VENUE PROFILE</p>
+          <h1 className="mb-24">
+            THE LANDMARK<br />IS YOURS.
+          </h1>
+          <p className="text-foreground/60 max-w-2xl mx-auto">
+            We do not split the venue.<br />
+            You secure the entire building and grounds.
+          </p>
+        </motion.div>
       </section>
 
       {/* The Investment - Minimal Pricing */}

@@ -124,33 +124,31 @@ export function LandingPage() {
 
       {/* Hero - Shorter on mobile */}
       <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', paddingTop: '96px', paddingBottom: '80px' }}>
-        <div className="container-wide">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
+          className="container-wide w-full text-center"
+        >
+          <p className="mono text-primary mb-12 lg:mb-12">OLD TOWNE ORANGE, CALIFORNIA</p>
+          <h1 className="mb-16 lg:mb-16">
+            Grand<br />Gimeno
+          </h1>
+          <p className="max-w-3xl mx-auto mb-24 lg:mb-32 text-foreground/60">
+            A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
+          </p>
+          
+          {/* Scroll indicator - mobile only */}
           <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.4, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-            className="container-wide w-full text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.8, duration: 1 }}
+            className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
           >
-            <p className="mono text-primary mb-12 lg:mb-12">OLD TOWNE ORANGE, CALIFORNIA</p>
-            <h1 className="mb-16 lg:mb-16">
-              Grand<br />Gimeno
-            </h1>
-            <p className="max-w-3xl mx-auto mb-24 lg:mb-32 text-foreground/60">
-              A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
-            </p>
-            
-            {/* Scroll indicator - mobile only */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.8, duration: 1 }}
-              className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
-            >
-              <p className="mono">SCROLL</p>
-              <ChevronDown className="w-4 h-4 animate-bounce" />
-            </motion.div>
+            <p className="mono">SCROLL</p>
+            <ChevronDown className="w-4 h-4 animate-bounce" />
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Quick-Hit Value Props - New Section */}
