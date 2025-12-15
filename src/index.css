@@ -283,6 +283,10 @@
 }
 
 @layer utilities {
+  .fixed {
+    position: fixed;
+  }
+
   .relative {
     position: relative;
   }
@@ -1633,6 +1637,47 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+.pricing-value {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@media (width >= 1024px) {
+  .pricing-value {
+    font-size: 4.5rem;
+  }
+}
+
+.pricing-row-container {
+  text-align: center;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  display: grid;
+}
+
+@media (width >= 768px) {
+  .pricing-row-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+@media (width >= 1024px) {
+  .pricing-row-container {
+    gap: 64px;
+  }
+}
+
+.pricing-row-item {
+  border-bottom: 1px solid var(--color-border);
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  display: flex;
+}
+
 .private-culinary-grid {
   grid-template-columns: 1fr;
   gap: 40px;
@@ -1702,6 +1747,12 @@ button:focus-visible {
     grid-template-columns: repeat(4, 1fr);
     gap: 32px 24px;
   }
+}
+
+.private-vendor-card {
+  border: 1px solid var(--color-border);
+  text-align: center;
+  padding: 24px;
 }
 
 .private-capacity-grid {
