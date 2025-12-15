@@ -17,7 +17,7 @@ export default function PrivatePage() {
   const heroImageUrl = "https://images.unsplash.com/photo-1738800076744-c37b80b37d31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwbWluaW1hbHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
   const courtyardImageUrl = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080";
   const archImageUrl = "https://images.unsplash.com/photo-1762375164298-2f8f14bd8d36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwZGV0YWlsJTIwYXJjaHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
-  const culinaryImageUrl = "https://images.unsplash.com/photo-1652969209744-929be02a06c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlJTIwZmlyZSUyMGNvb2tpbmclMjBhc2Fkb3xlbnwxfHx8fDE3NjU4MTI1MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+  const culinaryImageUrl = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765839039/_AJB3571_ijrgo1.jpg";
 
   const faqItems = [
     {
@@ -212,7 +212,7 @@ export default function PrivatePage() {
           className="editorial-image-wrapper"
         >
           <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1765308767818-1e7fd17c8067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFuZCUyMGhhbGwlMjBiYWxscm9vbSUyMGx1eHVyeXxlbnwxfHx8fDE3NjU4MzM5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765839486/KAPSULE_Shawn_Steph_0796_qywqze.jpg"
             alt="Grand Central Hall"
             className="editorial-image-wide"
           />
@@ -286,7 +286,7 @@ export default function PrivatePage() {
             >
               <img 
                 src={culinaryImageUrl}
-                alt="Live fire cooking"
+                alt="Grand Gimeno Olive Grove"
                 className="culinary-image"
               />
             </motion.div>
@@ -371,7 +371,7 @@ export default function PrivatePage() {
             transition={{ duration: 1 }}
           >
             <ImageWithFallback 
-              src={courtyardImageUrl}
+              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765813997/jaysTitusandJo-4-2_1_x4l2ou.jpg"
               alt="Grand Gimeno"
               className="editorial-image"
             />
