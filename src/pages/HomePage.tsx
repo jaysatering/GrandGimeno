@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from '../components/GgLogo';
 import DevNav from '../components/DevNav';
+import { initializeTracking } from '../utils/tracking';
 
 const oliveGroveAerial = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780333/3J4A8985_qzhoes.jpg";
 const pizzaOven = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780827/_AJB3193_turfsf.jpg";
@@ -61,6 +62,11 @@ export default function HomePage() {
         document.body.removeChild(script);
       }
     };
+  }, []);
+
+  // Initialize tracking system for GCLID and FBCLID
+  useEffect(() => {
+    initializeTracking();
   }, []);
 
   const scrollToForm = () => {
