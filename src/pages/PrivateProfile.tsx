@@ -19,16 +19,19 @@ export function PrivateProfile() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-bone pt-32 lg:pt-40">
-      {/* Fixed Logo - Top Left */}
-      <div className="fixed top-4 left-4 lg:top-8 lg:left-12 z-50">
-        <div className="w-[120px] lg:w-[180px] h-auto" aria-label="Grand Gimeno">
-          <GgLogo />
-        </div>
+    <div className="bg-bone" style={{ paddingTop: '128px' }}>
+      {/* Fixed Logo - Mobile */}
+      <div className="fixed z-50 lg:hidden" style={{ top: '16px', left: '16px', width: '120px' }}>
+        <GgLogo />
+      </div>
+      
+      {/* Fixed Logo - Desktop */}
+      <div className="hidden lg:block fixed z-50" style={{ top: '32px', left: '48px', width: '180px' }}>
+        <GgLogo />
       </div>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 mb-0 lg:mb-16 -mt-32 lg:-mt-40 pt-32 lg:pt-40">
+      <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', paddingLeft: '24px', paddingRight: '24px', marginBottom: '0', marginTop: '-128px', paddingTop: '128px' }}>
         <div className="container-wide mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -59,7 +62,7 @@ export function PrivateProfile() {
       </section>
 
       {/* The Investment - Minimal Pricing */}
-      <section className="px-6 lg:px-12 mb-64">
+      <section style={{ paddingLeft: '24px', paddingRight: '24px', marginBottom: '256px' }}>
         <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -95,7 +98,7 @@ export function PrivateProfile() {
       </section>
 
       {/* Full-Width Image Break */}
-      <section className="mb-64">
+      <section style={{ marginBottom: '256px' }}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

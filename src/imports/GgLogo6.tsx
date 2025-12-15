@@ -2,8 +2,8 @@ import svgPaths from "./svg-i8vuswueby";
 
 export default function GgLogo() {
   return (
-    <div className="relative size-full" data-name="GG_Logo_6">
-      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 264 18">
+    <div className="relative w-full" data-name="GG_Logo_6">
+      <svg className="block w-full h-auto" fill="none" viewBox="0 0 264 18">
         <g id="ART">
           <path d={svgPaths.p246e7b00} fill="var(--fill-0, #669CC4)" id="Vector" />
           <path d={svgPaths.p14ed9800} fill="var(--fill-0, #669CC4)" id="Vector_2" />

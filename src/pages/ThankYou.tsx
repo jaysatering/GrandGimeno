@@ -11,7 +11,7 @@ export function ThankYou() {
   };
 
   return (
-    <div className="bg-bone pt-24 lg:pt-32 min-h-screen flex items-center justify-center px-6">
+    <div className="bg-bone flex items-center justify-center" style={{ paddingTop: '96px', minHeight: '100vh', paddingLeft: '24px', paddingRight: '24px' }}>
       <div className="container-text w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -24,18 +24,20 @@ export function ThankYou() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center mb-12"
+            className="flex justify-center" style={{ marginBottom: '48px' }}
           >
-            <div className="w-20 h-20 lg:w-24 lg:h-24">
+            <div style={{ width: '80px', height: '80px' }}>
               <GgLogo />
             </div>
           </motion.div>
 
           {/* Concierge Note */}
-          <div className="mb-16 space-y-8">
-            <h1>
-              Inquiry<br />received
-            </h1>
+          <div style={{ marginBottom: '64px' }}>
+            <div style={{ marginBottom: '32px' }}>
+              <h1>
+                Inquiry<br />received
+              </h1>
+            </div>
 
             <div className="max-w-2xl mx-auto text-foreground/70">
               <p>
@@ -45,7 +47,7 @@ export function ThankYou() {
           </div>
 
           {/* CTA */}
-          <div className="space-y-6">
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
             <button
               onClick={handleViewProfile}
               className="px-16 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mono"
@@ -59,7 +61,7 @@ export function ThankYou() {
           </div>
 
           {/* Signature */}
-          <div className="mt-16 pt-12 border-t border-border mb-12">
+          <div className="border-t border-border" style={{ marginTop: '64px', paddingTop: '48px', marginBottom: '48px' }}>
             <p className="text-foreground/60">
               The Grand Gimeno Team
             </p>

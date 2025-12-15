@@ -81,14 +81,25 @@ export function LandingPage() {
   return (
     <div className="bg-bone">
       {/* Fixed Logo - Top Left */}
-      <div className="fixed top-4 left-4 lg:top-8 lg:left-12 z-50">
-        <div className="w-[120px] lg:w-[180px] h-auto" aria-label="Grand Gimeno">
-          <GgLogo />
-        </div>
+      <div className="fixed z-50 lg:hidden" style={{ top: '16px', left: '16px', width: '120px' }}>
+        <GgLogo />
+      </div>
+      
+      {/* Desktop Logo - Larger */}
+      <div className="hidden lg:block fixed z-50" style={{ top: '32px', left: '48px', width: '180px' }}>
+        <GgLogo />
       </div>
 
-      {/* Desktop CTA - Top Right */}
-      <div className="hidden lg:block fixed top-8 right-12 z-50 transition-opacity duration-300" style={{ opacity: showCTA ? 1 : 0, pointerEvents: showCTA ? 'auto' : 'none' }}>
+      {/* Desktop CTA - Top Right - Using inline styles for Vercel compatibility */}
+      <div 
+        className="hidden lg:block fixed z-50 transition-opacity duration-300" 
+        style={{ 
+          top: '32px', 
+          right: '48px',
+          opacity: showCTA ? 1 : 0, 
+          pointerEvents: showCTA ? 'auto' : 'none' 
+        }}
+      >
         <button
           onClick={scrollToForm}
           className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mono"
@@ -98,7 +109,15 @@ export function LandingPage() {
       </div>
 
       {/* Mobile CTA - Bottom Right */}
-      <div className="lg:hidden fixed bottom-6 right-4 z-50 transition-opacity duration-300" style={{ opacity: showCTA ? 1 : 0, pointerEvents: showCTA ? 'auto' : 'none' }}>
+      <div 
+        className="lg:hidden fixed z-50 transition-opacity duration-300" 
+        style={{ 
+          bottom: '24px', 
+          right: '16px',
+          opacity: showCTA ? 1 : 0, 
+          pointerEvents: showCTA ? 'auto' : 'none' 
+        }}
+      >
         <button
           onClick={scrollToForm}
           className="px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mono shadow-lg"
@@ -109,7 +128,7 @@ export function LandingPage() {
       </div>
 
       {/* Hero - Shorter on mobile */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 pt-24 lg:pt-32 pb-20 lg:pb-20">
+      <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', paddingTop: '96px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px' }}>
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -138,7 +157,7 @@ export function LandingPage() {
       </section>
 
       {/* Quick-Hit Value Props - New Section */}
-      <section className="px-6 lg:px-12 mb-24 lg:mb-32">
+      <section style={{ paddingLeft: '24px', paddingRight: '24px', marginBottom: '96px' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +165,7 @@ export function LandingPage() {
           transition={{ duration: 0.8 }}
           className="container-content"
         >
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 py-12 lg:py-16 border-t border-b border-foreground/10">
+          <div className="grid md:grid-cols-3 border-t border-b" style={{ gap: '48px', paddingTop: '48px', paddingBottom: '48px', borderColor: 'rgba(82, 85, 87, 0.1)' }}>
             <div className="text-center md:text-left">
               <p className="mb-2">Two VIP Suites</p>
               <p className="text-foreground/60">optional 8am access</p>
@@ -166,8 +185,8 @@ export function LandingPage() {
       </section>
 
       {/* Editorial Image 1 - Full Width */}
-      <section className="lg:px-12 mb-32 lg:mb-48">
-        <div className="container-full">
+      <section style={{ marginBottom: '192px' }}>
+        <div className="container-full" style={{ maxWidth: '1800px', marginLeft: 'auto', marginRight: 'auto' }}>
           <motion.div
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}
@@ -195,17 +214,17 @@ export function LandingPage() {
       </section>
 
       {/* The Spaces - Full Width Text Block */}
-      <section className="px-6 lg:px-12 mb-32 lg:mb-48">
-        <div className="container-text">
+      <section style={{ paddingLeft: '24px', paddingRight: '24px', marginBottom: '192px' }}>
+        <div className="container-text" style={{ maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="mb-20"
+            style={{ marginBottom: '80px' }}
           >
-            <p className="mono text-primary mb-8">THE ARCHITECTURE</p>
-            <h2 className="mb-12">
+            <p className="mono text-primary" style={{ marginBottom: '32px' }}>THE ARCHITECTURE</p>
+            <h2 style={{ marginBottom: '48px' }}>
               A journey through<br />30,000 square feet
             </h2>
           </motion.div>
@@ -215,45 +234,46 @@ export function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-12 lg:gap-16 text-foreground/70"
+            className="grid md:grid-cols-2 text-foreground/70"
+            style={{ gap: '48px' }}
           >
             <div>
-              <h3 className="text-foreground mb-4">The Courtyard</h3>
+              <h3 className="text-foreground" style={{ marginBottom: '16px' }}>The Courtyard</h3>
               <p>
                 The arrival point. A lush, open-air space with a large Spanish fountain and arched breezeways.
               </p>
             </div>
 
             <div>
-              <h3 className="text-foreground mb-4">The Foyer</h3>
+              <h3 className="text-foreground" style={{ marginBottom: '16px' }}>The Foyer</h3>
               <p>
                 A transition space with a wrought-iron chandelier and double doors leading to the heart of the building.
               </p>
             </div>
 
             <div>
-              <h3 className="text-foreground mb-4">Grand Central</h3>
+              <h3 className="text-foreground" style={{ marginBottom: '16px' }}>Grand Central</h3>
               <p>
                 The primary indoor reception space. Soaring 30-foot ceilings, exposed timber trusses, and massive windows. Rustic industrial luxury—no crystal chandeliers here.
               </p>
             </div>
 
             <div>
-              <h3 className="text-foreground mb-4">The Olive Grove</h3>
+              <h3 className="text-foreground" style={{ marginBottom: '16px' }}>The Olive Grove</h3>
               <p>
                 The crown jewel. A large outdoor sanctuary filled with 100-year-old olive trees, market lights, and decomposed granite floors—designed for al fresco dining.
               </p>
             </div>
 
             <div>
-              <h3 className="text-foreground mb-4">The Suites</h3>
+              <h3 className="text-foreground" style={{ marginBottom: '16px' }}>The Suites</h3>
               <p>
                 Two high-end VIP suites—The Parlor and The Speakeasy—to prepare in style.
               </p>
             </div>
 
             <div>
-              <h3 className="text-foreground mb-4">The Sanctuary</h3>
+              <h3 className="text-foreground" style={{ marginBottom: '16px' }}>The Sanctuary</h3>
               <p>
                 Enclosed by high walls, Grand Gimeno creates a silent, private world inside the bustling city of Orange.
               </p>
@@ -263,9 +283,9 @@ export function LandingPage() {
       </section>
 
       {/* Culinary Distinction */}
-      <section className="mb-32 lg:mb-48 px-6 lg:px-12">
-        <div className="container-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section style={{ marginBottom: '192px', paddingLeft: '24px', paddingRight: '24px' }}>
+        <div className="container-full" style={{ maxWidth: '1800px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div className="grid lg:grid-cols-2 items-center" style={{ gap: '64px' }}>
             {/* Image - Full Width on Mobile, Half on Desktop */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
@@ -291,11 +311,11 @@ export function LandingPage() {
               transition={{ duration: 1 }}
               className="order-2"
             >
-              <p className="mono text-primary mb-8">CULINARY DISTINCTION</p>
-              <h2 className="mb-12">
+              <p className="mono text-primary" style={{ marginBottom: '32px' }}>CULINARY DISTINCTION</p>
+              <h2 style={{ marginBottom: '48px' }}>
                 Where architecture<br />meets fire
               </h2>
-              <div className="space-y-8 text-foreground/70">
+              <div className="text-foreground/70" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
                 <p>
                   Grand Gimeno wasn't designed around food—it was designed from food. Created by Jay's Catering, this is a culinary vision made architecture.
                 </p>
@@ -312,17 +332,17 @@ export function LandingPage() {
       </section>
 
       {/* Inquiry Form - Conversion-Optimized */}
-      <section id="inquiry-form" className="mb-12 lg:mb-48">
-        <div className="container-text px-6 lg:px-12">
+      <section id="inquiry-form" style={{ marginBottom: '192px' }}>
+        <div className="container-text" style={{ maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <div className="text-center mb-12 lg:mb-16">
-              <p className="mono text-primary mb-4">LIMITED 2026 AVAILABILITY</p>
-              <h2 className="mb-3">
+            <div className="text-center" style={{ marginBottom: '64px' }}>
+              <p className="mono text-primary" style={{ marginBottom: '16px' }}>LIMITED 2026 AVAILABILITY</p>
+              <h2 style={{ marginBottom: '12px' }}>
                 Start here
               </h2>
               <p className="text-foreground/40">
