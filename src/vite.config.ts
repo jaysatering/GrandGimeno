@@ -5,7 +5,7 @@ export default defineConfig({
   base: '/',
   plugins: [react()],
   build: {
-    outDir: 'dist',
+    outDir: 'build',
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'esbuild',
