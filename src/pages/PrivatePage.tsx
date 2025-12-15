@@ -172,7 +172,7 @@ export default function PrivatePage() {
         </button>
       </section>
 
-      <section style={{ padding: '64px 0', marginBottom: '0' }}>
+      <section style={{ padding: 'var(--space-section-mobile) 0' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -186,96 +186,92 @@ export default function PrivatePage() {
         >
           <div className="pricing-row-container">
             <div className="pricing-row-item">
-              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SEATED DINNER</span>
-              <span className="pricing-value">200</span>
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>FRIDAY</span>
+              <span className="pricing-value">$8,000</span>
             </div>
 
             <div className="pricing-row-item">
-              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>COCKTAIL RECEPTION</span>
-              <span className="pricing-value">300</span>
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SATURDAY</span>
+              <span className="pricing-value">$11,000</span>
             </div>
 
             <div className="pricing-row-item">
-              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>GUEST MINIMUM</span>
-              <span className="pricing-value">100</span>
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SUNDAY</span>
+              <span className="pricing-value">$8,000</span>
             </div>
           </div>
         </motion.div>
       </section>
 
-      <section className="editorial-image-section" style={{ height: '80vh', minHeight: '600px' }}>
+      <section className="editorial-image-section">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
           className="editorial-image-wrapper"
-          style={{ height: '100%' }}
         >
           <ImageWithFallback 
             src="https://images.unsplash.com/photo-1765308767818-1e7fd17c8067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFuZCUyMGhhbGwlMjBiYWxscm9vbSUyMGx1eHVyeXxlbnwxfHx8fDE3NjU4MzM5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Grand Central Hall"
             className="editorial-image"
-            style={{ height: '100%' }}
           />
         </motion.div>
       </section>
 
-      <section className="architecture-section" style={{ paddingTop: '240px' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="inclusions-container"
-          style={{ marginBottom: '64px' }}
-        >
-          <div style={{ marginBottom: '32px' }}>
-            <p style={{ marginBottom: '16px' }}>
-              <span className="mono" style={{ color: 'var(--color-primary)' }}>INCLUSIONS</span>
+      <section className="architecture-section">
+        <div className="container-content">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="architecture-header"
+          >
+            <p className="section-eyebrow">
+              <span className="mono">INCLUSIONS</span>
             </p>
-            <h2 className="inclusions-header-title">The design spec</h2>
-          </div>
-        </motion.div>
+            <h2>The design spec</h2>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="inclusions-container inclusions-content-text"
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <p style={{ opacity: 0.7 }}>14 hours of venue access (10am–midnight)</p>
-              <p style={{ opacity: 0.7 }}>Six distinct spaces including Grand Central Hall, Olive Grove, Courtyard, Foyer, and two VIP suites</p>
-              <p style={{ opacity: 0.7 }}>Farm tables, ghost chairs, and curated lounge furniture</p>
-              <p style={{ opacity: 0.7 }}>Market lights throughout the Olive Grove with architectural uplighting</p>
-              <p style={{ opacity: 0.7 }}>Permanent outdoor kitchen with wood-fired pizza oven and Argentine asado grill</p>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', maxWidth: '1100px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <p style={{ opacity: 0.7 }}>14 hours of venue access (10am–midnight)</p>
+                <p style={{ opacity: 0.7 }}>Six distinct spaces including Grand Central Hall, Olive Grove, Courtyard, Foyer, and two VIP suites</p>
+                <p style={{ opacity: 0.7 }}>Farm tables, ghost chairs, and curated lounge furniture</p>
+                <p style={{ opacity: 0.7 }}>Market lights throughout the Olive Grove with architectural uplighting</p>
+                <p style={{ opacity: 0.7 }}>Permanent outdoor kitchen with wood-fired pizza oven and Argentine asado grill</p>
+              </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '48px' }}>
-              <p style={{ opacity: 0.7 }}>Professional venue coordinator and event manager</p>
-              <p style={{ opacity: 0.7 }}>Security personnel and setup/breakdown crew</p>
-              <p style={{ opacity: 0.7 }}>On-site parking for 100 vehicles</p>
-              <p style={{ opacity: 0.7 }}>Valet coordination available</p>
-            </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
+                <p style={{ opacity: 0.7 }}>Professional venue coordinator and event manager</p>
+                <p style={{ opacity: 0.7 }}>Security personnel and setup/breakdown crew</p>
+                <p style={{ opacity: 0.7 }}>On-site parking for 100 vehicles</p>
+                <p style={{ opacity: 0.7 }}>Valet coordination available</p>
+              </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '48px' }}>
-              <p style={{ opacity: 0.7 }}>Climate-controlled interior spaces</p>
-              <p style={{ opacity: 0.7 }}>Professional sound system with wireless microphones</p>
-              <p style={{ opacity: 0.7 }}>Complimentary WiFi throughout the venue</p>
-              <p style={{ opacity: 0.7 }}>Full bridal suite and groom's lounge</p>
-            </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
+                <p style={{ opacity: 0.7 }}>Climate-controlled interior spaces</p>
+                <p style={{ opacity: 0.7 }}>Professional sound system with wireless microphones</p>
+                <p style={{ opacity: 0.7 }}>Complimentary WiFi throughout the venue</p>
+                <p style={{ opacity: 0.7 }}>Full bridal suite and groom's lounge</p>
+              </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '48px' }}>
-              <p style={{ opacity: 0.7 }}>Preferred vendor collective with exclusive rates</p>
-              <p style={{ opacity: 0.7 }}>Complimentary tasting for two with Jay's Catering</p>
-              <p style={{ opacity: 0.7 }}>Access to our curated rental inventory</p>
-              <p style={{ opacity: 0.7 }}>Rehearsal dinner discount available</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
+                <p style={{ opacity: 0.7 }}>Preferred vendor collective with exclusive rates</p>
+                <p style={{ opacity: 0.7 }}>Complimentary tasting for two with Jay's Catering</p>
+                <p style={{ opacity: 0.7 }}>Access to our curated rental inventory</p>
+                <p style={{ opacity: 0.7 }}>Rehearsal dinner discount available</p>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       <section className="culinary-section">
@@ -325,40 +321,6 @@ export default function PrivatePage() {
         </div>
       </section>
 
-      <section className="editorial-grid-section">
-        <div className="editorial-grid-container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1 }}
-            className="editorial-grid"
-          >
-            <div className="editorial-grid-item editorial-grid-item-large">
-              <ImageWithFallback 
-                src={courtyardImageUrl}
-                alt="Grand Gimeno courtyard"
-                className="editorial-grid-image"
-              />
-            </div>
-            <div className="editorial-grid-item editorial-grid-item-small-1">
-              <ImageWithFallback 
-                src={archImageUrl}
-                alt="Architectural details"
-                className="editorial-grid-image"
-              />
-            </div>
-            <div className="editorial-grid-item editorial-grid-item-small-2">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1519167758481-83f29da8c433?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMHRyZWUlMjBvdXRkb29yfGVufDF8fHx8MTc2NTc1Nzc1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Olive grove detail"
-                className="editorial-grid-image"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <section className="architecture-section">
         <div className="container-content">
           <motion.div
@@ -396,6 +358,23 @@ export default function PrivatePage() {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="editorial-grid-section">
+        <div className="editorial-grid-container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1 }}
+          >
+            <ImageWithFallback 
+              src={courtyardImageUrl}
+              alt="Grand Gimeno"
+              className="editorial-image"
+            />
           </motion.div>
         </div>
       </section>
@@ -441,7 +420,7 @@ export default function PrivatePage() {
       </section>
 
       <footer style={{ 
-        padding: '80px 48px 48px', 
+        padding: '80px 24px 48px', 
         borderTop: '1px solid var(--color-border)'
       }}>
         <motion.div
@@ -457,12 +436,12 @@ export default function PrivatePage() {
           <div style={{ 
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gap: '56px',
-            marginBottom: '80px'
+            gap: '40px',
+            marginBottom: '64px'
           }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '56px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }}>
               <div>
-                <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '24px' }}>LOCATION</p>
+                <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '16px' }}>LOCATION</p>
                 <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-charcoal)' }}>
                   Grand Gimeno<br />
                   128 West Chapman Avenue<br />
@@ -471,7 +450,7 @@ export default function PrivatePage() {
               </div>
 
               <div>
-                <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '24px' }}>CONTACT</p>
+                <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '16px' }}>CONTACT</p>
                 <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-charcoal)' }}>
                   <a 
                     href="tel:+17145551234"
@@ -510,6 +489,12 @@ export default function PrivatePage() {
 
         <style>{`
           @media (min-width: 768px) {
+            footer {
+              padding: 96px 48px 64px !important;
+            }
+            footer > div > div {
+              margin-bottom: 80px !important;
+            }
             footer > div > div > div {
               grid-template-columns: 1fr 1fr !important;
               gap: 96px !important;
