@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import { ChevronDown } from 'lucide-react';
 import GgLogo from '../components/GgLogo';
 import DevNav from '../components/DevNav';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
@@ -9,6 +10,10 @@ export default function PrivatePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const scrollToNextSection = () => {
+    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+  };
 
   const heroImageUrl = "https://images.unsplash.com/photo-1738800076744-c37b80b37d31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwbWluaW1hbHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
   const courtyardImageUrl = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080";
@@ -86,18 +91,23 @@ export default function PrivatePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
           >
-            <p className="section-eyebrow">
-              <span className="mono">PRIVATE VENUE PROFILE</span>
-            </p>
-            <h1 style={{ marginTop: '40px', marginBottom: '48px' }}>THE LANDMARK IS YOURS.</h1>
+            <h1 style={{ marginBottom: '48px' }}>THE LANDMARK IS YOURS.</h1>
             <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.25rem', lineHeight: '1.6' }}>
               We do not split the venue. You secure the entire building and grounds.
             </p>
           </motion.div>
+
+          <button 
+            onClick={scrollToNextSection}
+            className="scroll-indicator"
+            aria-label="Scroll to next section"
+          >
+            <ChevronDown size={32} strokeWidth={1} />
+          </button>
         </section>
 
         {/* PRICING */}
-        <section style={{ padding: '120px 24px', borderTop: '1px solid var(--color-border)' }}>
+        <section style={{ padding: '120px 24px' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
