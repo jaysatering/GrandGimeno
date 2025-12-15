@@ -1402,3 +1402,28 @@ button:focus-visible {
     padding: 20px;
   }
 }
+
+/* ===== PRIVATE PAGE CULINARY GRID ===== */
+.private-culinary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .private-culinary-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.private-culinary-text {
+  padding-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .private-culinary-text {
+    padding-right: 40px;
+  }
+}

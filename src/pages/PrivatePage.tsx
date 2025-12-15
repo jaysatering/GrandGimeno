@@ -207,7 +207,7 @@ export default function PrivatePage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+              <div className="private-culinary-grid">
                 {/* Image on left */}
                 <div>
                   <ImageWithFallback 
@@ -218,7 +218,7 @@ export default function PrivatePage() {
                 </div>
 
                 {/* Content on right */}
-                <div style={{ paddingRight: '40px' }}>
+                <div className="private-culinary-text">
                   <p className="section-eyebrow" style={{ marginBottom: '32px' }}>
                     <span className="mono">CULINARY EXPERIENCE</span>
                   </p>
