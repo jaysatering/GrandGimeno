@@ -4,16 +4,37 @@ module.exports = {
     "./index.html",
     "./**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'text-primary',
+    'bg-primary',
+    'border-primary',
+    'text-primary-foreground',
+    'bg-primary-foreground',
+    'text-charcoal',
+    'bg-charcoal',
+    'text-ivory',
+    'bg-ivory',
+    'text-blue',
+    'bg-blue',
+    'text-bone',
+    'bg-bone',
+    'text-foreground',
+    'bg-foreground',
+    'text-background',
+    'bg-background',
+    'text-muted',
+    'bg-muted',
+    'text-muted-foreground',
+    'bg-muted-foreground',
+    'border-border',
+  ],
   theme: {
     extend: {
       colors: {
-        // Grand Gimeno Design System Colors
         charcoal: '#525557',
         ivory: '#EEEDE1',
         blue: '#669CC4',
         bone: '#EEEDE1',
-        
-        // Semantic color mappings
         background: '#EEEDE1',
         foreground: '#525557',
         primary: {
