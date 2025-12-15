@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from '../components/GgLogo';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { Accordion } from '../components/Accordion';
+import { AccordionSingle } from '../components/Accordion';
 
 export default function PrivatePage() {
   useEffect(() => {
@@ -432,7 +432,20 @@ export default function PrivatePage() {
             <h2>Frequently asked</h2>
             
             <div style={{ marginTop: '64px', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}>
-              <Accordion items={faqItems} />
+              {faqItems.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                >
+                  <AccordionSingle
+                    question={item.question}
+                    answer={item.answer}
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

@@ -86,3 +86,22 @@ export function Accordion({ items }: AccordionProps) {
     </div>
   );
 }
+
+// Single accordion item export for individual use
+interface SingleAccordionProps {
+  question: string;
+  answer: string;
+}
+
+export function AccordionSingle({ question, answer }: SingleAccordionProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <AccordionItem
+      question={question}
+      answer={answer}
+      isOpen={isOpen}
+      onToggle={() => setIsOpen(!isOpen)}
+    />
+  );
+}
