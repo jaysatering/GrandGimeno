@@ -580,6 +580,17 @@ p {
   }
 }
 
+.section-eyebrow {
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+@media (width >= 1024px) {
+  .section-eyebrow {
+    margin-bottom: 16px;
+  }
+}
+
 .hero-title {
   flex-direction: column;
   align-items: center;
@@ -834,7 +845,7 @@ p {
 .form-section {
   justify-content: center;
   align-items: flex-start;
-  padding: 80px 0 60px;
+  padding: 48px 0 40px;
   display: flex;
 }
 
@@ -852,17 +863,17 @@ p {
 }
 
 .form-content h2 {
-  margin-bottom: 12px;
-  font-size: 2.25rem;
+  margin-bottom: 8px;
+  font-size: 1.875rem;
 }
 
 .form-subtitle {
   color: var(--color-muted);
   max-width: 600px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1rem;
+  font-size: .875rem;
 }
 
 @media (width >= 1024px) {
@@ -1355,14 +1366,17 @@ p {
 }
 
 .culinary-image-wrapper {
-  order: 2;
-  width: 100%;
+  order: 1;
+  width: calc(100% + 96px);
+  margin: 0 -48px;
   overflow: hidden;
 }
 
 @media (width >= 1024px) {
   .culinary-image-wrapper {
     order: 1;
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -1375,7 +1389,7 @@ p {
 }
 
 .culinary-text {
-  order: 1;
+  order: 2;
 }
 
 @media (width >= 1024px) {

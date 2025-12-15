@@ -1,15 +1,13 @@
-import image_3803d145ad74e97ee8f3b71a8444d177e600d7e1 from 'figma:asset/3803d145ad74e97ee8f3b71a8444d177e600d7e1.png';
-import image_95febfac84472c08a078fc09edad3c36f0dc9c68 from 'figma:asset/95febfac84472c08a078fc09edad3c36f0dc9c68.png';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from './components/GgLogo';
 
 // Unsplash Images
-const oliveGroveAerial = image_95febfac84472c08a078fc09edad3c36f0dc9c68;
+const oliveGroveAerial = "https://images.unsplash.com/photo-1496123630896-5374cc9e8233?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMGdyb3ZlJTIwYWVyaWFsfGVufDF8fHx8MTc2NTc3NTg5OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const pizzaOven = "https://images.unsplash.com/photo-1689150911817-3e27168ab6a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwZmlyZWQlMjBwaXp6YSUyMG92ZW58ZW58MXx8fHwxNzY1NzY4OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const spanishCourtyard = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const oliveCeremony = image_3803d145ad74e97ee8f3b71a8444d177e600d7e1;
+const oliveCeremony = "https://images.unsplash.com/photo-1761047726992-4e47b1dda7a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwY2VyZW1vbnklMjBvbGl2ZSUyMHRyZWVzfGVufDF8fHx8MTc2NTc3OTk0N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 export default function App() {
   const [showCTA, setShowCTA] = useState(true);
@@ -345,7 +343,7 @@ export default function App() {
             className="form-content"
           >
             <p className="section-eyebrow">
-              <span className="mono">Limited 2026 Availability</span>
+              <span className="mono">Availability</span>
             </p>
             <h2>Start here</h2>
             <p className="form-subtitle">
