@@ -1,38 +1,46 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-@theme {
-  /* Grand Gimeno Color System */
-  --color-charcoal: #525557;
-  --color-ivory: #EEEDE1;
-  --color-blue: #669CC4;
-  
-  /* Tailwind Color Utilities - Map to design system */
-  --color-background: #EEEDE1;
-  --color-foreground: #525557;
-  --color-primary: #669CC4;
-  --color-primary-foreground: #EEEDE1;
-  --color-muted: #f5f4ed;
-  --color-muted-foreground: #6a6b6d;
-  --color-border: rgba(82, 85, 87, 0.15);
-  --color-bone: #EEEDE1;
-  
-  /* Typography */
-  --font-sans: 'Cormorant Garamond', ui-serif, Georgia, serif;
-  --font-mono: 'Space Mono', ui-monospace, monospace;
-  
-  /* Spacing Scale */
-  --spacing-section: 128px;
-  --spacing-section-mobile: 80px;
-  
-  /* Border Radius */
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
+  :root {
+    /* Grand Gimeno Color System */
+    --color-charcoal: #525557;
+    --color-ivory: #EEEDE1;
+    --color-blue: #669CC4;
+    
+    /* Tailwind Color Utilities - Map to design system */
+    --color-background: #EEEDE1;
+    --color-foreground: #525557;
+    --color-primary: #669CC4;
+    --color-primary-foreground: #EEEDE1;
+    --color-muted: #f5f4ed;
+    --color-muted-foreground: #6a6b6d;
+    --color-border: rgba(82, 85, 87, 0.15);
+    --color-bone: #EEEDE1;
+    
+    /* SVG Fill Colors */
+    --fill-0: #669CC4;
+    --fill-1: #525557;
+    --fill-2: #EEEDE1;
+    
+    /* Typography */
+    --font-sans: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-mono: 'Space Mono', ui-monospace, monospace;
+    
+    /* Spacing Scale */
+    --spacing-section: 128px;
+    --spacing-section-mobile: 80px;
+    
+    /* Border Radius */
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+  }
+  
   * {
     border-color: var(--color-border);
   }

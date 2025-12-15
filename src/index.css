@@ -31,8 +31,8 @@
 
 @layer theme {
   :root, :host {
-    --font-sans: "Cormorant Garamond", ui-serif, Georgia, serif;
-    --font-mono: "Space Mono", ui-monospace, monospace;
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-gray-100: oklch(.967 .003 264.542);
     --spacing: .25rem;
     --container-xl: 36rem;
@@ -71,15 +71,12 @@
     --default-mono-font-family: var(--font-mono);
     --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
     --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
-    --color-background: #eeede1;
-    --color-foreground: #525557;
-    --color-primary: #669cc4;
-    --color-primary-foreground: #eeede1;
-    --color-muted-foreground: #6a6b6d;
-    --color-border: #52555726;
-    --color-charcoal: #525557;
-    --color-ivory: #eeede1;
-    --color-bone: #eeede1;
+    --color-background: oklch(1 0 0);
+    --color-foreground: oklch(.145 0 0);
+    --color-primary: oklch(.205 0 0);
+    --color-primary-foreground: oklch(.985 0 0);
+    --color-muted-foreground: oklch(.556 0 0);
+    --color-border: oklch(.922 0 0);
   }
 }
 
@@ -324,13 +321,37 @@
   }
 
   * {
-    border-color: var(--color-border);
+    border-color: oklch(.922 0 0);
     outline-color: color-mix(in oklab, oklch(.708 0 0) 50%, transparent);
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: oklch(1 0 0);
+    color: oklch(.145 0 0);
+  }
+
+  :root {
+    --color-charcoal: #525557;
+    --color-ivory: #eeede1;
+    --color-blue: #669cc4;
+    --color-background: #eeede1;
+    --color-foreground: #525557;
+    --color-primary: #669cc4;
+    --color-primary-foreground: #eeede1;
+    --color-muted: #f5f4ed;
+    --color-muted-foreground: #6a6b6d;
+    --color-border: #52555726;
+    --color-bone: #eeede1;
+    --fill-0: #669cc4;
+    --fill-1: #525557;
+    --fill-2: #eeede1;
+    --font-sans: "Cormorant Garamond", ui-serif, Georgia, serif;
+    --font-mono: "Space Mono", ui-monospace, monospace;
+    --spacing-section: 128px;
+    --spacing-section-mobile: 80px;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
   }
 
   * {
@@ -1082,21 +1103,11 @@
   }
 
   .border-border {
-    border-color: var(--color-border);
+    border-color: oklch(.922 0 0);
   }
 
   .border-foreground\/10 {
-    border-color: #5255571a;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .border-foreground\/10 {
-      border-color: color-mix(in oklab, var(--color-foreground) 10%, transparent);
-    }
-  }
-
-  .bg-bone {
-    background-color: var(--color-bone);
+    border-color: color-mix(in oklab, oklch(.145 0 0) 10%, transparent);
   }
 
   .bg-gray-100 {
@@ -1104,7 +1115,7 @@
   }
 
   .bg-primary {
-    background-color: var(--color-primary);
+    background-color: oklch(.205 0 0);
   }
 
   .object-cover {
@@ -1255,50 +1266,28 @@
     line-height: var(--leading-tight);
   }
 
-  .text-bone {
-    color: var(--color-bone);
-  }
-
   .text-foreground {
-    color: var(--color-foreground);
+    color: oklch(.145 0 0);
   }
 
   .text-foreground\/40 {
-    color: #52555766;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .text-foreground\/40 {
-      color: color-mix(in oklab, var(--color-foreground) 40%, transparent);
-    }
+    color: color-mix(in oklab, oklch(.145 0 0) 40%, transparent);
   }
 
   .text-foreground\/60 {
-    color: #52555799;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .text-foreground\/60 {
-      color: color-mix(in oklab, var(--color-foreground) 60%, transparent);
-    }
+    color: color-mix(in oklab, oklch(.145 0 0) 60%, transparent);
   }
 
   .text-foreground\/70 {
-    color: #525557b3;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .text-foreground\/70 {
-      color: color-mix(in oklab, var(--color-foreground) 70%, transparent);
-    }
+    color: color-mix(in oklab, oklch(.145 0 0) 70%, transparent);
   }
 
   .text-primary {
-    color: var(--color-primary);
+    color: oklch(.205 0 0);
   }
 
   .text-primary-foreground {
-    color: var(--color-primary-foreground);
+    color: oklch(.985 0 0);
   }
 
   .shadow-lg {
@@ -1337,19 +1326,13 @@
 
   @media (hover: hover) {
     .hover\:bg-primary\/90:hover {
-      background-color: #669cc4e6;
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .hover\:bg-primary\/90:hover {
-        background-color: color-mix(in oklab, var(--color-primary) 90%, transparent);
-      }
+      background-color: color-mix(in oklab, oklch(.205 0 0) 90%, transparent);
     }
   }
 
   @media (hover: hover) {
     .hover\:text-primary:hover {
-      color: var(--color-primary);
+      color: oklch(.205 0 0);
     }
   }
 
