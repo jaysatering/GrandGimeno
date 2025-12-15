@@ -9,8 +9,21 @@ const pizzaOven = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780827
 const oliveCeremony = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780355/3J4A0229_cpnpow.jpg";
 
 export default function HomePage() {
-  const [showCTA, setShowCTA] = useState(true);
+  const [showCTA, setShowCTA] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+
+  // Show CTA after user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setHasScrolled(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!formRef.current) return;
@@ -18,7 +31,9 @@ export default function HomePage() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setShowCTA(!entry.isIntersecting);
+          if (hasScrolled) {
+            setShowCTA(!entry.isIntersecting);
+          }
         });
       },
       {
@@ -32,7 +47,7 @@ export default function HomePage() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [hasScrolled]);
 
   useEffect(() => {
     const script = document.createElement('script');
