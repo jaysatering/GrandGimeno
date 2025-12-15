@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import GgLogo from '../imports/GgLogo6';
 import { ChevronDown } from 'lucide-react';
+import oliveGroveAerial from 'figma:asset/70a63a86057ecdc10a10ef186184d504f07ebd8a.png';
 
 export function PrivateProfile() {
   const navigate = useNavigate();
@@ -93,7 +94,7 @@ export function PrivateProfile() {
           className="w-full h-[80vh]"
         >
           <ImageWithFallback
-            src={image_70a63a86057ecdc10a10ef186184d504f07ebd8a}
+            src={oliveGroveAerial}
             alt="Grand Central Hall"
             className="w-full h-full object-cover"
           />

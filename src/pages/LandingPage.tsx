@@ -83,9 +83,6 @@ export function LandingPage() {
     };
   }, []);
 
-  const desktopCTAClass = "hidden lg:block fixed top-8 right-12 z-50 transition-opacity duration-300";
-  const mobileCTAClass = "lg:hidden fixed bottom-6 right-4 z-50 transition-opacity duration-300";
-
   return (
     <div className="bg-bone">
       {/* Fixed Logo - Top Left */}
@@ -96,7 +93,7 @@ export function LandingPage() {
       </div>
 
       {/* Desktop CTA - Top Right */}
-      <div className={desktopCTAClass} style={{ opacity: showCTA ? 1 : 0, pointerEvents: showCTA ? 'auto' : 'none' }}>
+      <div className="hidden lg:block fixed top-8 right-12 z-50 transition-opacity duration-300" style={{ opacity: showCTA ? 1 : 0, pointerEvents: showCTA ? 'auto' : 'none' }}>
         <button
           onClick={scrollToForm}
           className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mono"
@@ -106,7 +103,7 @@ export function LandingPage() {
       </div>
 
       {/* Mobile CTA - Bottom Right */}
-      <div className={mobileCTAClass} style={{ opacity: showCTA ? 1 : 0, pointerEvents: showCTA ? 'auto' : 'none' }}>
+      <div className="lg:hidden fixed bottom-6 right-4 z-50 transition-opacity duration-300" style={{ opacity: showCTA ? 1 : 0, pointerEvents: showCTA ? 'auto' : 'none' }}>
         <button
           onClick={scrollToForm}
           className="px-10 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors mono shadow-lg"
