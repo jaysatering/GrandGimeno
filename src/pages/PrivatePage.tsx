@@ -432,20 +432,7 @@ export default function PrivatePage() {
             <h2>Frequently asked</h2>
             
             <div style={{ marginTop: '64px', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}>
-              {faqItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                >
-                  <Accordion
-                    question={item.question}
-                    answer={item.answer}
-                  />
-                </motion.div>
-              ))}
+              <Accordion items={faqItems} />
             </div>
           </motion.div>
         </div>
