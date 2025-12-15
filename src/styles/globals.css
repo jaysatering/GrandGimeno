@@ -31,14 +31,28 @@
     --font-sans: 'Cormorant Garamond', ui-serif, Georgia, serif;
     --font-mono: 'Space Mono', ui-monospace, monospace;
     
-    /* Spacing Scale */
+    /* Spacing Scale - Design System */
     --spacing-section: 128px;
     --spacing-section-mobile: 80px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 96px;
     
     /* Border Radius */
     --radius-sm: 2px;
     --radius-md: 4px;
     --radius-lg: 8px;
+    
+    /* Container Max Widths */
+    --container-text: 1200px;
+    --container-content: 1400px;
+    --container-wide: 1600px;
+    --container-full: 1800px;
   }
   
   * {
@@ -281,6 +295,54 @@
   
   .text-foreground\/40 {
     color: rgba(82, 85, 87, 0.4) !important;
+  }
+  
+  /* Design System Spacing Utilities */
+  .section-spacing {
+    margin-bottom: var(--spacing-section);
+  }
+  
+  @media (max-width: 1023px) {
+    .section-spacing {
+      margin-bottom: var(--spacing-section-mobile);
+    }
+  }
+  
+  .container-text {
+    max-width: var(--container-text);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .container-content {
+    max-width: var(--container-content);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .container-wide {
+    max-width: var(--container-wide);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .container-full {
+    max-width: var(--container-full);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Design System Border Radius */
+  .radius-sm {
+    border-radius: var(--radius-sm);
+  }
+  
+  .radius-md {
+    border-radius: var(--radius-md);
+  }
+  
+  .radius-lg {
+    border-radius: var(--radius-lg);
   }
 
   /* HubSpot Form Styling */

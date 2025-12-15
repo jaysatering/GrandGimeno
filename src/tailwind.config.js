@@ -26,8 +26,17 @@ module.exports = {
         'accent-foreground': '#525557',
       },
       fontFamily: {
-        sans: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
-        mono: ['Space Mono', 'ui-monospace', 'monospace'],
+        sans: ['var(--font-sans)', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+      },
+      spacing: {
+        'section': 'var(--spacing-section)',
+        'section-mobile': 'var(--spacing-section-mobile)',
+      },
+      borderRadius: {
+        'sm': 'var(--radius-sm)',
+        'md': 'var(--radius-md)',
+        'lg': 'var(--radius-lg)',
       },
     },
   },
