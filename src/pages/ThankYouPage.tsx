@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import GgLogo from '../components/GgLogo';
-import DevNav from '../components/DevNav';
 
 export default function ThankYouPage() {
   const navigate = useNavigate();
@@ -17,8 +16,6 @@ export default function ThankYouPage() {
 
   return (
     <div className="page-wrapper">
-      <DevNav />
-      
       <div className="fixed-logo">
         <GgLogo />
       </div>

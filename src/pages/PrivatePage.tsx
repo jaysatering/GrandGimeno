@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from '../components/GgLogo';
-import DevNav from '../components/DevNav';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Accordion } from '../components/Accordion';
 
@@ -48,414 +47,409 @@ export default function PrivatePage() {
   ];
 
   const vendorCollective = [
-    {
-      category: "PLANNING",
-      vendors: [
-        { name: "Kelsey Rae Designs", specialty: "Full-service production" },
-        { name: "Bash Please", specialty: "Luxury event curation" },
-        { name: "Moxie Bright Events", specialty: "Modern celebrations" },
-        { name: "Style & Story Creative", specialty: "Editorial design" },
-        { name: "Ashley Baber Weddings", specialty: "Refined details" },
-        { name: "Duet Weddings", specialty: "Romantic planning" },
-        { name: "Engage!13", specialty: "Destination expertise" },
-        { name: "Jesi Haack Design", specialty: "Organic elegance" },
-        { name: "Love & Splendor", specialty: "Timeless events" },
-        { name: "Sinclair & Moore", specialty: "Modern luxury" },
-        { name: "Brightly & Co", specialty: "Elevated design" },
-        { name: "The Dainty Lion", specialty: "Intimate celebrations" },
-        { name: "Bright Event Productions", specialty: "Flawless execution" },
-        { name: "LVL Weddings & Events", specialty: "Curated experiences" },
-        { name: "Amorology", specialty: "Artful planning" },
-        { name: "A Good Affair", specialty: "Signature style" },
-        { name: "Beijos Events", specialty: "European inspired" },
-        { name: "Details Details", specialty: "Personalized service" },
-        { name: "Sterling Engagements", specialty: "Bespoke events" },
-        { name: "Alchemy Fine Events", specialty: "Transformative design" }
-      ]
-    }
+    "Adore You Events",
+    "Blush Botanicals",
+    "Cake & Art",
+    "DJ Marcus Lee",
+    "Elevate Productions",
+    "Floral Theory",
+    "Glow Event Rentals",
+    "Honeycomb Coordinating"
   ];
 
   return (
     <div className="page-wrapper">
-      <DevNav />
-      
       <div className="fixed-logo">
         <GgLogo />
       </div>
-      
-      <main>
-        {/* HERO SECTION */}
-        <section style={{ padding: '200px 24px 160px', textAlign: 'center' }}>
+
+      <section className="hero-section">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
+          className="hero-content"
+        >
+          <p className="hero-eyebrow">
+            <span className="mono">Private Profile</span>
+          </p>
+          <h1 className="hero-title">
+            <span className="hero-title-line">The</span>
+            <span className="hero-title-line">Details</span>
+          </h1>
+          <p className="hero-subtitle">
+            Investment. Inclusions. Culinary experience.<br />
+            Everything you need to know.
+          </p>
+        </motion.div>
+
+        <button 
+          onClick={scrollToNextSection}
+          className="scroll-indicator"
+          aria-label="Scroll to next section"
+        >
+          <ChevronDown size={32} strokeWidth={1} />
+        </button>
+      </section>
+
+      <section className="intro-section">
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
           >
-            <h1 style={{ marginBottom: '48px' }}>THE LANDMARK IS YOURS.</h1>
-            <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.25rem', lineHeight: '1.6' }}>
-              We do not split the venue. You secure the entire building and grounds.
+            <p className="section-eyebrow">
+              <span className="mono">Investment Structure</span>
             </p>
-          </motion.div>
-
-          <button 
-            onClick={scrollToNextSection}
-            className="scroll-indicator"
-            aria-label="Scroll to next section"
-          >
-            <ChevronDown size={32} strokeWidth={1} />
-          </button>
-        </section>
-
-        {/* PRICING */}
-        <section style={{ padding: '120px 24px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-              style={{ textAlign: 'center' }}
-            >
-              <div style={{ marginBottom: '80px' }}>
-                <div className="private-pricing-grid">
-                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
-                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>SATURDAY</p>
-                    <h2>$12K</h2>
-                  </div>
-                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
-                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>FRIDAY</p>
-                    <h2>$10K</h2>
-                  </div>
-                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
-                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>SUNDAY</p>
-                    <h2>$9K</h2>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FULL-WIDTH IMAGE BREAK */}
-        <section style={{ width: '100%', margin: '0', padding: '0' }}>
-          <ImageWithFallback 
-            src={heroImageUrl}
-            alt="Grand Gimeno venue"
-            style={{ width: '100%', height: 'auto', display: 'block', minHeight: '100vh', objectFit: 'cover' }}
-          />
-        </section>
-
-        {/* INCLUSIONS */}
-        <section style={{ padding: '80px 24px 160px' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '96px' }}>
-                <h2>What's included</h2>
-              </div>
-
-              <div className="private-inclusions-grid">
-                {/* SPACES */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SPACES</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>Courtyard with Spanish fountain</p>
-                    <p>Grand Central hall (30-foot ceilings)</p>
-                    <p>Olive Grove (100-year-old trees)</p>
-                    <p>The Parlor & Speakeasy VIP suites</p>
-                    <p>Live Fire Kitchen with Asado Grill & Pizza Oven</p>
-                  </div>
-                </div>
-
-                {/* FURNISHINGS */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>FURNISHINGS</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>300 Bentwood Chairs</p>
-                    <p>Market lights in Olive Grove</p>
-                    <p>Original architectural features</p>
-                    <p>Wrought-iron chandeliers</p>
-                  </div>
-                </div>
-
-                {/* SERVICE */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SERVICE</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>Dedicated venue coordinator</p>
-                    <p>14-hour venue access (10am–midnight)</p>
-                    <p>On-site parking coordination</p>
-                    <p>Full climate control</p>
-                  </div>
-                </div>
-
-                {/* CULINARY */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>CULINARY</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>Exclusive use of Live Fire Kitchen</p>
-                    <p>Jay's Catering Collection team</p>
-                    <p>Custom menu design included</p>
-                    <p>Tasting for up to 4 guests</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CULINARY EXPERIENCE */}
-        <section style={{ padding: '160px 24px' }}>
-          <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="private-culinary-grid">
-                {/* Image on left */}
-                <div>
-                  <ImageWithFallback 
-                    src={culinaryImageUrl}
-                    alt="Live fire cooking at Grand Gimeno"
-                    style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '4 / 5', objectFit: 'cover' }}
-                  />
-                </div>
-
-                {/* Content on right */}
-                <div className="private-culinary-text">
-                  <p className="section-eyebrow" style={{ marginBottom: '32px' }}>
-                    <span className="mono">CULINARY EXPERIENCE</span>
-                  </p>
-                  
-                  <h2 style={{ marginBottom: '48px', lineHeight: '1.2' }}>
-                    Live fire.<br />
-                    Seasonal craft.<br />
-                    Zero compromise.
-                  </h2>
-
-                  <div style={{ marginBottom: '64px' }}>
-                    <p style={{ marginBottom: '32px', color: 'var(--color-muted)', fontSize: '1.125rem', lineHeight: '1.7' }}>
-                      Grand Gimeno was built by Jay's Catering Collection. Every menu is designed specifically for your event—guided by what's in season, what inspires us, and what moves you.
-                    </p>
-                    <p style={{ color: 'var(--color-muted)', fontSize: '1.125rem', lineHeight: '1.7' }}>
-                      The Live Fire Kitchen anchors the experience: whole animal asado on the custom grill, wood-fired pizzas from the oven, smoke and flame as part of the theater.
-                    </p>
-                  </div>
-
-                  <div>
-                    <a 
-                      href="http://www.jayscatering.com/food-and-drink/the-grand-gimeno-bespoke-menu"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cta-button"
-                      style={{ textDecoration: 'none', display: 'inline-block' }}
-                    >
-                      <span className="mono">View Bespoke Menus</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* VENDOR COLLECTIVE */}
-        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                <h2 style={{ marginBottom: '32px' }}>The Collective</h2>
-                <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--color-muted)' }}>
-                  Partners who know the space.
-                </p>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '96px' }}>
-                {vendorCollective.map((category, idx) => (
-                  <div key={idx}>
-                    <p className="mono" style={{ marginBottom: '48px', color: 'var(--color-primary)' }}>
-                      {category.category}
-                    </p>
-                    <div className="private-vendor-grid">
-                      {category.vendors.map((vendor, vIdx) => (
-                        <div 
-                          key={vIdx}
-                          style={{
-                            cursor: 'pointer',
-                            transition: 'color 0.3s ease'
-                          }}
-                          onMouseEnter={(e) => {
-                            const h3 = e.currentTarget.querySelector('h3');
-                            if (h3) h3.style.color = 'var(--color-primary)';
-                          }}
-                          onMouseLeave={(e) => {
-                            const h3 = e.currentTarget.querySelector('h3');
-                            if (h3) h3.style.color = '';
-                          }}
-                        >
-                          <h3 style={{ marginBottom: '8px', fontSize: '1rem', transition: 'color 0.3s ease' }}>{vendor.name}</h3>
-                          <p style={{ color: 'var(--color-muted)', margin: '0', fontSize: '0.875rem' }}>{vendor.specialty}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CAPACITY */}
-        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-              style={{ textAlign: 'center' }}
-            >
-              <div style={{ marginBottom: '80px' }}>
-                <h2 style={{ marginBottom: '80px' }}>Capacity</h2>
-
-                <div className="private-capacity-grid">
-                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
-                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>RECEPTION STYLE</p>
-                    <h2>300</h2>
-                  </div>
-                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
-                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>SEATED DINNER</p>
-                    <h2>250</h2>
-                  </div>
-                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
-                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>CEREMONY + DINNER</p>
-                    <h2>200</h2>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* THE SPACES (GALLERY) */}
-        <section style={{ padding: '120px 24px 200px' }}>
-          <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                <h2>The Spaces</h2>
-              </div>
-
-              <div className="private-spaces-grid">
-                <ImageWithFallback 
-                  src={courtyardImageUrl}
-                  alt="Spanish courtyard with fountain"
-                  style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '3 / 2', objectFit: 'cover' }}
-                />
-                <ImageWithFallback 
-                  src={archImageUrl}
-                  alt="Architectural detail"
-                  style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '4 / 5', objectFit: 'cover' }}
-                />
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FAQ SECTION */}
-        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '96px' }}>
-                <h2>Frequently Asked Questions</h2>
-              </div>
-
-              <Accordion items={faqItems} />
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FOOTER */}
-        <footer style={{ padding: '120px 24px 80px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <div className="private-footer-grid">
-              {/* Address */}
-              <div>
-                <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
-                  LOCATION
-                </p>
-                <p style={{ lineHeight: '1.8', color: 'var(--color-muted)' }}>
-                  147 S Olive Street<br />
-                  Old Towne Orange, CA 92866
-                </p>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
-                  INQUIRIES
-                </p>
-                <p style={{ lineHeight: '1.8' }}>
-                  <a 
-                    href="tel:7145322333" 
-                    style={{ color: 'var(--color-muted)', textDecoration: 'none', transition: 'color 0.3s ease' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-muted)'}
-                  >
-                    714.532.2333
-                  </a>
-                  <br />
-                  <a 
-                    href="mailto:events@grandgimeno.com" 
-                    style={{ color: 'var(--color-muted)', textDecoration: 'none', transition: 'color 0.3s ease' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-muted)'}
-                  >
-                    events@grandgimeno.com
-                  </a>
-                </p>
-              </div>
-
-              {/* Hours */}
-              <div>
-                <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
-                  VENUE TOURS
-                </p>
-                <p style={{ lineHeight: '1.8', color: 'var(--color-muted)' }}>
-                  By appointment only
-                </p>
-              </div>
-            </div>
-
-            {/* Bottom bar */}
-            <div style={{ textAlign: 'center', paddingTop: '64px', borderTop: '1px solid var(--color-border)' }}>
-              <p className="mono" style={{ fontSize: '0.75rem', color: 'var(--color-muted)', letterSpacing: '0.1em' }}>
-                © 2024 GRAND GIMENO. a Jay's Catering Hospitality Group Property
+            <h2>Pricing</h2>
+            
+            <div className="intro-text">
+              <p>
+                Grand Gimeno operates on a venue + catering model. All culinary services are provided by Jay's Catering Collection, the team that built this venue.
               </p>
             </div>
+
+            <div className="private-pricing-grid" style={{ marginTop: '64px' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                style={{ textAlign: 'center' }}
+              >
+                <h3>Venue Fee</h3>
+                <p style={{ marginTop: '12px', fontSize: '2.5rem', fontWeight: '600', color: 'var(--color-primary)' }}>$10,000</p>
+                <p style={{ marginTop: '8px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>Venue rental + staff</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                style={{ textAlign: 'center' }}
+              >
+                <h3>Catering</h3>
+                <p style={{ marginTop: '12px', fontSize: '2.5rem', fontWeight: '600', color: 'var(--color-primary)' }}>$175-225</p>
+                <p style={{ marginTop: '8px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>Per guest (100 minimum)</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{ textAlign: 'center' }}
+              >
+                <h3>Total Investment</h3>
+                <p style={{ marginTop: '12px', fontSize: '2.5rem', fontWeight: '600', color: 'var(--color-primary)' }}>$27,500+</p>
+                <p style={{ marginTop: '8px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>Starting at 100 guests</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="editorial-image-section">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+          className="editorial-image-wrapper"
+        >
+          <ImageWithFallback 
+            src={heroImageUrl}
+            alt="Grand Gimeno interior detail"
+            className="editorial-image"
+          />
+        </motion.div>
+      </section>
+
+      <section className="intro-section">
+        <div className="container-text">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="section-eyebrow">
+              <span className="mono">What's Included</span>
+            </p>
+            <h2>Your rental includes</h2>
+            
+            <div className="private-inclusions-grid" style={{ marginTop: '64px' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                <h3>Venue Access</h3>
+                <p>14 hours (10am-midnight) across six distinct spaces including the Olive Grove, Grand Central, Courtyard, Foyer, and two VIP suites.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+              >
+                <h3>Event Staff</h3>
+                <p>Professional venue coordinator, security personnel, and setup/breakdown crew to ensure seamless execution.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <h3>Tables & Seating</h3>
+                <p>Farm tables, ghost chairs, and lounge furniture throughout. Additional rentals available through our preferred partners.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.25 }}
+              >
+                <h3>Lighting Design</h3>
+                <p>Market lights throughout the Olive Grove, architectural uplighting, and ambient string lights across all outdoor spaces.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <h3>Culinary Infrastructure</h3>
+                <p>Permanent outdoor kitchen with wood-fired pizza oven, Argentine asado grill, and full prep facilities for live cooking.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.35 }}
+              >
+                <h3>Parking & Logistics</h3>
+                <p>On-site parking for 100 vehicles. Valet coordination and overflow lot arrangements available for larger events.</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="culinary-section">
+        <div className="container-content">
+          <div className="private-culinary-grid">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="private-culinary-text"
+            >
+              <p className="section-eyebrow">
+                <span className="mono">Culinary Experience</span>
+              </p>
+              <h2>Jay's Catering Collection</h2>
+              <div className="culinary-paragraphs">
+                <p>
+                  Every event at Grand Gimeno is catered by Jay's Catering Collection—the culinary team that designed and built this venue from the ground up.
+                </p>
+                <p>
+                  The menu is designed around live-fire cooking: wood-fired pizza, Argentine asado, seasonal family-style platters, and curated bar service. This isn't a venue with catering—it's a culinary experience with architecture.
+                </p>
+                <p>
+                  Pricing ranges from $175-$225 per guest depending on menu selection, bar package, and service style. 100-guest minimum.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+            >
+              <ImageWithFallback 
+                src={culinaryImageUrl}
+                alt="Live fire cooking"
+                style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '3 / 4', objectFit: 'cover' }}
+              />
+            </motion.div>
           </div>
-        </footer>
-      </main>
+        </div>
+      </section>
+
+      <section className="intro-section">
+        <div className="container-text">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="section-eyebrow">
+              <span className="mono">Capacity</span>
+            </p>
+            <h2>Event sizes</h2>
+            
+            <div className="private-capacity-grid" style={{ marginTop: '64px' }}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                style={{ textAlign: 'center' }}
+              >
+                <h3>Seated Dinner</h3>
+                <p style={{ marginTop: '12px', fontSize: '2.5rem', fontWeight: '600', color: 'var(--color-primary)' }}>200</p>
+                <p style={{ marginTop: '8px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>Maximum capacity</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                style={{ textAlign: 'center' }}
+              >
+                <h3>Cocktail Reception</h3>
+                <p style={{ marginTop: '12px', fontSize: '2.5rem', fontWeight: '600', color: 'var(--color-primary)' }}>300</p>
+                <p style={{ marginTop: '8px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>Maximum capacity</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{ textAlign: 'center' }}
+              >
+                <h3>Minimum</h3>
+                <p style={{ marginTop: '12px', fontSize: '2.5rem', fontWeight: '600', color: 'var(--color-primary)' }}>100</p>
+                <p style={{ marginTop: '8px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>Guest minimum</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="editorial-grid-section">
+        <div className="editorial-grid-container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1 }}
+            className="editorial-grid"
+          >
+            <div className="editorial-grid-item editorial-grid-item-large">
+              <ImageWithFallback 
+                src={courtyardImageUrl}
+                alt="Grand Gimeno courtyard"
+                className="editorial-grid-image"
+              />
+            </div>
+            <div className="editorial-grid-item editorial-grid-item-small-1">
+              <ImageWithFallback 
+                src={archImageUrl}
+                alt="Architectural details"
+                className="editorial-grid-image"
+              />
+            </div>
+            <div className="editorial-grid-item editorial-grid-item-small-2">
+              <ImageWithFallback 
+                src="https://images.unsplash.com/photo-1519167758481-83f29da8c433?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMHRyZWUlMjBvdXRkb29yfGVufDF8fHx8MTc2NTc1Nzc1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Olive grove detail"
+                className="editorial-grid-image"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="intro-section">
+        <div className="container-text">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="section-eyebrow">
+              <span className="mono">Vendor Collective</span>
+            </p>
+            <h2>Preferred partners</h2>
+            
+            <div className="intro-text">
+              <p>
+                We've curated relationships with Orange County's most exceptional wedding professionals—florists, photographers, planners, and entertainment who understand the architecture and spirit of Grand Gimeno.
+              </p>
+            </div>
+
+            <div className="private-vendor-grid" style={{ marginTop: '48px' }}>
+              {vendorCollective.map((vendor, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  style={{ 
+                    padding: '24px',
+                    border: '1px solid var(--color-border)',
+                    textAlign: 'center'
+                  }}
+                >
+                  <p style={{ fontSize: '1rem', fontWeight: '500' }}>{vendor}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="intro-section" style={{ paddingBottom: 'var(--space-section)' }}>
+        <div className="container-text">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="section-eyebrow">
+              <span className="mono">Questions</span>
+            </p>
+            <h2>Frequently asked</h2>
+            
+            <div style={{ marginTop: '64px', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}>
+              {faqItems.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                >
+                  <Accordion
+                    question={item.question}
+                    answer={item.answer}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

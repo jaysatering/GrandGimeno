@@ -1342,73 +1342,11 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-/* ===== DEV NAV (TEMPORARY) ===== */
-.dev-nav {
-  position: fixed;
-  bottom: 16px;
-  left: 16px;
-  z-index: 9999;
-  background-color: rgba(82, 85, 87, 0.95);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border: 2px solid var(--color-primary);
-}
-
-.dev-nav-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--color-primary);
-  margin: 0;
-  text-align: center;
-}
-
-.dev-nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.dev-nav-link {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--color-ivory);
-  text-decoration: none;
-  padding: 8px 16px;
-  background-color: transparent;
-  border: 1px solid rgba(238, 237, 225, 0.3);
-  transition: all 0.2s ease;
-  text-align: center;
-}
-
-.dev-nav-link:hover {
-  background-color: rgba(238, 237, 225, 0.1);
-  border-color: var(--color-ivory);
-}
-
-.dev-nav-link-active {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-ivory);
-}
-
-@media (min-width: 1024px) {
-  .dev-nav {
-    bottom: 24px;
-    left: 24px;
-    padding: 20px;
-  }
-}
-
 /* ===== PRIVATE PAGE CULINARY GRID ===== */
 .private-culinary-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
-  align-items: center;
 }
 
 @media (min-width: 1024px) {
