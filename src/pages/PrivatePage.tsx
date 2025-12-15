@@ -369,9 +369,9 @@ export default function PrivatePage() {
             className="architecture-header center-aligned"
           >
             <p className="section-eyebrow">
-              <span className="mono">Vendor Collective</span>
+              <span className="mono">Trusted professionals who know Grand Gimeno.</span>
             </p>
-            <h2>Preferred partners</h2>
+            <h2>Vendor Collective</h2>
           </motion.div>
 
           <motion.div
@@ -381,10 +381,6 @@ export default function PrivatePage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             style={{ padding: '0 48px', textAlign: 'center' }}
           >
-            <p style={{ marginBottom: '48px', maxWidth: '800px', margin: '0 auto 48px' }}>
-              Trusted professionals who know Grand Gimeno.
-            </p>
-
             <div className="vendor-collective-grid">
               {vendorCollective.map((vendor, index) => (
                 <motion.div
@@ -394,13 +390,9 @@ export default function PrivatePage() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: index * 0.02 }}
                 >
-                  <p 
-                    className="vendor-name"
-                    style={{ marginBottom: '8px' }}
-                  >
+                  <p className="vendor-name">
                     {vendor.name}
                   </p>
-                  <p style={{ opacity: 0.6, fontSize: '14px' }}>{vendor.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -447,6 +439,84 @@ export default function PrivatePage() {
           </motion.div>
         </div>
       </section>
+
+      <footer style={{ 
+        padding: '80px 48px 48px', 
+        borderTop: '1px solid var(--color-border)'
+      }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          style={{
+            maxWidth: '1400px',
+            margin: '0 auto'
+          }}
+        >
+          <div style={{ 
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: '56px',
+            marginBottom: '80px'
+          }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '56px' }}>
+              <div>
+                <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '24px' }}>LOCATION</p>
+                <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-charcoal)' }}>
+                  Grand Gimeno<br />
+                  128 West Chapman Avenue<br />
+                  Old Towne Orange, California 92866
+                </p>
+              </div>
+
+              <div>
+                <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '24px' }}>CONTACT</p>
+                <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-charcoal)' }}>
+                  <a 
+                    href="tel:+17145551234"
+                    style={{ 
+                      color: 'var(--color-charcoal)', 
+                      textDecoration: 'none',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-charcoal)'}
+                  >
+                    (714) 555-1234
+                  </a>
+                  <br />
+                  <a 
+                    href="mailto:events@grandgimeno.com"
+                    style={{ 
+                      color: 'var(--color-charcoal)', 
+                      textDecoration: 'none',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-charcoal)'}
+                  >
+                    events@grandgimeno.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p style={{ fontSize: '0.75rem', color: 'var(--color-muted)' }}>
+            © {new Date().getFullYear()} Grand Gimeno. All rights reserved.
+          </p>
+        </motion.div>
+
+        <style>{`
+          @media (min-width: 768px) {
+            footer > div > div > div {
+              grid-template-columns: 1fr 1fr !important;
+              gap: 96px !important;
+            }
+          }
+        `}</style>
+      </footer>
     </div>
   );
 }

@@ -15,7 +15,7 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
         onClick={onToggle}
         style={{
           width: '100%',
-          padding: '40px 0',
+          padding: '32px 0',
           background: 'transparent',
           border: 'none',
           cursor: 'pointer',
@@ -26,11 +26,11 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
           textAlign: 'left'
         }}
       >
-        <h3 style={{ margin: '0' }}>{question}</h3>
+        <h3 style={{ margin: '0', fontSize: '1.125rem', fontWeight: '500' }}>{question}</h3>
         <span 
           className="mono" 
           style={{ 
-            fontSize: '24px', 
+            fontSize: '20px', 
             color: 'var(--color-primary)',
             transition: 'transform 0.3s ease',
             transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)'
@@ -49,8 +49,8 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
             transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
             style={{ overflow: 'hidden' }}
           >
-            <div style={{ paddingBottom: '48px' }}>
-              <p style={{ color: 'var(--color-muted)', lineHeight: '1.8' }}>
+            <div style={{ paddingBottom: '40px' }}>
+              <p style={{ color: 'var(--color-muted)', lineHeight: '1.7', fontSize: '1rem' }}>
                 {answer}
               </p>
             </div>
