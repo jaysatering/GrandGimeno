@@ -69,18 +69,39 @@
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1;
+    font-size: 3.75rem; /* 60px mobile */
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 6rem; /* 96px tablet */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 11.25rem; /* 180px desktop */
+    }
   }
   
   h2 {
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.1;
+    font-size: 2.5rem; /* 40px mobile */
+  }
+  
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 4.5rem; /* 72px desktop */
+    }
   }
   
   h3 {
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1.2;
+    font-size: 1.5rem; /* 24px */
   }
   
   p {

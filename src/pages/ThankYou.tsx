@@ -12,7 +12,7 @@ export function ThankYou() {
 
   return (
     <div className="bg-bone pt-24 lg:pt-32 min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-[800px] w-full">
+      <div className="container-text w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,11 +33,11 @@ export function ThankYou() {
 
           {/* Concierge Note */}
           <div className="mb-16 space-y-8">
-            <h1 className="text-4xl lg:text-6xl leading-tight">
+            <h1>
               Inquiry<br />received
             </h1>
 
-            <div className="max-w-[600px] mx-auto text-lg text-foreground/70 leading-relaxed">
+            <div className="max-w-2xl mx-auto text-foreground/70">
               <p>
                 We'll be in touch shortly. Your pricing and details below.
               </p>
@@ -53,7 +53,7 @@ export function ThankYou() {
               VIEW PRIVATE PROFILE
             </button>
             
-            <p className="text-sm text-foreground/60">
+            <p className="text-foreground/60">
               146 N Grand St, Orange, CA 92866
             </p>
           </div>

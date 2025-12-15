@@ -30,17 +30,17 @@ export function PrivateProfile() {
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-12 mb-0 lg:mb-16 -mt-32 lg:-mt-40 pt-32 lg:pt-40">
-        <div className="max-w-[1600px] mx-auto text-center">
+        <div className="container-wide mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
           >
             <p className="mono text-primary mb-16">PRIVATE VENUE PROFILE</p>
-            <h1 className="text-5xl md:text-7xl lg:text-[140px] leading-[0.85] mb-24">
+            <h1 className="mb-24">
               THE LANDMARK<br />IS YOURS.
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-foreground/60 max-w-2xl mx-auto">
               We do not split the venue.<br />
               You secure the entire building and grounds.
             </p>
@@ -53,7 +53,7 @@ export function PrivateProfile() {
             transition={{ delay: 1.8, duration: 1 }}
             className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
           >
-            <p className="mono text-[8px]">SCROLL</p>
+            <p className="mono">SCROLL</p>
             <ChevronDown className="w-4 h-4 animate-bounce" />
           </motion.div>
         </div>
@@ -61,7 +61,7 @@ export function PrivateProfile() {
 
       {/* The Investment - Minimal Pricing */}
       <section className="px-6 lg:px-12 mb-64">
-        <div className="max-w-[1000px] mx-auto">
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,17 +74,17 @@ export function PrivateProfile() {
             <div className="space-y-16">
               <div className="flex items-baseline justify-between border-b border-border pb-8">
                 <span className="mono text-primary">SATURDAY</span>
-                <span className="text-5xl lg:text-7xl">$12K</span>
+                <span>$12K</span>
               </div>
               
               <div className="flex items-baseline justify-between border-b border-border pb-8">
                 <span className="mono text-primary">FRIDAY</span>
-                <span className="text-5xl lg:text-7xl">$10K</span>
+                <span>$10K</span>
               </div>
               
               <div className="flex items-baseline justify-between border-b border-border pb-8">
                 <span className="mono text-primary">SUNDAY</span>
-                <span className="text-5xl lg:text-7xl">$9K</span>
+                <span>$9K</span>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ export function PrivateProfile() {
 
       {/* Culinary Section */}
       <section className="px-6 lg:px-12 mb-64">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,10 +123,10 @@ export function PrivateProfile() {
             className="text-center mb-32"
           >
             <p className="mono text-primary mb-16">CULINARY EXPERIENCE</p>
-            <h2 className="text-5xl lg:text-7xl leading-tight mb-20">
+            <h2 className="mb-20">
               Bespoke menus,<br />designed for you
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-foreground/60 max-w-2xl mx-auto mb-12">
               Every Grand Gimeno event is catered by Jay's Catering Collection. Our culinary team designs custom menus that reflect your vision, using seasonal ingredients and live-fire techniques.
             </p>
           </motion.div>
@@ -140,44 +140,25 @@ export function PrivateProfile() {
             className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20"
           >
             <div className="space-y-6">
-              <h3 className="text-2xl">Live fire cooking</h3>
-              <p className="text-foreground/70 leading-relaxed">
+              <h3>Live fire cooking</h3>
+              <p className="text-foreground/70">
                 Our Live Fire Kitchen features an Asado grill and wood-fired pizza oven. We specialize in open-flame techniques that bring theater and flavor to your event.
               </p>
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-2xl">Seasonal menus</h3>
-              <p className="text-foreground/70 leading-relaxed">
+              <h3>Seasonal menus</h3>
+              <p className="text-foreground/70">
                 We design menus around what's in season, sourcing from California farms and artisan producers. Each menu is tailored to your taste and event style.
               </p>
             </div>
-          </motion.div>
-
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-center"
-          >
-            <button
-              onClick={() => {
-                navigate('/culinary');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="px-16 py-5 bg-primary text-bone hover:bg-primary/90 transition-colors mono"
-            >
-              BESPOKE CULINARY DESIGNER
-            </button>
           </motion.div>
         </div>
       </section>
 
       {/* What's Included - Clean Lists */}
       <section className="px-6 lg:px-12 mb-64">
-        <div className="max-w-[900px] mx-auto">
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +167,7 @@ export function PrivateProfile() {
             className="mb-32"
           >
             <p className="mono text-primary mb-16">INCLUSIONS</p>
-            <h2 className="text-5xl lg:text-7xl leading-tight">
+            <h2>
               The design spec
             </h2>
           </motion.div>
@@ -196,7 +177,7 @@ export function PrivateProfile() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="space-y-12 text-lg"
+            className="space-y-12"
           >
             <div className="space-y-4">
               <p className="text-foreground/70">The Courtyard with Spanish fountain</p>
@@ -232,7 +213,7 @@ export function PrivateProfile() {
 
       {/* Capacity - Minimal */}
       <section className="px-6 lg:px-12 mb-64">
-        <div className="max-w-[1000px] mx-auto">
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -244,21 +225,21 @@ export function PrivateProfile() {
             <div className="space-y-16">
               <div className="flex items-baseline justify-between border-b border-border pb-8">
                 <span className="text-foreground/70">Reception style</span>
-                <span className="text-5xl lg:text-6xl">300</span>
+                <span>300</span>
               </div>
               
               <div className="flex items-baseline justify-between border-b border-border pb-8">
                 <span className="text-foreground/70">Seated dinner</span>
-                <span className="text-5xl lg:text-6xl">250</span>
+                <span>250</span>
               </div>
               
               <div className="flex items-baseline justify-between border-b border-border pb-8">
                 <span className="text-foreground/70">Ceremony + dinner</span>
-                <span className="text-5xl lg:text-6xl">200</span>
+                <span>200</span>
               </div>
             </div>
 
-            <p className="text-sm text-foreground/60 mt-16 text-center">
+            <p className="text-foreground/60 mt-16 text-center">
               Total square footage: 30,000 sq ft
             </p>
           </motion.div>
@@ -267,7 +248,7 @@ export function PrivateProfile() {
 
       {/* Vendor Collective */}
       <section className="px-6 lg:px-12 mb-64">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="container-content">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -276,10 +257,10 @@ export function PrivateProfile() {
             className="mb-48 text-center"
           >
             <p className="mono text-primary mb-16">VENDOR COLLECTIVE</p>
-            <h2 className="text-5xl lg:text-7xl leading-tight mb-20">
+            <h2 className="mb-20">
               The people<br />we trust
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-foreground/60 max-w-2xl mx-auto">
               We don't do preferred vendor lists. This is our collective—the artists, designers, and makers who understand the building and deliver at the level we expect.
             </p>
           </motion.div>
@@ -484,7 +465,7 @@ export function PrivateProfile() {
 
       {/* Gallery - Asymmetric Editorial */}
       <section className="px-6 lg:px-12 pb-48 lg:pb-64">
-        <div className="max-w-[1800px] mx-auto">
+        <div className="container-full">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -655,18 +636,18 @@ export function PrivateProfile() {
 
       {/* Footer */}
       <footer className="px-6 lg:px-12 py-20 border-t border-foreground/10">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="container-content">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20 mb-16">
             {/* Location & Address */}
             <div className="text-center lg:text-left">
-              <p className="mono text-sm text-primary mb-4">LOCATION</p>
+              <p className="mono text-primary mb-4">LOCATION</p>
               <p className="text-foreground/70 mb-1">146 N Grand St</p>
               <p className="text-foreground/70">Orange, CA 92866</p>
             </div>
             
             {/* Contact */}
             <div className="text-center">
-              <p className="mono text-sm text-primary mb-4">CONTACT</p>
+              <p className="mono text-primary mb-4">CONTACT</p>
               <p className="text-foreground/70 mb-1">
                 <a href="tel:+17146366045" className="hover:text-primary transition-colors">
                   (714) 636-6045
@@ -681,7 +662,7 @@ export function PrivateProfile() {
             
             {/* Hours */}
             <div className="text-center lg:text-right">
-              <p className="mono text-sm text-primary mb-4">TOURS</p>
+              <p className="mono text-primary mb-4">TOURS</p>
               <p className="text-foreground/70 mb-1">By appointment only</p>
               <p className="text-foreground/70">Tuesday–Friday</p>
             </div>
@@ -689,8 +670,8 @@ export function PrivateProfile() {
 
           {/* Bottom Bar */}
           <div className="pt-12 border-t border-foreground/10 flex flex-col lg:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-foreground/40">© 2025 Grand Gimeno. All rights reserved.</p>
-            <p className="mono text-sm text-foreground/60">CREATED BY JAY'S CATERING</p>
+            <p className="text-foreground/40">© 2025 Grand Gimeno. All rights reserved.</p>
+            <p className="mono text-foreground/60">CREATED BY JAY'S CATERING</p>
           </div>
         </div>
       </footer>

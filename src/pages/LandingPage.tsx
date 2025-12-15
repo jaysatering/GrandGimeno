@@ -119,13 +119,13 @@ export function LandingPage() {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-          className="max-w-[1600px] w-full text-center"
+          className="container-wide w-full text-center"
         >
           <p className="mono text-primary mb-12 lg:mb-12">OLD TOWNE ORANGE, CALIFORNIA</p>
-          <h1 className="text-6xl md:text-8xl lg:text-[180px] leading-[0.9] mb-16 lg:mb-16">
+          <h1 className="mb-16 lg:mb-16">
             Grand<br />Gimeno
           </h1>
-          <p className="text-lg md:text-2xl lg:text-3xl max-w-3xl mx-auto mb-24 lg:mb-32 text-foreground/60">
+          <p className="max-w-3xl mx-auto mb-24 lg:mb-32 text-foreground/60">
             A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
           </p>
           
@@ -136,7 +136,7 @@ export function LandingPage() {
             transition={{ delay: 1.8, duration: 1 }}
             className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
           >
-            <p className="mono text-[8px]">SCROLL</p>
+            <p className="mono">SCROLL</p>
             <ChevronDown className="w-4 h-4 animate-bounce" />
           </motion.div>
         </motion.div>
@@ -149,21 +149,21 @@ export function LandingPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-[1400px] mx-auto"
+          className="container-content"
         >
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12 py-12 lg:py-16 border-t border-b border-foreground/10">
             <div className="text-center md:text-left">
-              <p className="text-3xl lg:text-4xl mb-2">Two VIP Suites</p>
+              <p className="mb-2">Two VIP Suites</p>
               <p className="text-foreground/60">optional 8am access</p>
             </div>
             
             <div className="text-center md:text-left">
-              <p className="text-3xl lg:text-4xl mb-2">Up to 300</p>
+              <p className="mb-2">Up to 300</p>
               <p className="text-foreground/60">guests across six spaces</p>
             </div>
             
             <div className="text-center md:text-left">
-              <p className="text-3xl lg:text-4xl mb-2">Created by</p>
+              <p className="mb-2">Created by</p>
               <p className="text-foreground/60">Jay's Catering</p>
             </div>
           </div>
@@ -172,7 +172,7 @@ export function LandingPage() {
 
       {/* Editorial Image 1 - Full Width */}
       <section className="lg:px-12 mb-32 lg:mb-48">
-        <div className="max-w-[1800px] mx-auto">
+        <div className="container-full">
           <motion.div
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}
@@ -190,7 +190,7 @@ export function LandingPage() {
             <div className="absolute inset-0 flex items-center justify-center">
               <button
                 onClick={scrollToForm}
-                className="px-6 lg:px-12 py-3 lg:py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all mono text-[9px] lg:text-[12px]"
+                className="px-6 lg:px-12 py-3 lg:py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all mono"
               >
                 READY TO SEE IT IN PERSON?
               </button>
@@ -201,7 +201,7 @@ export function LandingPage() {
 
       {/* The Spaces - Full Width Text Block */}
       <section className="px-6 lg:px-12 mb-32 lg:mb-48">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export function LandingPage() {
             className="mb-20"
           >
             <p className="mono text-primary mb-8">THE ARCHITECTURE</p>
-            <h2 className="text-4xl lg:text-6xl mb-12 leading-tight">
+            <h2 className="mb-12">
               A journey through<br />30,000 square feet
             </h2>
           </motion.div>
@@ -220,45 +220,45 @@ export function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-12 lg:gap-16 text-lg text-foreground/70"
+            className="grid md:grid-cols-2 gap-12 lg:gap-16 text-foreground/70"
           >
             <div>
-              <h3 className="text-2xl text-foreground mb-4">The Courtyard</h3>
+              <h3 className="text-foreground mb-4">The Courtyard</h3>
               <p>
                 The arrival point. A lush, open-air space with a large Spanish fountain and arched breezeways.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl text-foreground mb-4">The Foyer</h3>
+              <h3 className="text-foreground mb-4">The Foyer</h3>
               <p>
                 A transition space with a wrought-iron chandelier and double doors leading to the heart of the building.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl text-foreground mb-4">Grand Central</h3>
+              <h3 className="text-foreground mb-4">Grand Central</h3>
               <p>
                 The primary indoor reception space. Soaring 30-foot ceilings, exposed timber trusses, and massive windows. Rustic industrial luxury—no crystal chandeliers here.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl text-foreground mb-4">The Olive Grove</h3>
+              <h3 className="text-foreground mb-4">The Olive Grove</h3>
               <p>
                 The crown jewel. A large outdoor sanctuary filled with 100-year-old olive trees, market lights, and decomposed granite floors—designed for al fresco dining.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl text-foreground mb-4">The Suites</h3>
+              <h3 className="text-foreground mb-4">The Suites</h3>
               <p>
                 Two high-end VIP suites—The Parlor and The Speakeasy—to prepare in style.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl text-foreground mb-4">The Sanctuary</h3>
+              <h3 className="text-foreground mb-4">The Sanctuary</h3>
               <p>
                 Enclosed by high walls, Grand Gimeno creates a silent, private world inside the bustling city of Orange.
               </p>
@@ -269,7 +269,7 @@ export function LandingPage() {
 
       {/* Culinary Distinction */}
       <section className="mb-32 lg:mb-48 px-6 lg:px-12">
-        <div className="max-w-[1800px] mx-auto">
+        <div className="container-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image - Full Width on Mobile, Half on Desktop */}
             <motion.div
@@ -297,10 +297,10 @@ export function LandingPage() {
               className="order-2"
             >
               <p className="mono text-primary mb-8">CULINARY DISTINCTION</p>
-              <h2 className="text-4xl lg:text-6xl mb-12 leading-tight">
+              <h2 className="mb-12">
                 Where architecture<br />meets fire
               </h2>
-              <div className="space-y-8 text-lg text-foreground/70">
+              <div className="space-y-8 text-foreground/70">
                 <p>
                   Grand Gimeno wasn't designed around food—it was designed from food. Created by Jay's Catering, this is a culinary vision made architecture.
                 </p>
@@ -318,7 +318,7 @@ export function LandingPage() {
 
       {/* Inquiry Form - Conversion-Optimized */}
       <section id="inquiry-form" className="mb-12 lg:mb-48">
-        <div className="max-w-[900px] mx-auto px-6 lg:px-12">
+        <div className="container-text px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -327,10 +327,10 @@ export function LandingPage() {
           >
             <div className="text-center mb-12 lg:mb-16">
               <p className="mono text-primary mb-4">LIMITED 2026 AVAILABILITY</p>
-              <h2 className="text-5xl lg:text-7xl mb-3 leading-tight">
+              <h2 className="mb-3">
                 Start here
               </h2>
-              <p className="text-foreground/40 text-sm lg:text-base">
+              <p className="text-foreground/40">
                 tell us about your event
               </p>
             </div>
@@ -339,24 +339,6 @@ export function LandingPage() {
             <div id="hubspot-form-container" className="hubspot-form-wrapper"></div>
           </motion.div>
         </div>
-      </section>
-
-      {/* Final Editorial Image - Full Bleed, Edge to Edge */}
-      <section>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
-        >
-          <div className="h-screen overflow-hidden">
-            <ImageWithFallback
-              src={image_3803d145ad74e97ee8f3b71a8444d177e600d7e1}
-              alt="Olive Grove ceremony at Grand Gimeno"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
       </section>
     </div>
   );
