@@ -833,14 +833,15 @@ p {
 
 .form-section {
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items: flex-start;
   padding: 48px 0 32px;
   display: flex;
 }
 
 @media (width >= 1024px) {
   .form-section {
+    align-items: center;
+    min-height: 100vh;
     padding: 64px 0 48px;
   }
 }
@@ -1249,7 +1250,7 @@ p {
 }
 
 .editorial-overlay {
-  background: #0000004d;
+  background: none;
   justify-content: center;
   align-items: center;
   width: 100%;
