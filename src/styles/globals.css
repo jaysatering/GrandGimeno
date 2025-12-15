@@ -55,12 +55,21 @@
     border-color: rgb(var(--color-border) / 0.15);
   }
   
+  html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
+    width: 100%;
+    min-height: 100vh;
     background-color: rgb(var(--color-ivory));
     color: rgb(var(--color-charcoal));
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
   }
   
   h1, h2, h3, h4, h5, h6 {

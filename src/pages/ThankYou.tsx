@@ -11,7 +11,7 @@ export function ThankYou() {
   };
 
   return (
-    <div className="bg-bone flex items-center justify-center" style={{ paddingTop: '96px', minHeight: '100vh' }}>
+    <div className="min-h-screen w-full bg-bone flex items-center justify-center" style={{ paddingTop: '96px' }}>
       <div className="container-text w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

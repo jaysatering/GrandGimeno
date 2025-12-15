@@ -19,7 +19,7 @@ export function PrivateProfile() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-bone" style={{ paddingTop: '128px' }}>
+    <div className="min-h-screen w-full bg-bone" style={{ paddingTop: '128px' }}>
       {/* Fixed Logo */}
       <div className="fixed-logo">
         <GgLogo />

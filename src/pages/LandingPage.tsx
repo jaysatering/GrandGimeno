@@ -79,7 +79,7 @@ export function LandingPage() {
   }, []);
 
   return (
-    <div className="bg-bone">
+    <div className="min-h-screen w-full bg-bone">
       {/* Fixed Logo - Top Left */}
       <div className="fixed-logo">
         <GgLogo />
