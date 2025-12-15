@@ -123,36 +123,38 @@ export function LandingPage() {
       </div>
 
       {/* Hero - Shorter on mobile */}
-      <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', paddingTop: '96px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
-          className="container-wide w-full text-center"
-        >
-          <p className="mono text-primary mb-12 lg:mb-12">OLD TOWNE ORANGE, CALIFORNIA</p>
-          <h1 className="mb-16 lg:mb-16">
-            Grand<br />Gimeno
-          </h1>
-          <p className="max-w-3xl mx-auto mb-24 lg:mb-32 text-foreground/60">
-            A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
-          </p>
-          
-          {/* Scroll indicator - mobile only */}
+      <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', paddingTop: '96px', paddingBottom: '80px' }}>
+        <div className="container-wide">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8, duration: 1 }}
-            className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.4, delay: 0.2, ease: [0.19, 1, 0.22, 1] }}
+            className="container-wide w-full text-center"
           >
-            <p className="mono">SCROLL</p>
-            <ChevronDown className="w-4 h-4 animate-bounce" />
+            <p className="mono text-primary mb-12 lg:mb-12">OLD TOWNE ORANGE, CALIFORNIA</p>
+            <h1 className="mb-16 lg:mb-16">
+              Grand<br />Gimeno
+            </h1>
+            <p className="max-w-3xl mx-auto mb-24 lg:mb-32 text-foreground/60">
+              A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
+            </p>
+            
+            {/* Scroll indicator - mobile only */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.8, duration: 1 }}
+              className="lg:hidden absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-foreground/40"
+            >
+              <p className="mono">SCROLL</p>
+              <ChevronDown className="w-4 h-4 animate-bounce" />
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Quick-Hit Value Props - New Section */}
-      <section style={{ paddingLeft: '24px', paddingRight: '24px', marginBottom: '96px' }}>
+      <section style={{ marginBottom: '96px' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,8 +211,8 @@ export function LandingPage() {
       </section>
 
       {/* The Spaces - Full Width Text Block */}
-      <section style={{ paddingLeft: '24px', paddingRight: '24px', marginBottom: '192px' }}>
-        <div className="container-text" style={{ maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto' }}>
+      <section style={{ marginBottom: '192px' }}>
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -278,8 +280,8 @@ export function LandingPage() {
       </section>
 
       {/* Culinary Distinction */}
-      <section style={{ marginBottom: '192px', paddingLeft: '24px', paddingRight: '24px' }}>
-        <div className="container-full" style={{ maxWidth: '1800px', marginLeft: 'auto', marginRight: 'auto' }}>
+      <section style={{ marginBottom: '192px' }}>
+        <div className="container-full">
           <div className="grid lg:grid-cols-2 items-center" style={{ gap: '64px' }}>
             {/* Image - Full Width on Mobile, Half on Desktop */}
             <motion.div
@@ -328,7 +330,7 @@ export function LandingPage() {
 
       {/* Inquiry Form - Conversion-Optimized */}
       <section id="inquiry-form" style={{ marginBottom: '192px' }}>
-        <div className="container-text" style={{ maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '24px', paddingRight: '24px' }}>
+        <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -26,8 +26,8 @@ export function PrivateProfile() {
       </div>
 
       {/* Hero */}
-      <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', paddingLeft: '24px', paddingRight: '24px', marginBottom: '0', marginTop: '-128px', paddingTop: '128px' }}>
-        <div className="container-wide mx-auto text-center">
+      <section className="relative flex items-center justify-center" style={{ minHeight: '100vh', marginBottom: '0', marginTop: '-128px', paddingTop: '128px' }}>
+        <div className="container-wide text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export function PrivateProfile() {
       </section>
 
       {/* The Investment - Minimal Pricing */}
-      <section style={{ paddingLeft: '24px', paddingRight: '24px', marginBottom: '256px' }}>
+      <section style={{ marginBottom: '256px' }}>
         <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
