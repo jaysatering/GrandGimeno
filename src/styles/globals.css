@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
+@import "tailwindcss";
+
 @theme {
   /* Grand Gimeno Color System */
   --color-charcoal: #525557;
   --color-ivory: #EEEDE1;
   --color-blue: #669CC4;
   
-  /* Semantic Color Mapping */
+  /* Tailwind Color Utilities - Map to design system */
   --color-background: #EEEDE1;
   --color-foreground: #525557;
   --color-primary: #669CC4;
@@ -15,14 +17,11 @@
   --color-muted: #f5f4ed;
   --color-muted-foreground: #6a6b6d;
   --color-border: rgba(82, 85, 87, 0.15);
-  
-  /* Semantic Color Aliases for Tailwind */
   --color-bone: #EEEDE1;
-  --color-ivory: #EEEDE1;
   
   /* Typography */
-  --font-family-sans: 'Cormorant Garamond', serif;
-  --font-family-mono: 'Space Mono', monospace;
+  --font-sans: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
   
   /* Spacing Scale */
   --spacing-section: 128px;
@@ -41,38 +40,38 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
   }
   
   h1 {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1;
   }
   
   h2 {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.1;
   }
   
   h3 {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1.2;
   }
   
   p {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.6;
   }
   
   .mono {
-    font-family: var(--font-family-mono);
+    font-family: var(--font-mono);
     font-weight: 400;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -108,7 +107,7 @@
     padding: 8px 16px;
     text-decoration: none;
     z-index: 100;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -152,7 +151,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-mono);
     font-weight: 400;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -230,7 +229,7 @@
 
   /* HubSpot Form Styling */
   .hubspot-form-wrapper {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
   }
 
   /* HubSpot form fields */
@@ -245,7 +244,7 @@
   }
 
   .hubspot-form-wrapper label {
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-mono) !important;
     color: var(--color-primary) !important;
     font-size: 11px !important;
     letter-spacing: 0.1em !important;
@@ -267,7 +266,7 @@
     border: none !important;
     border-bottom: 1px solid var(--color-border) !important;
     color: var(--color-foreground) !important;
-    font-family: var(--font-family-sans) !important;
+    font-family: var(--font-sans) !important;
     font-size: 16px !important;
     outline: none !important;
     transition: border-color 0.2s ease !important;
@@ -336,7 +335,7 @@
     background: var(--color-primary) !important;
     color: var(--color-primary-foreground) !important;
     border: none !important;
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-mono) !important;
     font-size: 10px !important;
     letter-spacing: 0.2em !important;
     text-transform: uppercase !important;
@@ -364,7 +363,7 @@
 
   .hubspot-form-wrapper .hs-error-msg {
     color: #d14343 !important;
-    font-family: var(--font-family-mono) !important;
+    font-family: var(--font-mono) !important;
     font-size: 9px !important;
     letter-spacing: 0.05em !important;
   }
@@ -418,7 +417,7 @@
   .hubspot-form-wrapper .hs-form-booleancheckbox label {
     flex: 1 !important;
     max-width: calc(100% - 28px) !important;
-    font-family: var(--font-family-sans) !important;
+    font-family: var(--font-sans) !important;
     font-size: 12px !important;
     line-height: 1.5 !important;
     letter-spacing: 0 !important;
@@ -429,7 +428,7 @@
   }
 
   .hubspot-form-wrapper .hs-form-booleancheckbox label span {
-    font-family: var(--font-family-sans) !important;
+    font-family: var(--font-sans) !important;
   }
 
   .hubspot-form-wrapper .hs-form-booleancheckbox .hs-input {

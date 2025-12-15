@@ -5,5 +5,9 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    assetsInlineLimit: 0,
+  },
+  optimizeDeps: {
+    exclude: ['figma:asset/*'],
   },
 });
