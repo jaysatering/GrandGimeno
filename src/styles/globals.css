@@ -330,6 +330,7 @@ p {
   color: var(--color-muted);
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.25rem;
 }
 
 .hero-cta {
@@ -344,6 +345,7 @@ p {
   .hero-subtitle {
     margin-top: 48px;
     max-width: 800px;
+    font-size: 1.5rem;
   }
   
   .hero-cta {

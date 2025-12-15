@@ -153,7 +153,8 @@ export default function App() {
             <span className="hero-title-line">Gimeno</span>
           </h1>
           <p className="hero-subtitle">
-            A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
+            A 30,000-square-foot Spanish Colonial sanctuary.<br />
+            Built 1928. Architect Harold Gimeno.
           </p>
         </motion.div>
 

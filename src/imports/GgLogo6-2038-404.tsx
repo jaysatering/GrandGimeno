@@ -1,4 +1,4 @@
-import svgPaths from "../imports/svg-0fuw8ucymm";
+import svgPaths from "./svg-0fuw8ucymm";
 
 export default function GgLogo() {
   return (
