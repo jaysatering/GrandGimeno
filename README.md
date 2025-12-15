@@ -1,7 +1,7 @@
 
-  # Lander + Thank You + Private Profile
+  # GG - Landing Page
 
-  This is a code bundle for Lander + Thank You + Private Profile. The original project is available at https://www.figma.com/design/Yb8VzcPU5Yv2FLTyIHrCHy/Lander---Thank-You---Private-Profile.
+  This is a code bundle for GG - Landing Page. The original project is available at https://www.figma.com/design/Yb8VzcPU5Yv2FLTyIHrCHy/GG---Landing-Page.
 
   ## Running the code
 
