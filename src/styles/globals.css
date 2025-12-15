@@ -1427,3 +1427,97 @@ button:focus-visible {
     padding-right: 40px;
   }
 }
+
+/* ===== PRIVATE PAGE PRICING GRID ===== */
+.private-pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .private-pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+/* ===== PRIVATE PAGE INCLUSIONS GRID ===== */
+.private-inclusions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .private-inclusions-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px 96px;
+  }
+}
+
+/* ===== PRIVATE PAGE VENDOR GRID ===== */
+.private-vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 16px;
+}
+
+@media (min-width: 768px) {
+  .private-vendor-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .private-vendor-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+  }
+}
+
+/* ===== PRIVATE PAGE CAPACITY GRID ===== */
+.private-capacity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .private-capacity-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+/* ===== PRIVATE PAGE SPACES GRID ===== */
+.private-spaces-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .private-spaces-grid {
+    grid-template-columns: 7fr 5fr;
+    gap: 32px;
+  }
+}
+
+/* ===== PRIVATE PAGE FOOTER GRID ===== */
+.private-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .private-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+  }
+}

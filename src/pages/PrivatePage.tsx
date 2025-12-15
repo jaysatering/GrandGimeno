@@ -96,7 +96,7 @@ export default function PrivatePage() {
           </motion.div>
         </section>
 
-        {/* THE INVESTMENT (PRICING) */}
+        {/* PRICING */}
         <section style={{ padding: '120px 24px', borderTop: '1px solid var(--color-border)' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <motion.div
@@ -107,7 +107,7 @@ export default function PrivatePage() {
               style={{ textAlign: 'center' }}
             >
               <div style={{ marginBottom: '80px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
+                <div className="private-pricing-grid">
                   <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
                     <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>SATURDAY</p>
                     <h2>$12K</h2>
@@ -148,7 +148,7 @@ export default function PrivatePage() {
                 <h2>What's included</h2>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px 96px', maxWidth: '1200px', margin: '0 auto' }}>
+              <div className="private-inclusions-grid">
                 {/* SPACES */}
                 <div>
                   <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SPACES</p>
@@ -277,7 +277,7 @@ export default function PrivatePage() {
                     <p className="mono" style={{ marginBottom: '48px', color: 'var(--color-primary)' }}>
                       {category.category}
                     </p>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px 24px' }}>
+                    <div className="private-vendor-grid">
                       {category.vendors.map((vendor, vIdx) => (
                         <div 
                           key={vIdx}
@@ -319,7 +319,7 @@ export default function PrivatePage() {
               <div style={{ marginBottom: '80px' }}>
                 <h2 style={{ marginBottom: '80px' }}>Capacity</h2>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
+                <div className="private-capacity-grid">
                   <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
                     <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>RECEPTION STYLE</p>
                     <h2>300</h2>
@@ -351,7 +351,7 @@ export default function PrivatePage() {
                 <h2>The Spaces</h2>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '32px' }}>
+              <div className="private-spaces-grid">
                 <ImageWithFallback 
                   src={courtyardImageUrl}
                   alt="Spanish courtyard with fountain"
@@ -388,7 +388,7 @@ export default function PrivatePage() {
         {/* FOOTER */}
         <footer style={{ padding: '120px 24px 80px', borderTop: '1px solid var(--color-border)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '64px', marginBottom: '80px' }}>
+            <div className="private-footer-grid">
               {/* Address */}
               <div>
                 <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
