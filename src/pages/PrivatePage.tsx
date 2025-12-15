@@ -145,21 +145,21 @@ export default function PrivatePage() {
 
       <section className="hero-section">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
           className="hero-content"
         >
           <p className="hero-eyebrow">
-            <span className="mono">Private Profile</span>
+            <span className="mono">Private Venue Profile</span>
           </p>
           <h1 className="hero-title">
-            <span className="hero-title-line">The</span>
-            <span className="hero-title-line">Details</span>
+            <span className="hero-title-line">The Landmark</span>
+            <span className="hero-title-line">Is Yours.</span>
           </h1>
           <p className="hero-subtitle">
-            Investment. Inclusions. Culinary experience.<br />
-            Everything you need to know.
+            We do not split the venue.<br />
+            You secure the entire building and grounds.
           </p>
         </motion.div>
 
@@ -214,7 +214,7 @@ export default function PrivatePage() {
           <ImageWithFallback 
             src="https://images.unsplash.com/photo-1765308767818-1e7fd17c8067?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFuZCUyMGhhbGwlMjBiYWxscm9vbSUyMGx1eHVyeXxlbnwxfHx8fDE3NjU4MzM5MjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Grand Central Hall"
-            className="editorial-image"
+            className="editorial-image-wide"
           />
         </motion.div>
       </section>
@@ -240,7 +240,7 @@ export default function PrivatePage() {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', maxWidth: '1100px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', maxWidth: '1100px', margin: '0 auto', padding: '0 48px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <p style={{ opacity: 0.7 }}>14 hours of venue access (10am–midnight)</p>
                 <p style={{ opacity: 0.7 }}>Six distinct spaces including Grand Central Hall, Olive Grove, Courtyard, Foyer, and two VIP suites</p>
@@ -341,7 +341,7 @@ export default function PrivatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            style={{ padding: '0 48px', textAlign: 'center' }}
+            style={{ padding: '0 48px' }}
           >
             <div className="vendor-collective-grid">
               {vendorCollective.map((vendor, index) => (

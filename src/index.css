@@ -1326,7 +1326,7 @@ p {
   position: relative;
 }
 
-.editorial-image {
+.editorial-image, .editorial-image-wide {
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -1335,7 +1335,7 @@ p {
 }
 
 @media (width >= 1024px) {
-  .editorial-image {
+  .editorial-image-wide {
     min-height: 75vh;
     max-height: 75vh;
   }
@@ -1369,7 +1369,10 @@ p {
 
 .architecture-header {
   text-align: left;
+  max-width: 1100px;
   margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 48px;
 }
 
@@ -1794,7 +1797,7 @@ button:focus-visible {
 
 .vendor-collective-grid {
   grid-template-columns: repeat(2, 1fr);
-  gap: 56px 48px;
+  gap: 32px 24px;
   display: grid;
 }
 
