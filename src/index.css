@@ -791,20 +791,12 @@
     border-bottom-width: 1px;
   }
 
-  .border-border {
-    border-color: oklch(.922 0 0);
-  }
-
   .border-foreground\/10 {
     border-color: color-mix(in oklab, oklch(.145 0 0) 10%, transparent);
   }
 
   .bg-gray-100 {
     background-color: var(--color-gray-100);
-  }
-
-  .bg-primary {
-    background-color: oklch(.205 0 0);
   }
 
   .object-cover {
@@ -957,26 +949,6 @@
 
   .text-foreground {
     color: oklch(.145 0 0);
-  }
-
-  .text-foreground\/40 {
-    color: color-mix(in oklab, oklch(.145 0 0) 40%, transparent);
-  }
-
-  .text-foreground\/60 {
-    color: color-mix(in oklab, oklch(.145 0 0) 60%, transparent);
-  }
-
-  .text-foreground\/70 {
-    color: color-mix(in oklab, oklch(.145 0 0) 70%, transparent);
-  }
-
-  .text-primary {
-    color: oklch(.205 0 0);
-  }
-
-  .text-primary-foreground {
-    color: oklch(.985 0 0);
   }
 
   .shadow-lg {
@@ -1314,6 +1286,82 @@
     .lg\:text-\[180px\] {
       font-size: 180px;
     }
+  }
+
+  .text-primary {
+    color: #669cc4 !important;
+  }
+
+  .bg-primary {
+    background-color: #669cc4 !important;
+  }
+
+  .border-primary {
+    border-color: #669cc4 !important;
+  }
+
+  .text-blue {
+    color: #669cc4 !important;
+  }
+
+  .bg-blue {
+    background-color: #669cc4 !important;
+  }
+
+  .text-charcoal {
+    color: #525557 !important;
+  }
+
+  .bg-charcoal {
+    background-color: #525557 !important;
+  }
+
+  .text-ivory {
+    color: #eeede1 !important;
+  }
+
+  .bg-ivory {
+    background-color: #eeede1 !important;
+  }
+
+  .text-bone {
+    color: #eeede1 !important;
+  }
+
+  .bg-bone {
+    background-color: #eeede1 !important;
+  }
+
+  .text-primary-foreground {
+    color: #eeede1 !important;
+  }
+
+  .bg-primary-foreground {
+    background-color: #eeede1 !important;
+  }
+
+  .border-border {
+    border-color: #d4d3ca !important;
+  }
+
+  .bg-primary\/90 {
+    background-color: #669cc4e6 !important;
+  }
+
+  .bg-primary\/80 {
+    background-color: #669cc4cc !important;
+  }
+
+  .text-foreground\/60 {
+    color: #52555799 !important;
+  }
+
+  .text-foreground\/70 {
+    color: #525557b3 !important;
+  }
+
+  .text-foreground\/40 {
+    color: #52555766 !important;
   }
 
   .hubspot-form-wrapper {
