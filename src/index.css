@@ -720,10 +720,6 @@
     border-bottom-width: 1px;
   }
 
-  .border-foreground\/10 {
-    border-color: color-mix(in oklab, oklch(.145 0 0) 10%, transparent);
-  }
-
   .object-cover {
     object-fit: cover;
   }
@@ -982,79 +978,83 @@
   }
 
   .text-primary {
-    color: #669cc4 !important;
+    color: #669cc4;
   }
 
   .bg-primary {
-    background-color: #669cc4 !important;
+    background-color: #669cc4;
   }
 
   .border-primary {
-    border-color: #669cc4 !important;
+    border-color: #669cc4;
   }
 
   .text-blue {
-    color: #669cc4 !important;
+    color: #669cc4;
   }
 
   .bg-blue {
-    background-color: #669cc4 !important;
+    background-color: #669cc4;
   }
 
   .text-charcoal {
-    color: #525557 !important;
+    color: #525557;
   }
 
   .bg-charcoal {
-    background-color: #525557 !important;
+    background-color: #525557;
   }
 
   .text-ivory {
-    color: #eeede1 !important;
+    color: #eeede1;
   }
 
   .bg-ivory {
-    background-color: #eeede1 !important;
+    background-color: #eeede1;
   }
 
   .text-bone {
-    color: #eeede1 !important;
+    color: #eeede1;
   }
 
   .bg-bone {
-    background-color: #eeede1 !important;
+    background-color: #eeede1;
   }
 
   .text-primary-foreground {
-    color: #eeede1 !important;
+    color: #eeede1;
   }
 
   .bg-primary-foreground {
-    background-color: #eeede1 !important;
+    background-color: #eeede1;
   }
 
   .border-border {
-    border-color: #d4d3ca !important;
+    border-color: #d4d3ca;
   }
 
   .bg-primary\/90 {
-    background-color: #669cc4e6 !important;
+    background-color: #669cc4e6;
   }
 
   .bg-primary\/80 {
-    background-color: #669cc4cc !important;
+    background-color: #669cc4cc;
   }
 
   .text-foreground\/60 {
-    color: #52555799 !important;
+    color: #52555799;
   }
 
   .text-foreground\/70 {
-    color: #525557b3 !important;
+    color: #525557b3;
   }
 
   .text-foreground\/40 {
-    color: #52555766 !important;
+    color: #52555766;
+  }
+
+  .border-foreground\/10 {
+    border-color: #5255571a;
   }
 
   .section-spacing {

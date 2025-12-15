@@ -258,82 +258,86 @@
 }
 
 @layer utilities {
-  /* Design System Color Utilities - Always Available */
+  /* Design System Color Utilities */
   .text-primary {
-    color: #669CC4 !important;
+    color: #669CC4;
   }
   
   .bg-primary {
-    background-color: #669CC4 !important;
+    background-color: #669CC4;
   }
   
   .border-primary {
-    border-color: #669CC4 !important;
+    border-color: #669CC4;
   }
   
   .text-blue {
-    color: #669CC4 !important;
+    color: #669CC4;
   }
   
   .bg-blue {
-    background-color: #669CC4 !important;
+    background-color: #669CC4;
   }
   
   .text-charcoal {
-    color: #525557 !important;
+    color: #525557;
   }
   
   .bg-charcoal {
-    background-color: #525557 !important;
+    background-color: #525557;
   }
   
   .text-ivory {
-    color: #EEEDE1 !important;
+    color: #EEEDE1;
   }
   
   .bg-ivory {
-    background-color: #EEEDE1 !important;
+    background-color: #EEEDE1;
   }
   
   .text-bone {
-    color: #EEEDE1 !important;
+    color: #EEEDE1;
   }
   
   .bg-bone {
-    background-color: #EEEDE1 !important;
+    background-color: #EEEDE1;
   }
   
   .text-primary-foreground {
-    color: #EEEDE1 !important;
+    color: #EEEDE1;
   }
   
   .bg-primary-foreground {
-    background-color: #EEEDE1 !important;
+    background-color: #EEEDE1;
   }
   
   .border-border {
-    border-color: #d4d3ca !important;
+    border-color: #d4d3ca;
   }
   
   /* Opacity variants */
   .bg-primary\/90 {
-    background-color: rgba(102, 156, 196, 0.9) !important;
+    background-color: rgba(102, 156, 196, 0.9);
   }
   
   .bg-primary\/80 {
-    background-color: rgba(102, 156, 196, 0.8) !important;
+    background-color: rgba(102, 156, 196, 0.8);
   }
   
   .text-foreground\/60 {
-    color: rgba(82, 85, 87, 0.6) !important;
+    color: rgba(82, 85, 87, 0.6);
   }
   
   .text-foreground\/70 {
-    color: rgba(82, 85, 87, 0.7) !important;
+    color: rgba(82, 85, 87, 0.7);
   }
   
   .text-foreground\/40 {
-    color: rgba(82, 85, 87, 0.4) !important;
+    color: rgba(82, 85, 87, 0.4);
+  }
+  
+  .border-foreground\/10 {
+    border-color: rgba(82, 85, 87, 0.1);
   }
   
   /* Design System Spacing Utilities */
