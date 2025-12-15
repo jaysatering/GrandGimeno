@@ -106,7 +106,7 @@ export default function PrivatePage() {
               style={{ textAlign: 'center' }}
             >
               <div style={{ marginBottom: '80px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '48px', marginBottom: '64px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
                   <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
                     <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>SATURDAY</p>
                     <h2>$12K</h2>
@@ -120,9 +120,69 @@ export default function PrivatePage() {
                     <h2>$9K</h2>
                   </div>
                 </div>
-                <p style={{ fontSize: '1rem', color: 'var(--color-muted)', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto' }}>
-                  Pricing includes venue access from 10am–midnight. Catering by Jay's Catering Collection is required and billed separately.
-                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* INCLUSIONS */}
+        <section style={{ padding: '80px 24px 160px' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <div style={{ textAlign: 'center', marginBottom: '96px' }}>
+                <h2>What's included</h2>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px 96px', maxWidth: '1200px', margin: '0 auto' }}>
+                {/* SPACES */}
+                <div>
+                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SPACES</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <p>Courtyard with Spanish fountain</p>
+                    <p>Grand Central hall (30-foot ceilings)</p>
+                    <p>Olive Grove (100-year-old trees)</p>
+                    <p>The Parlor & Speakeasy VIP suites</p>
+                    <p>Live Fire Kitchen with Asado Grill & Pizza Oven</p>
+                  </div>
+                </div>
+
+                {/* FURNISHINGS */}
+                <div>
+                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>FURNISHINGS</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <p>300 Bentwood Chairs</p>
+                    <p>Market lights in Olive Grove</p>
+                    <p>Original architectural features</p>
+                    <p>Wrought-iron chandeliers</p>
+                  </div>
+                </div>
+
+                {/* SERVICE */}
+                <div>
+                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SERVICE</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <p>Dedicated venue coordinator</p>
+                    <p>14-hour venue access (10am–midnight)</p>
+                    <p>On-site parking coordination</p>
+                    <p>Full climate control</p>
+                  </div>
+                </div>
+
+                {/* CULINARY */}
+                <div>
+                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>CULINARY</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <p>Exclusive use of Live Fire Kitchen</p>
+                    <p>Jay's Catering Collection team</p>
+                    <p>Custom menu design included</p>
+                    <p>Tasting for up to 4 guests</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -186,151 +246,6 @@ export default function PrivatePage() {
           </div>
         </section>
 
-        {/* INCLUSIONS */}
-        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '96px' }}>
-                <h2>What's included</h2>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '96px', maxWidth: '1000px', margin: '0 auto' }}>
-                {/* SPACES */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SPACES</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>Courtyard with Spanish fountain</p>
-                    <p>Grand Central hall (30-foot ceilings)</p>
-                    <p>Olive Grove (100-year-old trees)</p>
-                    <p>The Parlor & Speakeasy VIP suites</p>
-                    <p>Live Fire Kitchen with Asado Grill & Pizza Oven</p>
-                  </div>
-                </div>
-
-                {/* FURNISHINGS */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>FURNISHINGS</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>300 Bentwood Chairs</p>
-                    <p>Market lights in Olive Grove</p>
-                    <p>Original architectural features</p>
-                    <p>Wrought-iron chandeliers</p>
-                  </div>
-                </div>
-
-                {/* SERVICE */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>SERVICE</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>Dedicated venue coordinator</p>
-                    <p>14-hour venue access (10am–midnight)</p>
-                    <p>On-site parking coordination</p>
-                    <p>Full climate control</p>
-                  </div>
-                </div>
-
-                {/* CULINARY */}
-                <div>
-                  <p className="mono" style={{ marginBottom: '32px', color: 'var(--color-primary)' }}>CULINARY</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <p>Exclusive use of Live Fire Kitchen</p>
-                    <p>Jay's Catering Collection team</p>
-                    <p>Custom menu design included</p>
-                    <p>Tasting for up to 4 guests</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CAPACITY */}
-        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                <h2>Capacity</h2>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', marginBottom: '64px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '32px 0', borderBottom: '1px solid var(--color-border)' }}>
-                  <p style={{ margin: '0' }}>Reception style</p>
-                  <p style={{ margin: '0', fontSize: '1.5rem' }}>300</p>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '32px 0', borderBottom: '1px solid var(--color-border)' }}>
-                  <p style={{ margin: '0' }}>Seated dinner</p>
-                  <p style={{ margin: '0', fontSize: '1.5rem' }}>250</p>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '32px 0', borderBottom: '1px solid var(--color-border)' }}>
-                  <p style={{ margin: '0' }}>Ceremony + dinner</p>
-                  <p style={{ margin: '0', fontSize: '1.5rem' }}>200</p>
-                </div>
-              </div>
-
-              <p style={{ textAlign: 'center', fontSize: '0.875rem', color: 'var(--color-muted)' }}>
-                Total square footage: 30,000 sq ft
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* THE SPACES (GALLERY) */}
-        <section style={{ padding: '120px 24px 200px' }}>
-          <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                <h2>The Spaces</h2>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '32px' }}>
-                <ImageWithFallback 
-                  src={courtyardImageUrl}
-                  alt="Spanish courtyard with fountain"
-                  style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '3 / 2', objectFit: 'cover' }}
-                />
-                <ImageWithFallback 
-                  src={archImageUrl}
-                  alt="Architectural detail"
-                  style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '4 / 5', objectFit: 'cover' }}
-                />
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* FAQ SECTION */}
-        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '96px' }}>
-                <h2>Frequently Asked Questions</h2>
-              </div>
-
-              <Accordion items={faqItems} />
-            </motion.div>
-          </div>
-        </section>
-
         {/* VENDOR COLLECTIVE */}
         <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -378,6 +293,85 @@ export default function PrivatePage() {
                   </div>
                 ))}
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CAPACITY */}
+        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              style={{ textAlign: 'center' }}
+            >
+              <div style={{ marginBottom: '80px' }}>
+                <h2 style={{ marginBottom: '80px' }}>Capacity</h2>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '48px' }}>
+                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
+                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>RECEPTION STYLE</p>
+                    <h2>300</h2>
+                  </div>
+                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
+                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>SEATED DINNER</p>
+                    <h2>250</h2>
+                  </div>
+                  <div style={{ padding: '48px 24px', borderBottom: '1px solid var(--color-border)' }}>
+                    <p className="mono" style={{ marginBottom: '16px', color: 'var(--color-muted)' }}>CEREMONY + DINNER</p>
+                    <h2>200</h2>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* THE SPACES (GALLERY) */}
+        <section style={{ padding: '120px 24px 200px' }}>
+          <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+                <h2>The Spaces</h2>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '32px' }}>
+                <ImageWithFallback 
+                  src={courtyardImageUrl}
+                  alt="Spanish courtyard with fountain"
+                  style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '3 / 2', objectFit: 'cover' }}
+                />
+                <ImageWithFallback 
+                  src={archImageUrl}
+                  alt="Architectural detail"
+                  style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '4 / 5', objectFit: 'cover' }}
+                />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FAQ SECTION */}
+        <section style={{ padding: '160px 24px', borderTop: '1px solid var(--color-border)' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <div style={{ textAlign: 'center', marginBottom: '96px' }}>
+                <h2>Frequently Asked Questions</h2>
+              </div>
+
+              <Accordion items={faqItems} />
             </motion.div>
           </div>
         </section>
