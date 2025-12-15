@@ -1101,6 +1101,22 @@
     border-radius: var(--radius-lg);
   }
 
+  .fixed-logo {
+    z-index: 50;
+    width: 120px;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+  }
+
+  @media (width >= 1024px) {
+    .fixed-logo {
+      width: 180px;
+      top: 32px;
+      left: 48px;
+    }
+  }
+
   .hubspot-form-wrapper {
     font-family: Cormorant Garamond, ui-serif, Georgia, serif;
   }

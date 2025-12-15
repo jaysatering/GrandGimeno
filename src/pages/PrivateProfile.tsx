@@ -20,13 +20,8 @@ export function PrivateProfile() {
 
   return (
     <div className="bg-bone" style={{ paddingTop: '128px' }}>
-      {/* Fixed Logo - Mobile */}
-      <div className="fixed z-50 lg:hidden" style={{ top: '16px', left: '16px', width: '120px' }}>
-        <GgLogo />
-      </div>
-      
-      {/* Fixed Logo - Desktop */}
-      <div className="hidden lg:block fixed z-50" style={{ top: '32px', left: '48px', width: '180px' }}>
+      {/* Fixed Logo */}
+      <div className="fixed-logo">
         <GgLogo />
       </div>
 

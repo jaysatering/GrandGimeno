@@ -382,6 +382,23 @@
     border-radius: var(--radius-lg);
   }
 
+  /* Fixed Logo Positioning */
+  .fixed-logo {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    width: 120px;
+    z-index: 50;
+  }
+
+  @media (min-width: 1024px) {
+    .fixed-logo {
+      top: 32px;
+      left: 48px;
+      width: 180px;
+    }
+  }
+
   /* HubSpot Form Styling */
   .hubspot-form-wrapper {
     font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;

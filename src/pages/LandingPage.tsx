@@ -81,12 +81,7 @@ export function LandingPage() {
   return (
     <div className="bg-bone">
       {/* Fixed Logo - Top Left */}
-      <div className="fixed z-50 lg:hidden" style={{ top: '16px', left: '16px', width: '120px' }}>
-        <GgLogo />
-      </div>
-      
-      {/* Desktop Logo - Larger */}
-      <div className="hidden lg:block fixed z-50" style={{ top: '32px', left: '48px', width: '180px' }}>
+      <div className="fixed-logo">
         <GgLogo />
       </div>
 
