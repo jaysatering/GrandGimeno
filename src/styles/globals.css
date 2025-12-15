@@ -1000,7 +1000,7 @@ p {
 
 /* ===== EDITORIAL IMAGE SECTION ===== */
 .editorial-image-section {
-  padding: var(--space-section-mobile) 0;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
@@ -1013,29 +1013,66 @@ p {
   position: relative;
   width: 100%;
   margin: 0 auto;
+  height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .editorial-image-wrapper {
+    height: auto;
+  }
 }
 
 .editorial-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  min-height: 100vh;
   object-fit: cover;
 }
 
+@media (min-width: 1024px) {
+  .editorial-image {
+    height: auto;
+    object-fit: initial;
+  }
+}
+
 /* Private page specific wide crop on desktop */
+.private-page-editorial {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+  display: block;
+}
+
 .editorial-image-wide {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  min-height: 100vh;
   object-fit: cover;
 }
 
 @media (min-width: 1024px) {
   .editorial-image-wide {
-    min-height: 75vh;
-    max-height: 75vh;
+    height: auto;
+    object-fit: initial;
+  }
+}
+
+.editorial-full-height {
+  width: 100%;
+  height: 100vh;
+}
+
+.editorial-full-height-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .editorial-full-height {
+    height: 130vh;
   }
 }
 
@@ -1093,7 +1130,9 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
-  padding: 0 48px;
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -1106,7 +1145,7 @@ p {
 @media (min-width: 1024px) {
   .architecture-grid {
     gap: 64px 80px;
-    padding: 0 80px;
+    padding: 0;
   }
 }
 
@@ -1248,25 +1287,25 @@ p {
 
 /* ===== EDITORIAL GRID SECTION ===== */
 .editorial-grid-section {
-  padding: var(--space-section-mobile) 0;
+  padding: 0;
   width: 100%;
 }
 
 @media (min-width: 1024px) {
   .editorial-grid-section {
-    padding: var(--space-section) 0;
+    padding: 0;
   }
 }
 
 .editorial-grid-container {
-  max-width: 1800px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
   .editorial-grid-container {
-    padding: 0 48px;
+    padding: 0;
   }
 }
 
@@ -1522,12 +1561,14 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px 24px;
+  margin-top: 64px;
 }
 
 @media (min-width: 1024px) {
   .vendor-collective-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 64px 56px;
+    margin-top: 96px;
   }
 }
 

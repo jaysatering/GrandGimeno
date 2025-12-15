@@ -362,21 +362,20 @@ export default function PrivatePage() {
         </div>
       </section>
 
-      <section className="editorial-grid-section">
-        <div className="editorial-grid-container">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1 }}
-          >
-            <ImageWithFallback 
-              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765813997/jaysTitusandJo-4-2_1_x4l2ou.jpg"
-              alt="Grand Gimeno"
-              className="editorial-image"
-            />
-          </motion.div>
-        </div>
+      <section className="full-height-image-section">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1 }}
+          className="editorial-full-height"
+        >
+          <img 
+            src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765813997/jaysTitusandJo-4-2_1_x4l2ou.jpg"
+            alt="Grand Gimeno"
+            className="editorial-full-height-img"
+          />
+        </motion.div>
       </section>
 
       <section className="architecture-section" style={{ paddingBottom: 'var(--space-section)' }}>
