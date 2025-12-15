@@ -1619,7 +1619,6 @@ p {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: transform .8s cubic-bezier(.19, 1, .22, 1);
   display: block;
 }
 

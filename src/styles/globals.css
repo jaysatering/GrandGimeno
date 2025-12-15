@@ -1324,7 +1324,6 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .editorial-grid-item:hover .editorial-grid-image {

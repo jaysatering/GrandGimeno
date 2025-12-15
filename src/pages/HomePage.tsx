@@ -314,55 +314,31 @@ export default function HomePage() {
 
       <section className="editorial-grid-section">
         <div className="editorial-grid-container">
-          <motion.div 
-            className="editorial-grid"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-          >
-            <motion.div 
-              className="editorial-grid-item editorial-grid-item-large"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
-            >
+          <div className="editorial-grid">
+            <div className="editorial-grid-item editorial-grid-item-large">
               <img 
                 src={editorialGrid1}
                 alt="Spanish Colonial courtyard"
                 className="editorial-grid-image"
               />
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="editorial-grid-item editorial-grid-item-small-1"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
-            >
+            <div className="editorial-grid-item editorial-grid-item-small-1">
               <img 
                 src={editorialGrid2}
                 alt="Architectural details"
                 className="editorial-grid-image"
               />
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="editorial-grid-item editorial-grid-item-small-2"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.3 }}
-            >
+            <div className="editorial-grid-item editorial-grid-item-small-2">
               <img 
                 src={editorialGrid3}
                 alt="Olive grove"
                 className="editorial-grid-image"
               />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
