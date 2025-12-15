@@ -5,6 +5,17 @@ import GgLogo from '../imports/GgLogo6';
 import { ChevronDown } from 'lucide-react';
 import oliveGroveAerial from 'figma:asset/70a63a86057ecdc10a10ef186184d504f07ebd8a.png';
 
+// Placeholder images from Unsplash
+const image_spanishCourtyard = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_chandelier = "https://images.unsplash.com/photo-1760281581532-73976e21fa10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cm91Z2h0JTIwaXJvbiUyMGNoYW5kZWxpZXJ8ZW58MXx8fHwxNzY1NzY2NDM0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_historicInterior = "https://images.unsplash.com/photo-1761116182530-67c643f982fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaXN0b3JpYyUyMGJ1aWxkaW5nJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY1NjY2Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_outdoorDining = "https://images.unsplash.com/photo-1762195804047-65ba748de62c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwZGluaW5nJTIwb2xpdmUlMjB0cmVlc3xlbnwxfHx8fDE3NjU3NjY0MzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_wroughtIron = "https://images.unsplash.com/photo-1754852050560-d4c57cbf77c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cm91Z2h0JTIwaXJvbiUyMGRldGFpbHxlbnwxfHx8fDE3NjU3NTc3NTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_c35727a90159d087a9e56d733b68c098e3f119cd = "https://images.unsplash.com/photo-1634913174448-f2932ddfe4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMHNwYWNlJTIwc2V0dXB8ZW58MXx8fHwxNzY1NzY2NDM3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_96f784d215fdb2dafc0538f61064c2adef28e0fd = "https://images.unsplash.com/photo-1759730840961-09faa5731a3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwYmFsbHJvb20lMjBjZWlsaW5nfGVufDF8fHx8MTc2NTc0NjM4M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_oliveTrees = "https://images.unsplash.com/photo-1722228097356-bd0202d99367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMGdyb3ZlJTIwc3Vuc2V0fGVufDF8fHx8MTc2NTc2NjQzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const image_132849be8bad78b6d89d4aadacdafbccad992ce1 = "https://images.unsplash.com/photo-1757190412618-a52ad13f6759?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFuZCUyMGhhbGwlMjBhcmNoaXRlY3R1cmV8ZW58MXx8fHwxNzY1NjY2Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+
 export function PrivateProfile() {
   const navigate = useNavigate();
 
