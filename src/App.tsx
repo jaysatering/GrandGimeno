@@ -343,12 +343,9 @@ export default function App() {
             className="form-content"
           >
             <p className="section-eyebrow">
-              <span className="mono">Availability</span>
+              <span className="mono">Limited 2026 Availability</span>
             </p>
-            <h2>Start here</h2>
-            <p className="form-subtitle">
-              Tell us about your event
-            </p>
+            <h2>Tell us about your event</h2>
             
             <div id="hubspot-form-container" className="hubspot-form-wrapper"></div>
           </motion.div>
