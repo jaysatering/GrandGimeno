@@ -1,9 +1,6 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
@@ -446,4 +443,32 @@
     align-items: flex-start !important;
     gap: 12px !important;
   }
+}
+
+@theme {
+  /* Custom color tokens */
+  --color-charcoal: #525557;
+  --color-ivory: #EEEDE1;
+  --color-blue: #669CC4;
+  --color-background: #EEEDE1;
+  --color-foreground: #525557;
+  --color-primary: #669CC4;
+  --color-primary-foreground: #EEEDE1;
+  --color-muted: #f5f4ed;
+  --color-muted-foreground: #6a6b6d;
+  --color-border: rgba(82, 85, 87, 0.15);
+  --color-bone: #EEEDE1;
+  
+  /* Custom font families */
+  --font-family-sans: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-family-mono: 'Space Mono', ui-monospace, monospace;
+  
+  /* Custom spacing */
+  --spacing-section: 128px;
+  --spacing-section-mobile: 80px;
+  
+  /* Custom border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
 }
