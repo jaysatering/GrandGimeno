@@ -1418,7 +1418,6 @@ p {
   margin-bottom: 48px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 48px;
 }
 
 .architecture-header h2 {
@@ -1454,7 +1453,6 @@ p {
 @media (width >= 1024px) {
   .architecture-grid {
     gap: 64px 80px;
-    padding: 0;
   }
 }
 
