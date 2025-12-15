@@ -1,30 +1,46 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from './components/GgLogo';
 
 // Unsplash Images
-const heroImage = "https://images.unsplash.com/photo-1655323193437-c68a5b3281f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY29sb25pYWwlMjBjb3VydHlhcmQlMjBmb3VudGFpbnxlbnwxfHx8fDE3NjU3NzQ2OTN8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const interiorImage = "https://images.unsplash.com/photo-1763231575952-98244918f99b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBldmVudCUyMHNwYWNlJTIwaW50ZXJpb3J8ZW58MXx8fHwxNjU3Njg5MjB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const chandelierImage = "https://images.unsplash.com/photo-1758597340435-c6ac65a88e44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwYmFsbHJvb20lMjBjaGFuZGVsaWVyfGVufDF8fHx8MTc2NTc3NDY5NHww&ixlib=rb-4.1.0&q=80&w=1080";
-const outdoorImage = "https://images.unsplash.com/photo-1762195804047-65ba748de62c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwZGluaW5nJTIwb2xpdmUlMjB0cmVlc3xlbnwxfHx8fDE3NjU3NjY0MzV8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const oliveGroveAerial = "https://images.unsplash.com/photo-1496123630896-5374cc9e8233?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMGdyb3ZlJTIwYWVyaWFsfGVufDF8fHx8MTc2NTc3NTg5OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const pizzaOven = "https://images.unsplash.com/photo-1689150911817-3e27168ab6a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwZmlyZWQlMjBwaXp6YSUyMG92ZW58ZW58MXx8fHwxNzY1NzY4OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const spanishCourtyard = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const oliveCeremony = "https://images.unsplash.com/photo-1761047726992-4e47b1dda7a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMHRyZWVzJTIwY2VyZW1vbnklMjBvdXRkb29yfGVufDF8fHx8MTc2NTc3NTg5OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 export default function App() {
-  const [showCTA, setShowCTA] = useState(false);
+  const [showCTA, setShowCTA] = useState(true);
   const [currentView, setCurrentView] = useState<'landing' | 'thank-you'>('landing');
+  const formRef = useRef<HTMLDivElement>(null);
 
+  // IntersectionObserver to hide CTAs when form is visible
   useEffect(() => {
-    const handleScroll = () => {
-      setShowCTA(window.scrollY > 300);
+    if (!formRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setShowCTA(!entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px'
+      }
+    );
+
+    observer.observe(formRef.current);
+
+    return () => {
+      observer.disconnect();
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentView]);
 
   useEffect(() => {
     if (currentView === 'landing') {
       const script = document.createElement('script');
-      script.src = '//js.hsforms.net/forms/embed/v2.js';
+      script.src = '//js-na2.hsforms.net/forms/embed/v2.js';
       script.charset = 'utf-8';
       script.type = 'text/javascript';
       script.async = true;
@@ -32,9 +48,9 @@ export default function App() {
       script.onload = () => {
         if (window.hbspt) {
           window.hbspt.forms.create({
-            region: "na1",
-            portalId: "48463073",
-            formId: "aff9e4b8-d8da-425c-ae96-e8fc1c25b850",
+            region: "na2",
+            portalId: "48463492",
+            formId: "83c1be77-a158-4a0a-9938-e04f79ced417",
             target: '#hubspot-form-container',
             onFormSubmit: () => {
               setTimeout(() => {
@@ -97,6 +113,9 @@ export default function App() {
     );
   }
 
+  const ctaClassDesktop = showCTA ? "cta-fixed cta-fixed-desktop" : "cta-fixed cta-fixed-desktop cta-hidden";
+  const ctaClassMobile = showCTA ? "cta-fixed cta-fixed-mobile" : "cta-fixed cta-fixed-mobile cta-hidden";
+
   return (
     <div className="page-wrapper">
       {/* Fixed Logo - Top Left */}
@@ -105,15 +124,16 @@ export default function App() {
       </div>
 
       {/* Desktop CTA - Top Right */}
-      <div 
-        className="desktop-cta"
-        style={{ 
-          opacity: showCTA ? 1 : 0,
-          pointerEvents: showCTA ? 'auto' : 'none'
-        }}
-      >
+      <div className={ctaClassDesktop}>
         <button onClick={scrollToForm} className="cta-button">
-          <span className="mono">Inquire Now</span>
+          <span className="mono">Inquire</span>
+        </button>
+      </div>
+
+      {/* Mobile CTA - Bottom Right */}
+      <div className={ctaClassMobile}>
+        <button onClick={scrollToForm} className="cta-button">
+          <span className="mono">Inquire</span>
         </button>
       </div>
 
@@ -125,14 +145,16 @@ export default function App() {
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
           className="hero-content"
         >
-          <h1>Grand Gimeno</h1>
-          <p className="hero-subtitle">
-            A restored 1928 Spanish Colonial Revival estate in the heart of Old Towne Orange
+          <p className="hero-eyebrow">
+            <span className="mono">Old Towne Orange, California</span>
           </p>
-          
-          <button onClick={scrollToForm} className="cta-button hero-cta">
-            <span className="mono">Book Private Tour</span>
-          </button>
+          <h1 className="hero-title">
+            <span className="hero-title-line">Grand</span>
+            <span className="hero-title-line">Gimeno</span>
+          </h1>
+          <p className="hero-subtitle">
+            A 30,000-square-foot Spanish Colonial sanctuary. Built 1928. Architect Harold Gimeno.
+          </p>
         </motion.div>
 
         <button 
@@ -144,73 +166,83 @@ export default function App() {
         </button>
       </section>
 
-      {/* Introduction */}
-      <section className="intro-section">
-        <div className="container-text">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2>Where History Meets Luxury</h2>
-            <div className="intro-text">
-              <p>
-                Grand Gimeno stands as one of Orange County's most distinguished event venues—a meticulously restored Spanish Colonial Revival masterpiece offering 12,000 square feet of elegant indoor and outdoor space.
-              </p>
-              <p>
-                From intimate gatherings to grand celebrations, our venue seamlessly blends historic architecture with modern luxury, providing an unparalleled backdrop for life's most important moments.
-              </p>
-            </div>
-          </motion.div>
+      {/* Quick Stats Bar */}
+      <section className="stats-bar">
+        <div className="stats-container">
+          <div className="stat-item">
+            <p className="stat-main">Two VIP Suites</p>
+            <p className="stat-sub">optional 8am access</p>
+          </div>
+          <div className="stat-item">
+            <p className="stat-main">Up to 300</p>
+            <p className="stat-sub">guests across six spaces</p>
+          </div>
+          <div className="stat-item">
+            <p className="stat-main">Created by</p>
+            <p className="stat-sub">Jay's Catering</p>
+          </div>
         </div>
       </section>
 
-      {/* Featured Image */}
-      <section className="featured-image-section">
+      {/* Full-Width Editorial Image with Overlay CTA */}
+      <section className="editorial-image-section">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-          className="featured-image-wrapper"
+          className="editorial-image-wrapper"
         >
           <img 
-            src={heroImage}
-            alt="Grand Gimeno Spanish Colonial courtyard with fountain"
-            className="featured-image"
+            src={oliveGroveAerial}
+            alt="Grand Gimeno olive grove aerial view"
+            className="editorial-image"
           />
+          <div className="editorial-overlay">
+            <button onClick={scrollToForm} className="cta-button cta-overlay">
+              <span className="mono">Ready to see it in person?</span>
+            </button>
+          </div>
         </motion.div>
       </section>
 
-      {/* Spaces Grid */}
-      <section className="spaces-section">
+      {/* Architecture Section */}
+      <section className="architecture-section">
         <div className="container-content">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="section-title"
+            className="architecture-header"
           >
-            Distinctive Spaces
-          </motion.h2>
+            <p className="section-eyebrow">
+              <span className="mono">The Architecture</span>
+            </p>
+            <h2>A journey through 30,000 square feet</h2>
+          </motion.div>
 
-          <div className="spaces-grid">
+          <div className="architecture-grid">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="space-card"
+              className="architecture-item"
             >
-              <div className="space-image-wrapper">
-                <img src={interiorImage} alt="Grand Ballroom interior" className="space-image" />
-              </div>
-              <div className="space-content">
-                <h3>Grand Ballroom</h3>
-                <p>5,000 sq ft of restored grandeur featuring original 1928 architectural details, wrought iron chandeliers, and soaring ceilings.</p>
-              </div>
+              <h3>The Courtyard</h3>
+              <p>The arrival point. A lush, open-air space with a large Spanish fountain and arched breezeways.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="architecture-item"
+            >
+              <h3>The Foyer</h3>
+              <p>A transition space with a wrought-iron chandelier and double doors leading to the heart of the building.</p>
             </motion.div>
 
             <motion.div
@@ -218,15 +250,21 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="space-card"
+              className="architecture-item"
             >
-              <div className="space-image-wrapper">
-                <img src={chandelierImage} alt="Intimate salon with chandelier" className="space-image" />
-              </div>
-              <div className="space-content">
-                <h3>Intimate Salons</h3>
-                <p>Three private salon spaces perfect for cocktail receptions, board meetings, or boutique gatherings up to 75 guests.</p>
-              </div>
+              <h3>Grand Central</h3>
+              <p>The primary indoor reception space. Soaring 30-foot ceilings, exposed timber trusses, and massive windows. Rustic industrial luxury—no crystal chandeliers here.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="architecture-item"
+            >
+              <h3>The Olive Grove</h3>
+              <p>The crown jewel. A large outdoor sanctuary filled with 100-year-old olive trees, market lights, and decomposed granite floors—designed for al fresco dining.</p>
             </motion.div>
 
             <motion.div
@@ -234,69 +272,67 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-card"
+              className="architecture-item"
             >
-              <div className="space-image-wrapper">
-                <img src={outdoorImage} alt="Outdoor courtyard with olive trees" className="space-image" />
-              </div>
-              <div className="space-content">
-                <h3>Courtyard Gardens</h3>
-                <p>Mediterranean-inspired outdoor space with century-old olive trees, custom lighting, and Spanish tile accents.</p>
+              <h3>The Suites</h3>
+              <p>Two high-end VIP suites—The Parlor and The Speakeasy—to prepare in style.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="architecture-item"
+            >
+              <h3>The Sanctuary</h3>
+              <p>Enclosed by high walls, Grand Gimeno creates a silent, private world inside the bustling city of Orange.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Culinary Section */}
+      <section className="culinary-section">
+        <div className="container-content">
+          <div className="culinary-content">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+              className="culinary-image-wrapper"
+            >
+              <img 
+                src={pizzaOven}
+                alt="Wood-fired pizza oven"
+                className="culinary-image"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="culinary-text"
+            >
+              <p className="section-eyebrow">
+                <span className="mono">Culinary Distinction</span>
+              </p>
+              <h2>Where architecture meets fire</h2>
+              <div className="culinary-paragraphs">
+                <p>Grand Gimeno wasn't designed around food—it was designed from food. Created by Jay's Catering, this is a culinary vision made architecture.</p>
+                <p>The permanent outdoor kitchen features an Argentine Asado Grill and a Wood-Fired Pizza Oven, cooking live in front of your guests.</p>
+                <p>Every event becomes a performance of fire, flavor, and craft—orchestrated by the team that built this place.</p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Features List */}
-      <section className="features-section">
-        <div className="container-text">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="features-content"
-          >
-            <h2>Exceptional Amenities</h2>
-            
-            <div className="features-grid">
-              <div className="feature-item">
-                <span className="mono feature-label">Capacity</span>
-                <p>300 guests seated / 450 reception style</p>
-              </div>
-              
-              <div className="feature-item">
-                <span className="mono feature-label">Catering</span>
-                <p>Full commercial kitchen with preferred caterer list</p>
-              </div>
-              
-              <div className="feature-item">
-                <span className="mono feature-label">Parking</span>
-                <p>Dedicated lot accommodating 150+ vehicles</p>
-              </div>
-              
-              <div className="feature-item">
-                <span className="mono feature-label">Technology</span>
-                <p>Integrated AV system, high-speed WiFi, professional lighting</p>
-              </div>
-              
-              <div className="feature-item">
-                <span className="mono feature-label">Accessibility</span>
-                <p>ADA compliant with elevator access to all levels</p>
-              </div>
-              
-              <div className="feature-item">
-                <span className="mono feature-label">Service</span>
-                <p>Dedicated event coordinator for planning and execution</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Inquiry Form */}
-      <section id="inquiry-form" className="form-section">
+      <section id="inquiry-form" className="form-section" ref={formRef}>
         <div className="container-text">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -305,9 +341,12 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="form-content"
           >
-            <h2>Begin Your Journey</h2>
+            <p className="section-eyebrow">
+              <span className="mono">Limited 2026 Availability</span>
+            </p>
+            <h2>Start here</h2>
             <p className="form-subtitle">
-              Schedule a private tour or request detailed pricing and availability information.
+              Tell us about your event
             </p>
             
             <div id="hubspot-form-container" className="hubspot-form-wrapper"></div>
@@ -315,20 +354,21 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container-text">
-          <div className="footer-content">
-            <div className="footer-info">
-              <span className="mono">Grand Gimeno</span>
-              <p>123 Historic Plaza, Old Towne Orange, CA 92866</p>
-            </div>
-            <div className="footer-legal">
-              <span className="mono">&copy; 2024 Grand Gimeno. All rights reserved.</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Final Full-Screen Image */}
+      <section className="final-image-section">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2 }}
+        >
+          <img 
+            src={oliveCeremony}
+            alt="Olive grove ceremony at Grand Gimeno"
+            className="final-image"
+          />
+        </motion.div>
+      </section>
     </div>
   );
 }

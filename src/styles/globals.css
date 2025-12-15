@@ -11,8 +11,8 @@
   --color-border: rgba(82, 85, 87, 0.15);
   
   /* SPACING */
-  --space-section: 8rem;
-  --space-section-mobile: 5rem;
+  --space-section: 10rem;
+  --space-section-mobile: 6rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -183,6 +183,68 @@ p {
   }
 }
 
+/* ===== GG WORDMARK ===== */
+.gg-wordmark {
+  width: 100%;
+  height: auto;
+}
+
+.gg-wordmark-text {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-charcoal);
+  line-height: 1.2;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .gg-wordmark-text {
+    font-size: 24px;
+  }
+}
+
+/* ===== FIXED CTA BUTTONS ===== */
+.cta-fixed {
+  position: fixed;
+  z-index: 50;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cta-fixed.cta-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Desktop CTA - Top Right */
+.cta-fixed-desktop {
+  display: none;
+  top: 32px;
+  right: 48px;
+}
+
+@media (min-width: 1024px) {
+  .cta-fixed-desktop {
+    display: block;
+  }
+}
+
+/* Mobile CTA - Bottom Right (thumb zone) */
+.cta-fixed-mobile {
+  display: block;
+  bottom: 24px;
+  right: 16px;
+}
+
+@media (min-width: 1024px) {
+  .cta-fixed-mobile {
+    display: none;
+  }
+}
+
 /* ===== DESKTOP CTA BUTTON ===== */
 .desktop-cta {
   display: none;
@@ -239,12 +301,35 @@ p {
   width: 100%;
 }
 
+.hero-eyebrow {
+  margin-bottom: 32px;
+  color: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  .hero-eyebrow {
+    margin-bottom: 48px;
+  }
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.hero-title-line {
+  display: block;
+  line-height: 0.85;
+}
+
 .hero-subtitle {
   margin-top: 24px;
   max-width: 600px;
+  color: var(--color-muted);
   margin-left: auto;
   margin-right: auto;
-  color: var(--color-muted);
 }
 
 .hero-cta {
@@ -252,8 +337,13 @@ p {
 }
 
 @media (min-width: 1024px) {
+  .hero-section {
+    padding: 128px 48px 80px;
+  }
+  
   .hero-subtitle {
     margin-top: 48px;
+    max-width: 800px;
   }
   
   .hero-cta {
@@ -474,60 +564,83 @@ p {
 
 /* ===== FORM SECTION ===== */
 .form-section {
-  padding: var(--space-section-mobile) 0;
+  padding: 48px 0 32px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {
   .form-section {
-    padding: var(--space-section) 0;
+    padding: 64px 0 48px;
   }
 }
 
 .form-content {
   text-align: center;
+  width: 100%;
 }
 
 .form-content h2 {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  font-size: 2rem;
 }
 
 .form-subtitle {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   color: var(--color-muted);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1rem;
 }
 
 @media (min-width: 1024px) {
   .form-content h2 {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
+    font-size: 2.5rem;
   }
   
   .form-subtitle {
-    margin-bottom: 64px;
+    margin-bottom: 40px;
+    font-size: 1.125rem;
   }
 }
 
 /* ===== HUBSPOT FORM STYLING ===== */
 .hubspot-form-wrapper {
   font-family: var(--font-display);
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .hubspot-form-wrapper .hs-form-field {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+  .hubspot-form-wrapper .hs-form-field {
+    margin-bottom: 24px;
+  }
 }
 
 .hubspot-form-wrapper label {
   font-family: var(--font-mono) !important;
   color: var(--color-primary) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.1em !important;
+  font-size: 10px !important;
+  letter-spacing: 0.15em !important;
   text-transform: uppercase !important;
-  margin-bottom: 4px !important;
+  margin-bottom: 12px !important;
   display: block !important;
+  font-weight: 400 !important;
+}
+
+@media (min-width: 1024px) {
+  .hubspot-form-wrapper label {
+    font-size: 11px !important;
+    margin-bottom: 16px !important;
+  }
 }
 
 .hubspot-form-wrapper input[type="text"],
@@ -545,9 +658,35 @@ p {
   color: var(--color-charcoal) !important;
   font-family: var(--font-display) !important;
   font-size: 16px !important;
+  font-weight: 400 !important;
   outline: none !important;
-  transition: border-color 0.2s ease !important;
+  transition: border-color 0.3s ease !important;
   border-radius: 0 !important;
+  line-height: 1.5 !important;
+}
+
+@media (min-width: 1024px) {
+  .hubspot-form-wrapper input[type="text"],
+  .hubspot-form-wrapper input[type="email"],
+  .hubspot-form-wrapper input[type="tel"],
+  .hubspot-form-wrapper input[type="date"],
+  .hubspot-form-wrapper input[type="number"],
+  .hubspot-form-wrapper select,
+  .hubspot-form-wrapper textarea {
+    padding: 14px 0 !important;
+    font-size: 18px !important;
+  }
+}
+
+.hubspot-form-wrapper textarea {
+  min-height: 80px !important;
+  resize: vertical !important;
+}
+
+.hubspot-form-wrapper input::placeholder,
+.hubspot-form-wrapper textarea::placeholder {
+  color: var(--color-muted) !important;
+  opacity: 0.5 !important;
 }
 
 .hubspot-form-wrapper input:focus,
@@ -558,53 +697,54 @@ p {
 
 .hubspot-form-wrapper .hs-form fieldset {
   max-width: 100% !important;
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 24px !important;
+  display: block !important;
   margin: 0 !important;
   padding: 0 !important;
-}
-
-@media (min-width: 768px) {
-  .hubspot-form-wrapper .hs-form fieldset {
-    grid-template-columns: 1fr 1fr !important;
-  }
+  border: none !important;
 }
 
 .hubspot-form-wrapper .hs-submit {
-  grid-column: 1 / -1 !important;
   text-align: center !important;
-  padding-top: 24px !important;
+  padding-top: 32px !important;
+  margin-top: 16px !important;
+}
+
+@media (min-width: 1024px) {
+  .hubspot-form-wrapper .hs-submit {
+    padding-top: 48px !important;
+    margin-top: 24px !important;
+  }
 }
 
 .hubspot-form-wrapper .hs-submit .hs-button {
-  padding: 12px 48px !important;
+  padding: 14px 56px !important;
   background: var(--color-primary) !important;
   color: var(--color-ivory) !important;
   border: none !important;
   font-family: var(--font-mono) !important;
   font-size: 10px !important;
-  letter-spacing: 0.2em !important;
+  letter-spacing: 0.25em !important;
   text-transform: uppercase !important;
   cursor: pointer !important;
-  transition: opacity 0.2s ease !important;
+  transition: opacity 0.25s ease !important;
+  font-weight: 400 !important;
 }
 
 @media (min-width: 1024px) {
   .hubspot-form-wrapper .hs-submit .hs-button {
-    padding: 16px 64px !important;
-    font-size: 12px !important;
+    padding: 18px 72px !important;
+    font-size: 11px !important;
   }
 }
 
 .hubspot-form-wrapper .hs-submit .hs-button:hover {
-  opacity: 0.9 !important;
+  opacity: 0.85 !important;
 }
 
 .hubspot-form-wrapper .hs-error-msgs {
   list-style: none !important;
   padding: 0 !important;
-  margin: 4px 0 0 0 !important;
+  margin: 8px 0 0 0 !important;
 }
 
 .hubspot-form-wrapper .hs-error-msg {
@@ -612,6 +752,7 @@ p {
   font-family: var(--font-mono) !important;
   font-size: 9px !important;
   letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
 }
 
 .hubspot-form-wrapper .hs-input {
@@ -624,35 +765,76 @@ p {
 }
 
 .hubspot-form-wrapper .hs-form-booleancheckbox {
-  grid-column: 1 / -1 !important;
-  margin-top: 12px !important;
+  margin-top: 24px !important;
 }
 
 .hubspot-form-wrapper .hs-form-booleancheckbox .hs-form-field {
   display: flex !important;
   align-items: flex-start !important;
   gap: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+.hubspot-form-wrapper .hs-form-booleancheckbox fieldset {
+  max-width: 100% !important;
+}
+
+.hubspot-form-wrapper .hs-form-booleancheckbox .input {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.hubspot-form-wrapper .hs-form-booleancheckbox .hs-input {
+  margin: 0 !important;
 }
 
 .hubspot-form-wrapper .hs-form-booleancheckbox input[type="checkbox"] {
   flex-shrink: 0 !important;
-  width: 16px !important;
-  height: 16px !important;
-  margin-top: 2px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: 4px !important;
   border: 1px solid var(--color-border) !important;
   background-color: var(--color-ivory) !important;
   cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+.hubspot-form-wrapper .hs-form-booleancheckbox input[type="checkbox"]:checked {
+  background-color: var(--color-ivory) !important;
+  border-color: var(--color-primary) !important;
+  position: relative !important;
+}
+
+.hubspot-form-wrapper .hs-form-booleancheckbox input[type="checkbox"]:checked::after {
+  content: '' !important;
+  position: absolute !important;
+  left: 5px !important;
+  top: 2px !important;
+  width: 5px !important;
+  height: 10px !important;
+  border: solid var(--color-primary) !important;
+  border-width: 0 2px 2px 0 !important;
+  transform: rotate(45deg) !important;
 }
 
 .hubspot-form-wrapper .hs-form-booleancheckbox label {
   flex: 1 !important;
   font-family: var(--font-display) !important;
-  font-size: 12px !important;
-  line-height: 1.5 !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
   color: var(--color-muted) !important;
   margin: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .hubspot-form-wrapper .hs-form-booleancheckbox label {
+    font-size: 14px !important;
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -724,6 +906,301 @@ p {
   
   .thank-you-subtitle {
     margin-bottom: 64px;
+  }
+}
+
+/* ===== STATS BAR ===== */
+.stats-bar {
+  padding: 48px 0;
+}
+
+@media (min-width: 1024px) {
+  .stats-bar {
+    padding: 64px 0;
+  }
+}
+
+.stats-container {
+  max-width: var(--container-content);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats-container {
+    gap: 64px;
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-main {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-sub {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+@media (min-width: 1024px) {
+  .stat-main {
+    font-size: 1.875rem;
+  }
+  
+  .stat-sub {
+    font-size: 1rem;
+  }
+}
+
+/* ===== EDITORIAL IMAGE SECTION ===== */
+.editorial-image-section {
+  padding: var(--space-section-mobile) 0;
+}
+
+@media (min-width: 1024px) {
+  .editorial-image-section {
+    padding: var(--space-section) 0;
+  }
+}
+
+.editorial-image-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.editorial-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .editorial-image {
+    min-height: 80vh;
+  }
+}
+
+.editorial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.cta-overlay {
+  z-index: 10;
+}
+
+/* ===== ARCHITECTURE SECTION ===== */
+.architecture-section {
+  padding: var(--space-section-mobile) 0;
+}
+
+@media (min-width: 1024px) {
+  .architecture-section {
+    padding: var(--space-section) 0;
+  }
+}
+
+.architecture-header {
+  text-align: left;
+  margin-bottom: 48px;
+  padding: 0 48px;
+}
+
+.architecture-header h2 {
+  margin-top: 16px;
+  max-width: 900px;
+}
+
+@media (min-width: 1024px) {
+  .architecture-header {
+    margin-bottom: 80px;
+    padding: 0 80px;
+  }
+  
+  .architecture-header h2 {
+    margin-top: 24px;
+  }
+}
+
+.architecture-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 0 48px;
+}
+
+@media (min-width: 768px) {
+  .architecture-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .architecture-grid {
+    gap: 64px 80px;
+    padding: 0 80px;
+  }
+}
+
+.architecture-item h3 {
+  margin-bottom: 12px;
+}
+
+@media (min-width: 1024px) {
+  .architecture-item h3 {
+    margin-bottom: 16px;
+  }
+}
+
+/* ===== CULINARY SECTION ===== */
+.culinary-section {
+  padding: var(--space-section-mobile) 0;
+}
+
+@media (min-width: 1024px) {
+  .culinary-section {
+    padding: var(--space-section) 0;
+  }
+}
+
+.culinary-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+  padding: 0 48px;
+}
+
+@media (min-width: 1024px) {
+  .culinary-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    padding: 0 80px;
+  }
+}
+
+.culinary-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .culinary-image-wrapper {
+    order: 1;
+  }
+}
+
+.culinary-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.culinary-text {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .culinary-text {
+    order: 2;
+  }
+}
+
+.culinary-text h2 {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  .culinary-text h2 {
+    margin-top: 24px;
+    margin-bottom: 48px;
+  }
+}
+
+.culinary-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .culinary-paragraphs {
+    gap: 32px;
+  }
+}
+
+/* ===== FORM MEDALLION ===== */
+.form-medallion {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 24px auto;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .form-medallion {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 32px;
+  }
+}
+
+/* ===== FINAL IMAGE SECTION ===== */
+.final-image-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.final-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 500px;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .final-image {
+    min-height: 100vh;
+    max-height: 100vh;
   }
 }
 
