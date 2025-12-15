@@ -9,6 +9,10 @@ const oliveGroveAerial = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v176
 const pizzaOven = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780827/_AJB3193_turfsf.jpg";
 const oliveCeremony = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780355/3J4A0229_cpnpow.jpg";
 
+const editorialGrid1 = "https://images.unsplash.com/photo-1655323193437-c68a5b3281f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY29sb25pYWwlMjBjb3VydHlhcmQlMjBmb3VudGFpbnxlbnwxfHx8fDE3NjU3NzQ2OTN8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const editorialGrid2 = "https://images.unsplash.com/photo-1763084681080-b4e2e4c086eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwYXJjaGl0ZWN0dXJlJTIwYXJjaGVzJTIwZGV0YWlsc3xlbnwxfHx8fDE3NjU4MTMxNzh8MA&ixlib=rb-4.1.0&q=80&w=1080";
+const editorialGrid3 = "https://images.unsplash.com/photo-1594079606112-f1113c1fd6d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMHRyZWVzJTIwZ3JvdmV8ZW58MXx8fHwxNjU4MTMxNzh8MA&ixlib=rb-4.1.0&q=80&w=1080";
+
 export default function HomePage() {
   const [showCTA, setShowCTA] = useState(true);
   const formRef = useRef<HTMLDivElement>(null);
@@ -304,6 +308,60 @@ export default function HomePage() {
             <h2>Tell us about your event</h2>
             
             <div id="hubspot-form-container" className="hubspot-form-wrapper"></div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="editorial-grid-section">
+        <div className="editorial-grid-container">
+          <motion.div 
+            className="editorial-grid"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+          >
+            <motion.div 
+              className="editorial-grid-item editorial-grid-item-large"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
+            >
+              <img 
+                src={editorialGrid1}
+                alt="Spanish Colonial courtyard"
+                className="editorial-grid-image"
+              />
+            </motion.div>
+
+            <motion.div 
+              className="editorial-grid-item editorial-grid-item-small-1"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
+            >
+              <img 
+                src={editorialGrid2}
+                alt="Architectural details"
+                className="editorial-grid-image"
+              />
+            </motion.div>
+
+            <motion.div 
+              className="editorial-grid-item editorial-grid-item-small-2"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.3 }}
+            >
+              <img 
+                src={editorialGrid3}
+                alt="Olive grove"
+                className="editorial-grid-image"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>

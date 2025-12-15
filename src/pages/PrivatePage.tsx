@@ -13,6 +13,7 @@ export default function PrivatePage() {
   const heroImageUrl = "https://images.unsplash.com/photo-1738800076744-c37b80b37d31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwbWluaW1hbHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
   const courtyardImageUrl = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080";
   const archImageUrl = "https://images.unsplash.com/photo-1762375164298-2f8f14bd8d36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwZGV0YWlsJTIwYXJjaHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
+  const culinaryImageUrl = "https://images.unsplash.com/photo-1652969209744-929be02a06c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlJTIwZmlyZSUyMGNvb2tpbmclMjBhc2Fkb3xlbnwxfHx8fDE3NjU4MTI1MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
   const faqItems = [
     {
@@ -199,48 +200,56 @@ export default function PrivatePage() {
 
         {/* CULINARY EXPERIENCE */}
         <section style={{ padding: '160px 24px' }}>
-          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                <p className="section-eyebrow">
-                  <span className="mono">CULINARY EXPERIENCE</span>
-                </p>
-                <h2 style={{ marginTop: '24px', marginBottom: '32px' }}>Bespoke menus, designed for you</h2>
-                <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--color-muted)' }}>
-                  Custom menu philosophy by Jay's Catering Collection
-                </p>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '64px', marginBottom: '80px', maxWidth: '800px', margin: '0 auto 80px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+                {/* Image on left */}
                 <div>
-                  <h3 style={{ marginBottom: '16px' }}>Live fire cooking</h3>
-                  <p style={{ color: 'var(--color-muted)' }}>
-                    Asado grill + wood-fired pizza oven
-                  </p>
+                  <ImageWithFallback 
+                    src={culinaryImageUrl}
+                    alt="Live fire cooking at Grand Gimeno"
+                    style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '4 / 5', objectFit: 'cover' }}
+                  />
                 </div>
-                <div>
-                  <h3 style={{ marginBottom: '16px' }}>Seasonal menus</h3>
-                  <p style={{ color: 'var(--color-muted)' }}>
-                    California farms, artisan producers
-                  </p>
-                </div>
-              </div>
 
-              <div style={{ textAlign: 'center' }}>
-                <a 
-                  href="https://jayscatering.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button"
-                  style={{ textDecoration: 'none', display: 'inline-block' }}
-                >
-                  <span className="mono">BESPOKE CULINARY DESIGNER</span>
-                </a>
+                {/* Content on right */}
+                <div style={{ paddingRight: '40px' }}>
+                  <p className="section-eyebrow" style={{ marginBottom: '32px' }}>
+                    <span className="mono">CULINARY EXPERIENCE</span>
+                  </p>
+                  
+                  <h2 style={{ marginBottom: '48px', lineHeight: '1.2' }}>
+                    Live fire.<br />
+                    Seasonal craft.<br />
+                    Zero compromise.
+                  </h2>
+
+                  <div style={{ marginBottom: '64px' }}>
+                    <p style={{ marginBottom: '32px', color: 'var(--color-muted)', fontSize: '1.125rem', lineHeight: '1.7' }}>
+                      Grand Gimeno was built by Jay's Catering Collection. Every menu is designed specifically for your event—guided by what's in season, what inspires us, and what moves you.
+                    </p>
+                    <p style={{ color: 'var(--color-muted)', fontSize: '1.125rem', lineHeight: '1.7' }}>
+                      The Live Fire Kitchen anchors the experience: whole animal asado on the custom grill, wood-fired pizzas from the oven, smoke and flame as part of the theater.
+                    </p>
+                  </div>
+
+                  <div>
+                    <a 
+                      href="http://www.jayscatering.com/food-and-drink/the-grand-gimeno-bespoke-menu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cta-button"
+                      style={{ textDecoration: 'none', display: 'inline-block' }}
+                    >
+                      <span className="mono">View Bespoke Menus</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -375,6 +384,67 @@ export default function PrivatePage() {
             </motion.div>
           </div>
         </section>
+
+        {/* FOOTER */}
+        <footer style={{ padding: '120px 24px 80px', borderTop: '1px solid var(--color-border)' }}>
+          <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '64px', marginBottom: '80px' }}>
+              {/* Address */}
+              <div>
+                <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
+                  LOCATION
+                </p>
+                <p style={{ lineHeight: '1.8', color: 'var(--color-muted)' }}>
+                  147 S Olive Street<br />
+                  Old Towne Orange, CA 92866
+                </p>
+              </div>
+
+              {/* Contact */}
+              <div>
+                <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
+                  INQUIRIES
+                </p>
+                <p style={{ lineHeight: '1.8' }}>
+                  <a 
+                    href="tel:7145322333" 
+                    style={{ color: 'var(--color-muted)', textDecoration: 'none', transition: 'color 0.3s ease' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-muted)'}
+                  >
+                    714.532.2333
+                  </a>
+                  <br />
+                  <a 
+                    href="mailto:events@grandgimeno.com" 
+                    style={{ color: 'var(--color-muted)', textDecoration: 'none', transition: 'color 0.3s ease' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-muted)'}
+                  >
+                    events@grandgimeno.com
+                  </a>
+                </p>
+              </div>
+
+              {/* Hours */}
+              <div>
+                <p className="mono" style={{ marginBottom: '24px', color: 'var(--color-primary)', fontSize: '0.875rem' }}>
+                  VENUE TOURS
+                </p>
+                <p style={{ lineHeight: '1.8', color: 'var(--color-muted)' }}>
+                  By appointment only
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom bar */}
+            <div style={{ textAlign: 'center', paddingTop: '64px', borderTop: '1px solid var(--color-border)' }}>
+              <p className="mono" style={{ fontSize: '0.75rem', color: 'var(--color-muted)', letterSpacing: '0.1em' }}>
+                © 2024 GRAND GIMENO. a Jay's Catering Hospitality Group Property
+              </p>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
