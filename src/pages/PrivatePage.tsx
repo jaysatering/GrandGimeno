@@ -126,6 +126,15 @@ export default function PrivatePage() {
           </div>
         </section>
 
+        {/* FULL-WIDTH IMAGE BREAK */}
+        <section style={{ width: '100%', margin: '0', padding: '0' }}>
+          <ImageWithFallback 
+            src={heroImageUrl}
+            alt="Grand Gimeno venue"
+            style={{ width: '100%', height: 'auto', display: 'block', minHeight: '100vh', objectFit: 'cover' }}
+          />
+        </section>
+
         {/* INCLUSIONS */}
         <section style={{ padding: '80px 24px 160px' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -187,15 +196,6 @@ export default function PrivatePage() {
               </div>
             </motion.div>
           </div>
-        </section>
-
-        {/* FULL-WIDTH IMAGE BREAK */}
-        <section style={{ width: '100%', margin: '0', padding: '0' }}>
-          <ImageWithFallback 
-            src={heroImageUrl}
-            alt="Grand Gimeno venue"
-            style={{ width: '100%', height: 'auto', display: 'block', minHeight: '100vh', objectFit: 'cover' }}
-          />
         </section>
 
         {/* CULINARY EXPERIENCE */}
