@@ -1067,15 +1067,13 @@ p {
   max-width: 900px;
 }
 
-@media (min-width: 1024px) {
-  .architecture-header {
-    margin-bottom: 80px;
-    padding: 0 80px;
-  }
-  
-  .architecture-header h2 {
-    margin-top: 24px;
-  }
+.architecture-header.center-aligned {
+  text-align: center;
+}
+
+.architecture-header.center-aligned h2 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .architecture-grid {
@@ -1345,14 +1343,14 @@ button:focus-visible {
 /* ===== PRICING VALUE ===== */
 .pricing-value {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-  font-size: 3rem; /* 48px mobile = text-5xl */
+  font-size: 2.5rem; /* 40px mobile */
 }
 
 @media (min-width: 1024px) {
   .pricing-value {
-    font-size: 4.5rem; /* 72px desktop = text-7xl */
+    font-size: 3.75rem; /* 60px desktop */
   }
 }
 
@@ -1360,20 +1358,20 @@ button:focus-visible {
 .pricing-row-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 48px;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .pricing-row-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    gap: 80px;
   }
 }
 
 @media (min-width: 1024px) {
   .pricing-row-container {
-    gap: 64px;
+    gap: 120px;
   }
 }
 
@@ -1466,6 +1464,30 @@ button:focus-visible {
   text-align: center;
 }
 
+/* Vendor name hover effect */
+.vendor-name {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.vendor-name:hover {
+  color: var(--color-primary);
+}
+
+/* Vendor Collective Grid */
+.vendor-collective-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px 48px;
+}
+
+@media (min-width: 1024px) {
+  .vendor-collective-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 64px 56px;
+  }
+}
+
 /* ===== PRIVATE PAGE CAPACITY GRID ===== */
 .private-capacity-grid {
   display: grid;
@@ -1506,5 +1528,39 @@ button:focus-visible {
   .private-footer-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 64px;
+  }
+}
+
+/* ===== INCLUSIONS SECTION ===== */
+.inclusions-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 1024px) {
+  .inclusions-container {
+    padding: 0 48px;
+  }
+}
+
+.inclusions-header-title {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+@media (min-width: 1024px) {
+  .inclusions-header-title {
+    font-size: 4.5rem;
+  }
+}
+
+.inclusions-content-text {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 1024px) {
+  .inclusions-content-text {
+    font-size: 1.125rem;
   }
 }

@@ -47,14 +47,86 @@ export default function PrivatePage() {
   ];
 
   const vendorCollective = [
-    "Adore You Events",
-    "Blush Botanicals",
-    "Cake & Art",
-    "DJ Marcus Lee",
-    "Elevate Productions",
-    "Floral Theory",
-    "Glow Event Rentals",
-    "Honeycomb Coordinating"
+    {
+      name: "Adore You Events",
+      description: "Full-service planning"
+    },
+    {
+      name: "Blush Botanicals",
+      description: "Seasonal florals"
+    },
+    {
+      name: "The Simplifiers",
+      description: "Day-of coordination"
+    },
+    {
+      name: "Honey & Lace Co.",
+      description: "Romantic design"
+    },
+    {
+      name: "Maven Made",
+      description: "Strategic planning"
+    },
+    {
+      name: "Luna & Wilde",
+      description: "Floral installations"
+    },
+    {
+      name: "Alexandra Rose Events",
+      description: "Detail-obsessed planning"
+    },
+    {
+      name: "Studio Bloom OC",
+      description: "Organic florals"
+    },
+    {
+      name: "Vow'd Weddings",
+      description: "Creative direction"
+    },
+    {
+      name: "Salt & Cedar Collective",
+      description: "Minimalist design"
+    },
+    {
+      name: "The Wildflowers",
+      description: "Garden-inspired florals"
+    },
+    {
+      name: "Gather & Gold",
+      description: "Experiential design"
+    },
+    {
+      name: "Whispered Whimsy",
+      description: "Romantic planning"
+    },
+    {
+      name: "Branch & Cole",
+      description: "Sculptural florals"
+    },
+    {
+      name: "Noir Events",
+      description: "Editorial planning"
+    },
+    {
+      name: "Wild Heart Events",
+      description: "Bohemian luxury"
+    },
+    {
+      name: "Kaleidoscope Weddings",
+      description: "Colorful design"
+    },
+    {
+      name: "Poppy & Vine Co.",
+      description: "Seasonal florals"
+    },
+    {
+      name: "Sterling Social",
+      description: "Modern planning"
+    },
+    {
+      name: "Celadon & Celery",
+      description: "Botanical design"
+    }
   ];
 
   const pricingRowStyle = {
@@ -100,7 +172,7 @@ export default function PrivatePage() {
         </button>
       </section>
 
-      <section style={{ padding: '64px 0', marginBottom: '64px' }}>
+      <section style={{ padding: '64px 0', marginBottom: '0' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,31 +186,20 @@ export default function PrivatePage() {
         >
           <div className="pricing-row-container">
             <div className="pricing-row-item">
-              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>FRIDAY</span>
-              <span className="pricing-value">$10,000</span>
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SEATED DINNER</span>
+              <span className="pricing-value">200</span>
             </div>
 
             <div className="pricing-row-item">
-              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SATURDAY</span>
-              <span className="pricing-value">$12,000</span>
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>COCKTAIL RECEPTION</span>
+              <span className="pricing-value">300</span>
             </div>
 
             <div className="pricing-row-item">
-              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SUNDAY</span>
-              <span className="pricing-value">$9,000</span>
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>GUEST MINIMUM</span>
+              <span className="pricing-value">100</span>
             </div>
           </div>
-
-          <p style={{ 
-            marginTop: '16px', 
-            textAlign: 'center',
-            maxWidth: '672px',
-            margin: '16px auto 0',
-            opacity: 0.6,
-            fontSize: '1rem'
-          }}>
-            Pricing includes venue access from 10am–midnight. Catering by Jay's Catering Collection is required and billed separately.
-          </p>
         </motion.div>
       </section>
 
@@ -160,89 +221,61 @@ export default function PrivatePage() {
         </motion.div>
       </section>
 
-      <section className="architecture-section">
-        <div className="container-content">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="architecture-header"
-          >
-            <p className="section-eyebrow">
-              <span className="mono">What's Included</span>
+      <section className="architecture-section" style={{ paddingTop: '240px' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="inclusions-container"
+          style={{ marginBottom: '64px' }}
+        >
+          <div style={{ marginBottom: '32px' }}>
+            <p style={{ marginBottom: '16px' }}>
+              <span className="mono" style={{ color: 'var(--color-primary)' }}>INCLUSIONS</span>
             </p>
-            <h2>Your rental includes</h2>
-          </motion.div>
-
-          <div className="architecture-grid">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="architecture-item"
-            >
-              <h3>Venue Access</h3>
-              <p>14 hours (10am-midnight) across six distinct spaces including the Olive Grove, Grand Central, Courtyard, Foyer, and two VIP suites.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="architecture-item"
-            >
-              <h3>Event Staff</h3>
-              <p>Professional venue coordinator, security personnel, and setup/breakdown crew to ensure seamless execution.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="architecture-item"
-            >
-              <h3>Tables & Seating</h3>
-              <p>Farm tables, ghost chairs, and lounge furniture throughout. Additional rentals available through our preferred partners.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.25 }}
-              className="architecture-item"
-            >
-              <h3>Lighting Design</h3>
-              <p>Market lights throughout the Olive Grove, architectural uplighting, and ambient string lights across all outdoor spaces.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="architecture-item"
-            >
-              <h3>Culinary Infrastructure</h3>
-              <p>Permanent outdoor kitchen with wood-fired pizza oven, Argentine asado grill, and full prep facilities for live cooking.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="architecture-item"
-            >
-              <h3>Parking & Logistics</h3>
-              <p>On-site parking for 100 vehicles. Valet coordination and overflow lot arrangements available for larger events.</p>
-            </motion.div>
+            <h2 className="inclusions-header-title">The design spec</h2>
           </div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="inclusions-container inclusions-content-text"
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <p style={{ opacity: 0.7 }}>14 hours of venue access (10am–midnight)</p>
+              <p style={{ opacity: 0.7 }}>Six distinct spaces including Grand Central Hall, Olive Grove, Courtyard, Foyer, and two VIP suites</p>
+              <p style={{ opacity: 0.7 }}>Farm tables, ghost chairs, and curated lounge furniture</p>
+              <p style={{ opacity: 0.7 }}>Market lights throughout the Olive Grove with architectural uplighting</p>
+              <p style={{ opacity: 0.7 }}>Permanent outdoor kitchen with wood-fired pizza oven and Argentine asado grill</p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '48px' }}>
+              <p style={{ opacity: 0.7 }}>Professional venue coordinator and event manager</p>
+              <p style={{ opacity: 0.7 }}>Security personnel and setup/breakdown crew</p>
+              <p style={{ opacity: 0.7 }}>On-site parking for 100 vehicles</p>
+              <p style={{ opacity: 0.7 }}>Valet coordination available</p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '48px' }}>
+              <p style={{ opacity: 0.7 }}>Climate-controlled interior spaces</p>
+              <p style={{ opacity: 0.7 }}>Professional sound system with wireless microphones</p>
+              <p style={{ opacity: 0.7 }}>Complimentary WiFi throughout the venue</p>
+              <p style={{ opacity: 0.7 }}>Full bridal suite and groom's lounge</p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid var(--color-border)', paddingTop: '48px' }}>
+              <p style={{ opacity: 0.7 }}>Preferred vendor collective with exclusive rates</p>
+              <p style={{ opacity: 0.7 }}>Complimentary tasting for two with Jay's Catering</p>
+              <p style={{ opacity: 0.7 }}>Access to our curated rental inventory</p>
+              <p style={{ opacity: 0.7 }}>Rehearsal dinner discount available</p>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       <section className="culinary-section">
@@ -284,49 +317,12 @@ export default function PrivatePage() {
                   Pricing ranges from $175-$225 per guest depending on menu selection, bar package, and service style. 100-guest minimum.
                 </p>
               </div>
+              <button className="cta-button" style={{ marginTop: '32px' }}>
+                <span className="mono">Bespoke Menu</span>
+              </button>
             </motion.div>
           </div>
         </div>
-      </section>
-
-      <section className="architecture-section">
-        <div className="container-content">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="architecture-header"
-          >
-            <p className="section-eyebrow">
-              <span className="mono">Capacity</span>
-            </p>
-            <h2>Event sizes</h2>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="stats-bar">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-          className="stats-container"
-        >
-          <div className="stat-item">
-            <p className="stat-main">200</p>
-            <p className="stat-sub">Seated dinner maximum</p>
-          </div>
-          <div className="stat-item">
-            <p className="stat-main">300</p>
-            <p className="stat-sub">Cocktail reception maximum</p>
-          </div>
-          <div className="stat-item">
-            <p className="stat-main">100</p>
-            <p className="stat-sub">Guest minimum</p>
-          </div>
-        </motion.div>
       </section>
 
       <section className="editorial-grid-section">
@@ -370,7 +366,7 @@ export default function PrivatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="architecture-header"
+            className="architecture-header center-aligned"
           >
             <p className="section-eyebrow">
               <span className="mono">Vendor Collective</span>
@@ -383,23 +379,28 @@ export default function PrivatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            style={{ padding: '0 48px' }}
+            style={{ padding: '0 48px', textAlign: 'center' }}
           >
-            <p style={{ marginBottom: '48px', maxWidth: '800px' }}>
-              We've curated relationships with Orange County's most exceptional wedding professionals—florists, photographers, planners, and entertainment who understand the architecture and spirit of Grand Gimeno.
+            <p style={{ marginBottom: '48px', maxWidth: '800px', margin: '0 auto 48px' }}>
+              Trusted professionals who know Grand Gimeno.
             </p>
 
-            <div className="private-vendor-grid">
+            <div className="vendor-collective-grid">
               {vendorCollective.map((vendor, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="private-vendor-card"
+                  transition={{ duration: 0.6, delay: index * 0.02 }}
                 >
-                  <p>{vendor}</p>
+                  <p 
+                    className="vendor-name"
+                    style={{ marginBottom: '8px' }}
+                  >
+                    {vendor.name}
+                  </p>
+                  <p style={{ opacity: 0.6, fontSize: '14px' }}>{vendor.description}</p>
                 </motion.div>
               ))}
             </div>
