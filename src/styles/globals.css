@@ -7,111 +7,114 @@
 
 @layer base {
   :root {
-    /* Grand Gimeno Color System */
-    --color-charcoal: #525557;
-    --color-ivory: #EEEDE1;
-    --color-blue: #669CC4;
+    /* ===== GRAND GIMENO DESIGN SYSTEM ===== */
     
-    /* Tailwind Color Utilities - Map to design system */
-    --color-background: #EEEDE1;
-    --color-foreground: #525557;
-    --color-primary: #669CC4;
-    --color-primary-foreground: #EEEDE1;
-    --color-muted: #f5f4ed;
-    --color-muted-foreground: #6a6b6d;
-    --color-border: rgba(82, 85, 87, 0.15);
-    --color-bone: #EEEDE1;
+    /* COLORS */
+    --color-primary: 102 156 196;        /* #669CC4 - Blue */
+    --color-charcoal: 82 85 87;          /* #525557 */
+    --color-ivory: 238 237 225;          /* #EEEDE1 */
+    --color-muted: 106 107 109;          /* #6a6b6d */
+    --color-border: 212 211 202;         /* #d4d3ca */
     
-    /* SVG Fill Colors */
-    --fill-0: #669CC4;
-    --fill-1: #525557;
-    --fill-2: #EEEDE1;
+    /* SPACING - Edit these to change site-wide spacing */
+    --space-section: 8rem;               /* 128px - Desktop section spacing */
+    --space-section-mobile: 5rem;        /* 80px - Mobile section spacing */
+    --space-xs: 0.25rem;                 /* 4px */
+    --space-sm: 0.5rem;                  /* 8px */
+    --space-md: 1rem;                    /* 16px */
+    --space-lg: 1.5rem;                  /* 24px */
+    --space-xl: 2rem;                    /* 32px */
+    --space-2xl: 3rem;                   /* 48px */
+    --space-3xl: 4rem;                   /* 64px */
+    --space-4xl: 6rem;                   /* 96px */
     
-    /* Typography */
-    --font-sans: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    /* TYPOGRAPHY */
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
     --font-mono: 'Space Mono', ui-monospace, monospace;
     
-    /* Spacing Scale - Design System */
-    --spacing-section: 128px;
-    --spacing-section-mobile: 80px;
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-2xl: 48px;
-    --spacing-3xl: 64px;
-    --spacing-4xl: 96px;
+    /* CONTAINERS - Edit these to change max-widths */
+    --container-text: 75rem;             /* 1200px */
+    --container-content: 87.5rem;        /* 1400px */
+    --container-wide: 100rem;            /* 1600px */
+    --container-full: 112.5rem;          /* 1800px */
     
-    /* Border Radius */
-    --radius-sm: 2px;
-    --radius-md: 4px;
-    --radius-lg: 8px;
+    /* BORDERS */
+    --radius-sm: 0.125rem;               /* 2px */
+    --radius-md: 0.25rem;                /* 4px */
+    --radius-lg: 0.5rem;                 /* 8px */
     
-    /* Container Max Widths */
-    --container-text: 1200px;
-    --container-content: 1400px;
-    --container-wide: 1600px;
-    --container-full: 1800px;
+    /* SVG FILLS */
+    --fill-primary: #669CC4;
+    --fill-charcoal: #525557;
+    --fill-ivory: #EEEDE1;
   }
   
   * {
-    @apply border-[rgba(82,85,87,0.15)];
+    border-color: rgb(var(--color-border) / 0.15);
   }
   
   body {
-    @apply bg-[#EEEDE1] text-[#525557];
-    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    background-color: rgb(var(--color-ivory));
+    color: rgb(var(--color-charcoal));
+    font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  
   h1 {
-    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1;
   }
   
   h2 {
-    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.01em;
     line-height: 1.1;
   }
   
   h3 {
-    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
     font-weight: 500;
     letter-spacing: -0.01em;
     line-height: 1.2;
   }
   
   p {
-    font-family: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 400;
     line-height: 1.6;
   }
   
+  /* MONO UTILITY - Space Mono for accents */
   .mono {
-    font-family: 'Space Mono', ui-monospace, monospace;
+    font-family: var(--font-mono);
     font-weight: 400;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     font-size: 9px;
   }
   
-  /* Screen Reader Only - Invisible to sighted users, visible to assistive tech */
+  /* Screen Reader Only */
   .sr-only {
-    @apply absolute w-px h-px p-0 -m-px overflow-hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
   }
   
-  /* Focus Visible - Subtle but compliant focus indicators */
+  /* Focus Styles */
   *:focus-visible {
-    @apply outline-2 outline-[#525557] outline-offset-2;
+    outline: 2px solid rgb(var(--color-charcoal));
+    outline-offset: 2px;
   }
 }
 
@@ -299,12 +302,12 @@
   
   /* Design System Spacing Utilities */
   .section-spacing {
-    margin-bottom: var(--spacing-section);
+    margin-bottom: var(--space-section);
   }
   
   @media (max-width: 1023px) {
     .section-spacing {
-      margin-bottom: var(--spacing-section-mobile);
+      margin-bottom: var(--space-section-mobile);
     }
   }
   
