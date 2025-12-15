@@ -313,9 +313,15 @@ export default function PrivatePage() {
                   Pricing ranges from $175-$225 per guest depending on menu selection, bar package, and service style. 100-guest minimum.
                 </p>
               </div>
-              <button className="cta-button" style={{ marginTop: '32px' }}>
+              <a 
+                href="http://www.jayscatering.com/food-and-drink/the-grand-gimeno-bespoke-menu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button" 
+                style={{ marginTop: '32px', display: 'inline-block', textDecoration: 'none' }}
+              >
                 <span className="mono">Bespoke Menu</span>
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>
