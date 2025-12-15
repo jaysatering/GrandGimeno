@@ -215,7 +215,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="architecture-header"
           >
             <p className="section-eyebrow">
@@ -229,7 +229,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
               className="architecture-item"
             >
               <h3>The Courtyard</h3>
@@ -240,7 +240,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.15 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.15 }}
               className="architecture-item"
             >
               <h3>The Foyer</h3>
@@ -251,7 +251,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
               className="architecture-item"
             >
               <h3>Grand Central</h3>
@@ -262,7 +262,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.25 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.25 }}
               className="architecture-item"
             >
               <h3>The Olive Grove</h3>
@@ -273,7 +273,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.3 }}
               className="architecture-item"
             >
               <h3>The Suites</h3>
@@ -284,7 +284,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.35 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.35 }}
               className="architecture-item"
             >
               <h3>The Sanctuary</h3>
@@ -315,7 +315,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
               className="culinary-text"
             >
               <p className="section-eyebrow">
@@ -338,7 +338,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="form-content"
           >
             <p className="section-eyebrow">
@@ -356,7 +356,7 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
         >
           <img 
             src={oliveCeremony}

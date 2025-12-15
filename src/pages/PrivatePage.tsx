@@ -145,8 +145,8 @@ export default function PrivatePage() {
 
       <section className="hero-section">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
           className="hero-content"
         >
@@ -177,7 +177,7 @@ export default function PrivatePage() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
           style={{ 
             maxWidth: '1000px', 
             margin: '0 auto',
@@ -224,8 +224,8 @@ export default function PrivatePage() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="architecture-header"
           >
             <p className="section-eyebrow">
@@ -237,8 +237,8 @@ export default function PrivatePage() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', maxWidth: '1100px', margin: '0 auto', padding: '0 48px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -295,7 +295,7 @@ export default function PrivatePage() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
               className="culinary-text"
             >
               <p className="section-eyebrow">
@@ -327,7 +327,7 @@ export default function PrivatePage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="architecture-header center-aligned"
           >
             <p className="section-eyebrow">
@@ -340,7 +340,7 @@ export default function PrivatePage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
             style={{ padding: '0 48px' }}
           >
             <div className="vendor-collective-grid">
@@ -367,7 +367,7 @@ export default function PrivatePage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
           className="editorial-full-height"
         >
           <img 
@@ -384,7 +384,7 @@ export default function PrivatePage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
             className="architecture-header"
           >
             <p className="section-eyebrow">
@@ -397,7 +397,7 @@ export default function PrivatePage() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
             style={{ padding: '0 48px', maxWidth: '1100px', margin: '0 auto' }}
           >
             {faqItems.map((item, index) => (
@@ -425,8 +425,8 @@ export default function PrivatePage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
           style={{
             maxWidth: '1400px',
             margin: '0 auto'
