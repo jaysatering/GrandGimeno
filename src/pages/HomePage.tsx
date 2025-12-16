@@ -361,7 +361,7 @@ export default function HomePage() {
         >
           <div className="tall-photo-item">
             <img 
-              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846540/231022wed-0449_fxb51g.jpg"
+              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846540/8W6A9496_vndbyv.jpg"
               alt="Grand Gimeno event detail"
               className="tall-photo-img"
             />
