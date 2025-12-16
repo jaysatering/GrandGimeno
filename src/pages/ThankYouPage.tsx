@@ -8,6 +8,18 @@ export default function ThankYouPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Fire conversion events
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
+    }
+    
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        event_category: 'Form',
+        event_label: 'Grand Gimeno Inquiry Submitted'
+      });
+    }
   }, []);
 
   const handleAccessPrivate = () => {

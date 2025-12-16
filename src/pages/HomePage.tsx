@@ -87,10 +87,7 @@ export default function HomePage() {
           region: "na2",
           portalId: "48463492",
           formId: "83c1be77-a158-4a0a-9938-e04f79ced417",
-          target: '#hubspot-form-container',
-          onFormSubmitted: () => {
-            window.location.href = '/thank-you';
-          }
+          target: '#hubspot-form-container'
         });
       }
     };

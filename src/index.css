@@ -360,6 +360,38 @@
   }
 }
 
+@font-face {
+  font-family: Masqualero;
+  src: url("/fonts/Masqualero-Regular.woff2") format("woff2"), url("/fonts/Masqualero-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Masqualero;
+  src: url("/fonts/Masqualero-Medium.woff2") format("woff2"), url("/fonts/Masqualero-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Masqualero;
+  src: url("/fonts/Masqualero-SemiBold.woff2") format("woff2"), url("/fonts/Masqualero-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Masqualero;
+  src: url("/fonts/Masqualero-Bold.woff2") format("woff2"), url("/fonts/Masqualero-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary: #669cc4;
   --color-charcoal: #525557;
@@ -376,7 +408,7 @@
   --space-2xl: 3rem;
   --space-3xl: 4rem;
   --space-4xl: 6rem;
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-display: "Masqualero", "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-mono: "Space Mono", ui-monospace, monospace;
   --container-text: 75rem;
   --container-content: 87.5rem;
