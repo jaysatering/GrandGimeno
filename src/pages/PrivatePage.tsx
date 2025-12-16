@@ -260,7 +260,7 @@ export default function PrivatePage() {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
-                <p style={{ opacity: 0.7 }}>Preferred vendor collective with exclusive rates</p>
+                <p style={{ opacity: 0.7 }}>Preferred The List with exclusive rates</p>
                 <p style={{ opacity: 0.7 }}>Complimentary tasting for two with Jay's Catering</p>
                 <p style={{ opacity: 0.7 }}>Access to our curated rental inventory</p>
                 <p style={{ opacity: 0.7 }}>Rehearsal dinner discount available</p>
@@ -335,7 +335,7 @@ export default function PrivatePage() {
             <p className="section-eyebrow">
               <span className="mono">Trusted professionals who know Grand Gimeno.</span>
             </p>
-            <h2>Vendor Collective</h2>
+            <h2>The List</h2>
           </motion.div>
 
           <motion.div
