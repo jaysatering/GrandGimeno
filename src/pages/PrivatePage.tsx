@@ -157,10 +157,6 @@ export default function PrivatePage() {
             <span className="hero-title-line">The Landmark</span>
             <span className="hero-title-line">Is Yours.</span>
           </h1>
-          <p className="hero-subtitle">
-            We do not split the venue.<br />
-            You secure the entire building and grounds.
-          </p>
         </motion.div>
 
         <button 

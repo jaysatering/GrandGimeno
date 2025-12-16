@@ -1588,6 +1588,36 @@ p {
   }
 }
 
+.three-tall-photos-grid {
+  max-width: var(--container-content);
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+}
+
+@media (width >= 768px) {
+  .three-tall-photos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 0 48px;
+  }
+}
+
+.tall-photo-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tall-photo-img {
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .editorial-grid-section {
   width: 100%;
   padding: 0;

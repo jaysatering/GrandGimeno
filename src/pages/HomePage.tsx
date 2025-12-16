@@ -351,6 +351,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section style={{ padding: 'var(--space-section-mobile) 0' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+          className="three-tall-photos-grid"
+        >
+          <div className="tall-photo-item">
+            <img 
+              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846540/231022wed-0449_fxb51g.jpg"
+              alt="Grand Gimeno event detail"
+              className="tall-photo-img"
+            />
+          </div>
+          <div className="tall-photo-item">
+            <img 
+              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846212/Jennifer_Michael_Wedding_Day_1011_smkp1z.jpg"
+              alt="Grand Gimeno interior"
+              className="tall-photo-img"
+            />
+          </div>
+          <div className="tall-photo-item">
+            <img 
+              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846541/Gimeno_Selects_35_emhokx.jpg"
+              alt="Architectural detail"
+              className="tall-photo-img"
+            />
+          </div>
+        </motion.div>
+      </section>
+
       <section className="final-image-section">
         <motion.div
           initial={{ opacity: 0 }}

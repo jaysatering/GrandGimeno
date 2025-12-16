@@ -1283,6 +1283,37 @@ p {
   }
 }
 
+/* ===== THREE TALL PHOTOS GRID ===== */
+.three-tall-photos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 0 24px;
+  max-width: var(--container-content);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .three-tall-photos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 0 48px;
+  }
+}
+
+.tall-photo-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tall-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+}
+
 /* ===== EDITORIAL GRID SECTION ===== */
 .editorial-grid-section {
   padding: 0;
