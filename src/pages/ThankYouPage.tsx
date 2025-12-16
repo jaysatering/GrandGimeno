@@ -32,6 +32,10 @@ export default function ThankYouPage() {
           <p className="thank-you-subtitle">
             We'll be in touch shortly.
           </p>
+
+          <p className="thank-you-subtitle" style={{ marginTop: '32px' }}>
+            In the meantime, view our pricing guide.
+          </p>
           
           <button 
             onClick={handleAccessPrivate}
