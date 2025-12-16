@@ -1,7 +1,7 @@
 
-  # GG - Landing Page
+  # Grand Gimeno
 
-  This is a code bundle for GG - Landing Page. The original project is available at https://www.figma.com/design/Yb8VzcPU5Yv2FLTyIHrCHy/GG---Landing-Page.
+  This is a code bundle for Grand Gimeno. The original project is available at https://www.figma.com/design/Yb8VzcPU5Yv2FLTyIHrCHy/Grand-Gimeno.
 
   ## Running the code
 
