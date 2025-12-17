@@ -2,7 +2,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ThankYouPage from './pages/ThankYouPage';
 import PrivatePage from './pages/PrivatePage';
-import DevNav from './components/DevNav';
+// import DevNav from './components/DevNav';
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
         <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/private" element={<PrivatePage />} />
       </Routes>
-      <DevNav />
+      {/* <DevNav /> */}
     </HashRouter>
   );
 }
