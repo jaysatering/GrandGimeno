@@ -440,8 +440,8 @@ export default function PrivatePage() {
                 <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '16px' }}>LOCATION</p>
                 <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-charcoal)' }}>
                   Grand Gimeno<br />
-                  128 West Chapman Avenue<br />
-                  Old Towne Orange, California 92866
+                  146 N Grand St<br />
+                  Orange, CA 92866
                 </p>
               </div>
 
@@ -449,7 +449,7 @@ export default function PrivatePage() {
                 <p className="mono" style={{ color: 'var(--color-primary)', marginBottom: '16px' }}>CONTACT</p>
                 <p style={{ fontSize: '1rem', lineHeight: '1.8', color: 'var(--color-charcoal)' }}>
                   <a 
-                    href="tel:+17145551234"
+                    href="tel:+17146366045"
                     style={{ 
                       color: 'var(--color-charcoal)', 
                       textDecoration: 'none',
@@ -458,11 +458,11 @@ export default function PrivatePage() {
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-charcoal)'}
                   >
-                    (714) 555-1234
+                    (714) 636-6045
                   </a>
                   <br />
                   <a 
-                    href="mailto:events@grandgimeno.com"
+                    href="mailto:info@grandgimeno.com"
                     style={{ 
                       color: 'var(--color-charcoal)', 
                       textDecoration: 'none',
@@ -471,7 +471,7 @@ export default function PrivatePage() {
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
                     onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-charcoal)'}
                   >
-                    events@grandgimeno.com
+                    info@grandgimeno.com
                   </a>
                 </p>
               </div>
