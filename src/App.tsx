@@ -59,13 +59,13 @@ export default function App() {
       window._hsq = [];
     }
     
-    // Load HubSpot tracking script
+    // Load HubSpot tracking script with correct Portal ID
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
     script.defer = true;
     script.id = 'hs-script-loader';
-    script.src = 'https://js.hs-scripts.com/10024036967634037.js';
+    script.src = '//js-na2.hs-scripts.com/48463492.js';
     document.head.appendChild(script);
     
     window._hubspotPixelInitialized = true;
