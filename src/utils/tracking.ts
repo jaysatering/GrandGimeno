@@ -95,8 +95,8 @@ function waitForFormAndFill(): void {
     const utmSourceField = document.querySelector('input[name="utm_source"]') as HTMLInputElement;
     const utmMediumField = document.querySelector('input[name="utm_medium"]') as HTMLInputElement;
     const utmCampaignField = document.querySelector('input[name="utm_campaign"]') as HTMLInputElement;
-    const utmContentField = document.querySelector('input[name="custom_utm_content"]') as HTMLInputElement;
-    const utmTermField = document.querySelector('input[name="custom_utm_term"]') as HTMLInputElement;
+    const utmContentField = document.querySelector('input[name="utm_content"]') as HTMLInputElement;
+    const utmTermField = document.querySelector('input[name="utm_term"]') as HTMLInputElement;
 
     // Attribution fields
     const landingPageField = document.querySelector('input[name="landing_page_url"]') as HTMLInputElement;
