@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import GgLogo from '../components/GgLogo';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { AccordionSingle } from '../components/Accordion';
 
 export default function PrivatePage() {
   useEffect(() => {
@@ -14,118 +13,116 @@ export default function PrivatePage() {
     window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
   };
 
-  const heroImageUrl = "https://images.unsplash.com/photo-1738800076744-c37b80b37d31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwbWluaW1hbHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
-  const courtyardImageUrl = "https://images.unsplash.com/photo-1721860982031-e1a031beb5f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwY291cnR5YXJkJTIwZm91bnRhaW58ZW58MXx8fHwxNzY1NzU3NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080";
-  const archImageUrl = "https://images.unsplash.com/photo-1762375164298-2f8f14bd8d36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmFsJTIwZGV0YWlsJTIwYXJjaHxlbnwxfHx8fDE3NjU3ODMyNDV8MA&ixlib=rb-4.1.0&q=80&w=1080";
   const culinaryImageUrl = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765839039/_AJB3571_ijrgo1.jpg";
-
-  const faqItems = [
-    {
-      question: "Can we bring our own caterer?",
-      answer: "Grand Gimeno was built by Jay's Catering Collection. All culinary services are provided exclusively by our in-house team to maintain the highest standards of quality and execution."
-    },
-    {
-      question: "What is your cancellation policy?",
-      answer: "We require a non-refundable deposit to secure your date. Our full cancellation policy will be provided during your consultation and outlined in your contract."
-    },
-    {
-      question: "Do you allow outside vendors?",
-      answer: "Yes. You are welcome to work with your preferred florist, photographer, DJ, and other vendors. We'll provide a list of preferred partners who are familiar with the venue."
-    },
-    {
-      question: "Is there parking available?",
-      answer: "Yes. Grand Gimeno offers on-site parking for up to 100 vehicles. We also coordinate with nearby lots for larger events and can arrange valet service."
-    },
-    {
-      question: "Can we see the venue before booking?",
-      answer: "Absolutely. We offer private tours by appointment. Please submit an inquiry and our venue concierge will schedule a personalized walkthrough."
-    },
-    {
-      question: "What time can we access the venue?",
-      answer: "Your rental includes 14 hours of access from 10am to midnight. Early access and extended hours can be arranged for an additional fee."
-    }
-  ];
 
   const vendorCollective = [
     {
-      name: "Adore You Events",
-      description: "Full-service planning"
+      name: "A Touch of Lavender",
+      url: "https://atouchoflavender.net"
     },
     {
-      name: "Blush Botanicals",
-      description: "Seasonal florals"
+      name: "All, Love",
+      url: "https://allevents.com"
     },
     {
-      name: "The Simplifiers",
-      description: "Day-of coordination"
+      name: "All in the Detail Design",
+      url: null
     },
     {
-      name: "Honey & Lace Co.",
-      description: "Romantic design"
+      name: "Beloved Events",
+      url: "https://threeowlsevents.com"
     },
     {
-      name: "Maven Made",
-      description: "Strategic planning"
+      name: "Blissful Moments",
+      url: null
     },
     {
-      name: "Luna & Wilde",
-      description: "Floral installations"
+      name: "Blush Events",
+      url: null
     },
     {
-      name: "Alexandra Rose Events",
-      description: "Detail-obsessed planning"
+      name: "Bring the Bubbly Events",
+      url: "https://bringthebubblyevents.info"
     },
     {
-      name: "Studio Bloom OC",
-      description: "Organic florals"
+      name: "Campfire Events",
+      url: "https://campfireevents.com"
     },
     {
-      name: "Vow'd Weddings",
-      description: "Creative direction"
+      name: "De La Planning",
+      url: "https://delaplanning.com"
     },
     {
-      name: "Salt & Cedar Collective",
-      description: "Minimalist design"
+      name: "Details Darling",
+      url: "https://detailsdarling.com"
     },
     {
-      name: "The Wildflowers",
-      description: "Garden-inspired florals"
+      name: "Deceptionally Yours Weddings & Events",
+      url: "https://exceptionallyyours.com"
     },
     {
-      name: "Gather & Gold",
-      description: "Experiential design"
+      name: "Ferdic Designs",
+      url: "https://ferdicdesigns.com"
     },
     {
-      name: "Whispered Whimsy",
-      description: "Romantic planning"
+      name: "Golden Flour Events",
+      url: null
     },
     {
-      name: "Branch & Cole",
-      description: "Sculptural florals"
+      name: "Haus + Company",
+      url: "https://haus333.com"
     },
     {
-      name: "Noir Events",
-      description: "Editorial planning"
+      name: "Intertainment",
+      url: "https://intertainedweddings.com"
     },
     {
-      name: "Wild Heart Events",
-      description: "Bohemian luxury"
+      name: "Joyfully Us",
+      url: "https://joyfullyus.com"
     },
     {
-      name: "Kaleidoscope Weddings",
-      description: "Colorful design"
+      name: "Mea Amore",
+      url: "https://meamoore.com"
     },
     {
-      name: "Poppy & Vine Co.",
-      description: "Seasonal florals"
+      name: "Modest Magnolia",
+      url: "https://modestmagnolia.com"
     },
     {
-      name: "Sterling Social",
-      description: "Modern planning"
+      name: "Now & Forever Love",
+      url: "https://nowandforeverlove.com"
     },
     {
-      name: "Celadon & Celery",
-      description: "Botanical design"
+      name: "Palm & Pine Events",
+      url: "https://palmandpineevents.com"
+    },
+    {
+      name: "Peonies & Bliss Events",
+      url: "https://peoniesanblissevents.com"
+    },
+    {
+      name: "Prep the Champagne",
+      url: null
+    },
+    {
+      name: "Pure Lavish",
+      url: "https://eventsbypureluxish.com"
+    },
+    {
+      name: "Sage Event Planning",
+      url: "https://sageeventplanning.com"
+    },
+    {
+      name: "The Fee Collective",
+      url: "https://thefeecollective.com"
+    },
+    {
+      name: "The Lovebirds",
+      url: "https://umakelevents.com"
+    },
+    {
+      name: "White Blossom Events",
+      url: "https://whiteblossomevents.com"
     }
   ];
 
@@ -180,7 +177,28 @@ export default function PrivatePage() {
             padding: '0 24px'
           }}
         >
-          <div className="pricing-row-container">
+          <div className="pricing-row-container" style={{ 
+            gridTemplateColumns: '1fr',
+            gap: '48px'
+          } as React.CSSProperties & { 
+            '@media (min-width: 768px)': { gridTemplateColumns: string };
+            '@media (min-width: 1024px)': { gridTemplateColumns: string; gap: string };
+          }}>
+            <style>{`
+              @media (min-width: 768px) {
+                .pricing-row-container {
+                  grid-template-columns: repeat(2, 1fr) !important;
+                  gap: 48px !important;
+                }
+              }
+              @media (min-width: 1024px) {
+                .pricing-row-container {
+                  grid-template-columns: repeat(4, 1fr) !important;
+                  gap: 64px !important;
+                }
+              }
+            `}</style>
+
             <div className="pricing-row-item">
               <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>FRIDAY</span>
               <span className="pricing-value">$8,000</span>
@@ -188,7 +206,14 @@ export default function PrivatePage() {
 
             <div className="pricing-row-item">
               <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SATURDAY</span>
+              <span className="pricing-value">$10,000</span>
+              <span className="mono" style={{ color: 'var(--color-muted)', marginTop: '8px', display: 'block', fontSize: '9px' }}>JAN - AUG</span>
+            </div>
+
+            <div className="pricing-row-item">
+              <span className="mono" style={{ color: 'var(--color-primary)', marginBottom: '8px', display: 'block' }}>SATURDAY</span>
               <span className="pricing-value">$11,000</span>
+              <span className="mono" style={{ color: 'var(--color-muted)', marginTop: '8px', display: 'block', fontSize: '9px' }}>SEP - DEC</span>
             </div>
 
             <div className="pricing-row-item">
@@ -227,7 +252,7 @@ export default function PrivatePage() {
             <p className="section-eyebrow">
               <span className="mono">INCLUSIONS</span>
             </p>
-            <h2>The design spec</h2>
+            <h2>The Logistics</h2>
           </motion.div>
 
           <motion.div
@@ -238,32 +263,28 @@ export default function PrivatePage() {
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', maxWidth: '1100px', margin: '0 auto', padding: '0 48px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <p style={{ opacity: 0.7 }}>14 hours of venue access (10am–midnight)</p>
-                <p style={{ opacity: 0.7 }}>Six distinct spaces including Grand Central Hall, Olive Grove, Courtyard, Foyer, and two VIP suites</p>
-                <p style={{ opacity: 0.7 }}>Farm tables, ghost chairs, and curated lounge furniture</p>
-                <p style={{ opacity: 0.7 }}>Market lights throughout the Olive Grove with architectural uplighting</p>
-                <p style={{ opacity: 0.7 }}>Permanent outdoor kitchen with wood-fired pizza oven and Argentine asado grill</p>
+                <p style={{ opacity: 0.7 }}>Five and a half hours for your event. Four hours to set the scene. One hour to close the chapter.</p>
+                <p style={{ opacity: 0.7 }}>Six distinct spaces: Grand Central Hall. Olive Grove. Courtyard. Foyer. Two VIP suites—private, quiet, yours.</p>
+                <p style={{ opacity: 0.7 }}>Dining tables - king or round. 250 wishbone chairs. More tables used as you need.</p>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
-                <p style={{ opacity: 0.7 }}>Professional venue coordinator and event manager</p>
-                <p style={{ opacity: 0.7 }}>Security personnel and setup/breakdown crew</p>
-                <p style={{ opacity: 0.7 }}>On-site parking for 100 vehicles</p>
-                <p style={{ opacity: 0.7 }}>Valet coordination available</p>
+                <p style={{ opacity: 0.7 }}>Market lights strung through the Olive Grove. Architectural uplighting that whispers elegance.</p>
+                <p style={{ opacity: 0.7 }}>An outdoor kitchen alive with fire: wood-fired pizza oven, Argentine asado grill.</p>
+                <p style={{ opacity: 0.7 }}>Two fireplaces inside. One fireplace outside. And a firepit under the stars.</p>
+                <p style={{ opacity: 0.7 }}>Handmade zellige and terracotta underfoot—every tile, a quiet detail.</p>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
-                <p style={{ opacity: 0.7 }}>Climate-controlled interior spaces</p>
-                <p style={{ opacity: 0.7 }}>Professional sound system with wireless microphones</p>
-                <p style={{ opacity: 0.7 }}>Complimentary WiFi throughout the venue</p>
-                <p style={{ opacity: 0.7 }}>Full bridal suite and groom's lounge</p>
+                <p style={{ opacity: 0.7 }}>An experienced team: venue representative, catering manager, security, and setup crew.</p>
+                <p style={{ opacity: 0.7 }}>The List—our trusted vendor partners, with exclusive offerings for your day.</p>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '40px' }}>
-                <p style={{ opacity: 0.7 }}>Preferred The List with exclusive rates</p>
-                <p style={{ opacity: 0.7 }}>Complimentary tasting for two with Jay's Catering</p>
-                <p style={{ opacity: 0.7 }}>Access to our curated rental inventory</p>
-                <p style={{ opacity: 0.7 }}>Rehearsal dinner discount available</p>
+                <p style={{ opacity: 0.7 }}>Two luxury suites, apartment-style. Optional early access at 8am.</p>
+                <p style={{ opacity: 0.7 }}>On-site parking.</p>
+                <p style={{ opacity: 0.7 }}>Rehearsal dinner discounts across The Collection.</p>
+                <p style={{ opacity: 0.7 }}>And two seats at A Taste of Jay's—on us.</p>
               </div>
             </div>
           </motion.div>
@@ -295,20 +316,20 @@ export default function PrivatePage() {
               className="culinary-text"
             >
               <p className="section-eyebrow">
-                <span className="mono">Culinary Experience</span>
+                <span className="mono">JAY'S CATERING</span>
               </p>
-              <h2>Jay's Catering Collection</h2>
-              <div className="culinary-paragraphs">
-                <p>
-                  Every event at Grand Gimeno is catered by Jay's Catering Collection—the culinary team that designed and built this venue from the ground up.
-                </p>
-                <p>
-                  The menu is designed around live-fire cooking: wood-fired pizza, Argentine asado, seasonal family-style platters, and curated bar service. This isn't a venue with catering—it's a culinary experience with architecture.
-                </p>
-                <p>
-                  Pricing ranges from $175-$225 per guest depending on menu selection, bar package, and service style. 100-guest minimum.
+              <h2>The Experience</h2>
+              <p style={{ opacity: 0.7 }}>
+                Every event at Grand Gimeno begins with Jay's Catering. The culinary team who imagined this space—and built it around food. The menu lives in fire: wood-fired pizza, Argentine asado, handmade hors d'oeuvres. Abundant buffets or curated plates. Indulgent desserts. A bar, perfectly crafted. This is not a venue with catering—it's a culinary experience with architecture.
+              </p>
+              
+              <div style={{ marginTop: '48px' }}>
+                <h3 style={{ marginBottom: '16px' }}>Pricing</h3>
+                <p style={{ opacity: 0.7 }}>
+                  Dependent on guest count, event length, menu, and service style. 75-guest minimum. Let us create your custom proposal.
                 </p>
               </div>
+
               <a 
                 href="http://www.jayscatering.com/food-and-drink/the-grand-gimeno-bespoke-menu"
                 target="_blank"
@@ -354,9 +375,23 @@ export default function PrivatePage() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: index * 0.02 }}
                 >
-                  <p className="vendor-name">
-                    {vendor.name}
-                  </p>
+                  {vendor.url ? (
+                    <a 
+                      href={vendor.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="vendor-name"
+                      style={{ textDecoration: 'none', color: 'var(--color-charcoal)', transition: 'color 0.2s ease' }}
+                      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-charcoal)'}
+                    >
+                      {vendor.name}
+                    </a>
+                  ) : (
+                    <p className="vendor-name">
+                      {vendor.name}
+                    </p>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -378,46 +413,6 @@ export default function PrivatePage() {
             className="editorial-full-height-img"
           />
         </motion.div>
-      </section>
-
-      <section className="architecture-section" style={{ paddingBottom: 'var(--space-section)' }}>
-        <div className="container-content">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-            className="architecture-header"
-          >
-            <p className="section-eyebrow">
-              <span className="mono">Questions</span>
-            </p>
-            <h2>Frequently asked</h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
-            style={{ padding: '0 48px', maxWidth: '1100px', margin: '0 auto' }}
-          >
-            {faqItems.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-              >
-                <AccordionSingle
-                  question={item.question}
-                  answer={item.answer}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
       </section>
 
       <footer style={{ 
