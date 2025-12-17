@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import ThankYouPage from './pages/ThankYouPage';
 import PrivatePage from './pages/PrivatePage';
-// import DevNav from './components/DevNav';
+import DevNav from './components/DevNav';
 
 // Global flag to prevent duplicate pixel initialization across all instances
 if (!window._metaPixelInitialized) {
@@ -60,17 +60,13 @@ export default function App() {
     }
     
     // Load HubSpot tracking script
-    (function(d,s,i,r) {
-      if(d.getElementById(i)) return;
-      const n = d.createElement(s);
-      const e = d.getElementsByTagName(s)[0];
-      n.type = 'text/javascript';
-      n.async = true;
-      n.defer = true;
-      n.id = i;
-      n.src = r;
-      e.parentNode.insertBefore(n,e);
-    })(document, 'script', 'hs-script-loader', 'https://js.hs-scripts.com/10024036967634037.js');
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.defer = true;
+    script.id = 'hs-script-loader';
+    script.src = 'https://js.hs-scripts.com/10024036967634037.js';
+    document.head.appendChild(script);
     
     window._hubspotPixelInitialized = true;
     console.log('HubSpot Pixel initialized');
@@ -83,7 +79,7 @@ export default function App() {
         <Route path="/thank-you" element={<ThankYouPage />} />
         <Route path="/private" element={<PrivatePage />} />
       </Routes>
-      {/* <DevNav /> */}
+      <DevNav />
     </HashRouter>
   );
 }

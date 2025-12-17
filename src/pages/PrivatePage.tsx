@@ -18,111 +18,111 @@ export default function PrivatePage() {
   const vendorCollective = [
     {
       name: "A Touch of Lavender",
-      url: "https://atouchoflavender.net"
+      url: "https://atouchoflavender.net/"
     },
     {
-      name: "All, Love",
-      url: "https://allevents.com"
+      name: "Ah, Love",
+      url: "https://www.ahloveevents.com/"
     },
     {
       name: "All in the Detail Design",
-      url: null
+      url: "https://www.aitdd.com/"
     },
     {
       name: "Beloved Events",
-      url: "https://threeowlsevents.com"
+      url: "https://www.belovedeventsco.com/"
     },
     {
       name: "Blissful Moments",
-      url: null
+      url: "https://www.blissfulmomentslp.com/"
     },
     {
       name: "Blush Events",
-      url: null
+      url: "https://blush-events.com/"
     },
     {
       name: "Bring the Bubbly Events",
-      url: "https://bringthebubblyevents.info"
+      url: "https://www.bringthebubblyevents.com/"
     },
     {
       name: "Campfire Events",
-      url: "https://campfireevents.com"
+      url: "https://www.campfire-events.com/"
     },
     {
       name: "De La Planning",
-      url: "https://delaplanning.com"
+      url: "https://delaplanning.com/"
     },
     {
       name: "Details Darling",
-      url: "https://detailsdarling.com"
+      url: "https://detailsdarling.com/"
     },
     {
-      name: "Deceptionally Yours Weddings & Events",
-      url: "https://exceptionallyyours.com"
+      name: "Exceptionally Yours Weddings & Events",
+      url: "https://exceptionallyyours.com/"
     },
     {
-      name: "Ferdic Designs",
-      url: "https://ferdicdesigns.com"
+      name: "Fetelle Designs",
+      url: "https://fetelle.com/"
     },
     {
-      name: "Golden Flour Events",
-      url: null
+      name: "Golden Hour Events",
+      url: "https://www.goldenhour-events.com/"
     },
     {
       name: "Haus + Company",
-      url: "https://haus333.com"
+      url: "https://haus353.com/"
     },
     {
-      name: "Intertainment",
-      url: "https://intertainedweddings.com"
+      name: "Intertwined",
+      url: "https://intertwinedevents.com/"
     },
     {
-      name: "Joyfully Us",
-      url: "https://joyfullyus.com"
+      name: "Joyfully Co",
+      url: "https://www.joyfullyco.com/"
     },
     {
-      name: "Mea Amore",
-      url: "https://meamoore.com"
+      name: "Mele Amore",
+      url: "https://www.meleamore.com/"
     },
     {
       name: "Modest Magnolia",
-      url: "https://modestmagnolia.com"
+      url: "https://modestmagnolia.com/"
     },
     {
       name: "Now & Forever Love",
-      url: "https://nowandforeverlove.com"
+      url: "http://www.nowandforeverlove.com/"
     },
     {
       name: "Palm & Pine Events",
-      url: "https://palmandpineevents.com"
+      url: "https://www.palmandpineevents.com/"
     },
     {
       name: "Peonies & Bliss Events",
-      url: "https://peoniesanblissevents.com"
+      url: "https://www.peoniesandblissevents.com/"
     },
     {
-      name: "Prep the Champagne",
-      url: null
+      name: "Pop the Champagne",
+      url: "https://popthechampagneevents.com/"
     },
     {
       name: "Pure Lavish",
-      url: "https://eventsbypureluxish.com"
+      url: "https://eventsbypurelavish.com/"
     },
     {
       name: "Sage Event Planning",
-      url: "https://sageeventplanning.com"
+      url: "https://www.sageeventplanning.com/"
     },
     {
-      name: "The Fee Collective",
-      url: "https://thefeecollective.com"
+      name: "The Fete Collective",
+      url: "https://www.thefetecollective.com/"
     },
     {
-      name: "The Lovebirds",
-      url: "https://umakelevents.com"
+      name: "Unoaked. Event design & production",
+      url: "https://unoakedevents.com/"
     },
     {
       name: "White Blossom Events",
-      url: "https://whiteblossomevents.com"
+      url: "https://www.whiteblossomevents.com/"
     }
   ];
 
@@ -320,7 +320,10 @@ export default function PrivatePage() {
               </p>
               <h2>The Experience</h2>
               <p style={{ opacity: 0.7 }}>
-                Every event at Grand Gimeno begins with Jay's Catering. The culinary team who imagined this space—and built it around food. The menu lives in fire: wood-fired pizza, Argentine asado, handmade hors d'oeuvres. Abundant buffets or curated plates. Indulgent desserts. A bar, perfectly crafted. This is not a venue with catering—it's a culinary experience with architecture.
+                Every event at Grand Gimeno begins with Jay's Catering. The culinary team who imagined this space—and built it around food.
+              </p>
+              <p style={{ opacity: 0.7, marginTop: '24px' }}>
+                The menu lives in fire: wood-fired pizza, Argentine asado, handmade hors d'oeuvres. Abundant buffets or curated plates. Indulgent desserts. A bar, perfectly crafted. This is not a venue with catering—it's a culinary experience with architecture.
               </p>
               
               <div style={{ marginTop: '48px' }}>
