@@ -122,7 +122,7 @@ export default function PrivatePage() {
     },
     {
       name: "White Blossom Events",
-      url: "https://www.whiteblossomevents.com/"
+      url: "https://www.instagram.com/whiteblossomevents/"
     }
   ];
 
