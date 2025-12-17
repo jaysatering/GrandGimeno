@@ -9,6 +9,7 @@
 - ✅ Meta Pixel (Client-Side) with CAPI readiness
 - ✅ Google Analytics 4 with cross-domain linking
 - ✅ HubSpot Forms with hidden tracking fields
+- ✅ HubSpot Tracking Pixel for page analytics
 - ✅ UTM parameter capture and storage
 - ✅ GCLID (Google Ads) tracking
 - ✅ FBCLID (Meta Ads) tracking
@@ -121,7 +122,68 @@ export default function App() {
 
 ---
 
-### **2. GOOGLE ANALYTICS 4 (index.html)**
+### **2. HUBSPOT TRACKING PIXEL (App.tsx)**
+
+**Location:** `/App.tsx`  
+**Method:** React useEffect with global window flag for duplicate prevention
+
+```typescript
+import { useEffect } from 'react';
+
+// Global flag to prevent duplicate pixel initialization across all instances
+if (!window._hubspotPixelInitialized) {
+  window._hubspotPixelInitialized = false;
+}
+
+export default function App() {
+  useEffect(() => {
+    // Initialize HubSpot tracking pixel only once globally
+    if (window._hubspotPixelInitialized) {
+      console.log('HubSpot Pixel already initialized, skipping');
+      return;
+    }
+
+    if (!window._hsq) {
+      window._hsq = window._hsq || [];
+    }
+
+    // Load HubSpot tracking code
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'hs-script-loader';
+    script.async = true;
+    script.defer = true;
+    script.src = '//js.hs-scripts.com/10024036967634037.js'; // 👈 YOUR HUBSPOT ID
+    
+    script.onload = () => {
+      window._hubspotPixelInitialized = true;
+      console.log('HubSpot Pixel initialized');
+    };
+
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    // Your routes...
+  );
+}
+```
+
+**What It Does:**
+- ✅ Tracks all page views in HubSpot Analytics
+- ✅ Identifies returning visitors
+- ✅ Links form submissions to visitor sessions
+- ✅ Provides traffic source attribution in HubSpot
+- ✅ Enables HubSpot's contact tracking & identification
+
+**⚠️ CRITICAL:**
+- HubSpot Pixel loaded in **App.tsx ONLY**
+- Uses **global window flag** `window._hubspotPixelInitialized` to prevent re-initialization
+- Separate from HubSpot Forms embed (they work together)
+
+---
+
+### **3. GOOGLE ANALYTICS 4 (index.html)**
 
 **Location:** `/index.html` in `<head>`
 
@@ -147,7 +209,7 @@ export default function App() {
 
 ---
 
-### **3. HUBSPOT FORM (HomePage.tsx)**
+### **4. HUBSPOT FORM (HomePage.tsx)**
 
 **Location:** `/pages/HomePage.tsx`
 
@@ -203,7 +265,7 @@ useEffect(() => {
 
 ---
 
-### **4. TRACKING UTILITY (tracking.ts)**
+### **5. TRACKING UTILITY (tracking.ts)**
 
 **Location:** `/utils/tracking.ts`
 
@@ -241,7 +303,7 @@ useEffect(() => {
 
 ---
 
-### **5. CONVERSION EVENTS (ThankYouPage.tsx)**
+### **6. CONVERSION EVENTS (ThankYouPage.tsx)**
 
 **Location:** `/pages/ThankYouPage.tsx`
 
@@ -572,15 +634,17 @@ export const TRACKING_CONFIG = {
 **Meta Pixel ID:** 511510642697274  
 **GA4 Property ID:** G-C53EL9R7Z6  
 **HubSpot Portal:** 48463492  
+**HubSpot Tracking ID:** 10024036967634037
 
 **Useful Links:**
 - [Meta Events Manager](https://business.facebook.com/events_manager2)
 - [Meta Pixel Helper](https://chrome.google.com/webstore/detail/meta-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc)
 - [GA4 DebugView](https://support.google.com/analytics/answer/7201382)
 - [HubSpot Forms](https://app.hubspot.com/forms/)
+- [HubSpot Analytics](https://app.hubspot.com/analytics-dashboard/)
 
 ---
 
 **Last Updated:** December 17, 2024  
-**Version:** 1.0  
+**Version:** 1.1  
 **Site:** lp.grandgimeno.com

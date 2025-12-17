@@ -10,6 +10,10 @@ if (!window._metaPixelInitialized) {
   window._metaPixelInitialized = false;
 }
 
+if (!window._hubspotPixelInitialized) {
+  window._hubspotPixelInitialized = false;
+}
+
 export default function App() {
   useEffect(() => {
     // Initialize Meta Pixel only once globally
@@ -35,18 +39,40 @@ export default function App() {
         s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)
       })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      
-      window.fbq('init', '511510642697274');
-      window.fbq('track', 'PageView');
-      window._metaPixelInitialized = true;
-      console.log('Meta Pixel initialized');
-    } else if (!window._metaPixelInitialized) {
-      // fbq exists but we haven't marked it as initialized (edge case)
-      window.fbq('init', '511510642697274');
-      window.fbq('track', 'PageView');
-      window._metaPixelInitialized = true;
-      console.log('Meta Pixel initialized (fbq existed)');
     }
+    
+    // Always init and track PageView (but only once due to flag)
+    window.fbq('init', '511510642697274');
+    window.fbq('track', 'PageView');
+    window._metaPixelInitialized = true;
+    console.log('Meta Pixel initialized');
+  }, []);
+
+  useEffect(() => {
+    // Initialize HubSpot tracking pixel only once globally
+    if (window._hubspotPixelInitialized) {
+      console.log('HubSpot Pixel already initialized, skipping');
+      return;
+    }
+
+    if (!window._hsq) {
+      window._hsq = window._hsq || [];
+    }
+
+    // Load HubSpot tracking code
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.id = 'hs-script-loader';
+    script.async = true;
+    script.defer = true;
+    script.src = '//js.hs-scripts.com/10024036967634037.js';
+    
+    script.onload = () => {
+      window._hubspotPixelInitialized = true;
+      console.log('HubSpot Pixel initialized');
+    };
+
+    document.body.appendChild(script);
   }, []);
 
   return (

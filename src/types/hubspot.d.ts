@@ -11,6 +11,8 @@ declare global {
         }) => void;
       };
     };
+    _hsq?: any[];
+    _hubspotPixelInitialized?: boolean;
     fbq: (action: string, event: string, params?: Record<string, unknown>) => void;
     gtag: (command: string, targetOrAction: string, params?: Record<string, unknown>) => void;
     dataLayer: unknown[];
