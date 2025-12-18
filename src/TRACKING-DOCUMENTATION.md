@@ -28,6 +28,8 @@ This document contains all tracking codes for Grand Gimeno's multi-property setu
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-C53EL9R7Z6', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure',
     'linker': {
       'domains': ['grandgimeno.com', 'lp.grandgimeno.com', 'jayscatering.com']
     }
