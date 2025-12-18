@@ -74,6 +74,7 @@ export default function App() {
 
   return (
     <HashRouter>
+      <DevNav />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
