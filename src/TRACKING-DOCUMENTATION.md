@@ -43,6 +43,43 @@ This document contains all tracking codes for Grand Gimeno's multi-property setu
 
 <!-- HubSpot Tracking Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/48463492.js"></script>
+
+<!-- HubSpot Form Auto-Fill for UTM & Click ID Tracking -->
+<script>
+window.addEventListener('message', function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+        var form = document.querySelector('form[data-form-id="' + event.data.id + '"]');
+        
+        function getCookie(name) {
+            var match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return match ? match.pop() : '';
+        }
+
+        var urlParams = new URLSearchParams(window.location.search);
+        
+        var tracking = {
+            'utm_source': urlParams.get('utm_source'),
+            'utm_medium': urlParams.get('utm_medium'),
+            'utm_campaign': urlParams.get('utm_campaign'),
+            'utm_content': urlParams.get('utm_content'),
+            'utm_term': urlParams.get('utm_term'),
+            'gclid': urlParams.get('gclid'),
+            'fbc': getCookie('_fbc') || (urlParams.get('fbclid') ? 'fb.1.' + Date.now() + '.' + urlParams.get('fbclid') : ''),
+            'fbp': getCookie('_fbp')
+        };
+
+        for (var key in tracking) {
+            if (tracking[key]) {
+                var input = form.querySelector('input[name="' + key + '"]');
+                if (input) {
+                    input.value = tracking[key];
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                }
+            }
+        }
+    }
+});
+</script>
 ```
 
 ### Webflow App Integration Settings
@@ -70,6 +107,8 @@ This document contains all tracking codes for Grand Gimeno's multi-property setu
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-C53EL9R7Z6', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure',
     'linker': {
       'domains': ['grandgimeno.com', 'lp.grandgimeno.com', 'jayscatering.com']
     }
@@ -81,10 +120,50 @@ This document contains all tracking codes for Grand Gimeno's multi-property setu
   gtag('config', 'AW-11462847665');
 </script>
 
-<!-- Meta Pixel & HubSpot loaded via React in App.tsx -->
+<!-- HubSpot Tracking Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/48463492.js"></script>
+
+<!-- HubSpot Form Auto-Fill for UTM & Click ID Tracking -->
+<script>
+window.addEventListener('message', function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+        var form = document.querySelector('form[data-form-id="' + event.data.id + '"]');
+        
+        function getCookie(name) {
+            var match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return match ? match.pop() : '';
+        }
+
+        var urlParams = new URLSearchParams(window.location.search);
+        
+        var tracking = {
+            'utm_source': urlParams.get('utm_source'),
+            'utm_medium': urlParams.get('utm_medium'),
+            'utm_campaign': urlParams.get('utm_campaign'),
+            'utm_content': urlParams.get('utm_content'),
+            'utm_term': urlParams.get('utm_term'),
+            'gclid': urlParams.get('gclid'),
+            'fbc': getCookie('_fbc') || (urlParams.get('fbclid') ? 'fb.1.' + Date.now() + '.' + urlParams.get('fbclid') : ''),
+            'fbp': getCookie('_fbp')
+        };
+
+        for (var key in tracking) {
+            if (tracking[key]) {
+                var input = form.querySelector('input[name="' + key + '"]');
+                if (input) {
+                    input.value = tracking[key];
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                }
+            }
+        }
+    }
+});
+</script>
+
+<!-- Meta Pixel loaded via React App.tsx -->
 ```
 
-**Note:** Meta Pixel (`511510642697274`) and HubSpot (`48463492`) are loaded dynamically in `/App.tsx` for the Vercel landing page.
+**Note:** Meta Pixel (`511510642697274`) is loaded dynamically in `/App.tsx` for the Vercel landing page with Event IDs for CAPI deduplication.
 
 ---
 
