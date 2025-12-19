@@ -38,14 +38,14 @@ export default function App() {
         t.src=v;
         s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      })(window, document, 'script', 'https://tracking.jayscatering.com/fbevents.js');
     }
     
     // Always init and track PageView (but only once due to flag)
     window.fbq('init', '511510642697274');
     window.fbq('track', 'PageView');
     window._metaPixelInitialized = true;
-    console.log('Meta Pixel initialized');
+    console.log('Meta Pixel initialized via Stape');
   }, []);
 
   useEffect(() => {

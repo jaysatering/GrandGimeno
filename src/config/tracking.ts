@@ -9,13 +9,13 @@
 
 export const TRACKING_CONFIG = {
   // Server-Side Tracking (Stape)
-  USE_SERVER_SIDE_TRACKING: false, // Set to true when Stape is ready
-  STAPE_SERVER_URL: '', // e.g., 'https://yoursubdomain.stape.io' or 'https://tracking.yourdomain.com'
-  GTM_CONTAINER_ID: '', // e.g., 'GTM-XXXXXX'
+  USE_SERVER_SIDE_TRACKING: true, // Stape is now active
+  STAPE_SERVER_URL: 'https://tracking.jayscatering.com', // Master Stape server
+  GTM_CONTAINER_ID: 'GTM-TJG6R99K', // Google Tag Manager container
   
   // Client-Side Tracking (Current Setup)
   META_PIXEL_ID: '511510642697274',
-  GA4_MEASUREMENT_ID: 'G-260342425',
+  GA4_MEASUREMENT_ID: 'G-C53EL9R7Z6',
 };
 
 /**

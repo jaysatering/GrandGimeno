@@ -23,41 +23,13 @@
     <!-- Adobe Fonts - Masqualero -->
     <link rel="stylesheet" href="https://use.typekit.net/dec0qbs.css">
     
-    <!-- Tracking Scripts -->
-    <!-- 
-      CURRENT: Client-side tracking (standard GA4 + Meta Pixel)
-      READY FOR: Server-side tracking via Stape GTM
-      
-      TO SWITCH TO STAPE:
-      1. Open /config/tracking.ts
-      2. Add your Stape server URL (e.g., 'https://yoursubdomain.stape.io')
-      3. Add your GTM container ID (e.g., 'GTM-XXXXXX')
-      4. Set USE_SERVER_SIDE_TRACKING to true
-      5. Rebuild the app
-      
-      The script URLs below will automatically switch to your Stape server
-      when USE_SERVER_SIDE_TRACKING is enabled.
-    -->
-    
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C53EL9R7Z6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-C53EL9R7Z6', {
-        'anonymize_ip': true,
-        'cookie_flags': 'SameSite=None;Secure',
-        'linker': {
-          'domains': ['grandgimeno.com', 'lp.grandgimeno.com', 'jayscatering.com']
-        }
-      });
-    </script>
-    
-    <!-- Google Ads Conversion Tracking -->
-    <script>
-      gtag('config', 'AW-11462847665');
-    </script>
+    <!-- Google Tag Manager (Server-Side via Stape) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://tracking.jayscatering.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJG6R99K');</script>
+    <!-- End Google Tag Manager -->
     
     <!-- HubSpot Tracking Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/48463492.js"></script>
@@ -98,10 +70,13 @@
         }
     });
     </script>
-    
-    <!-- Meta Pixel loaded via React App.tsx -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://tracking.jayscatering.com/ns.html?id=GTM-TJG6R99K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
