@@ -82,6 +82,14 @@ function captureTrackingParameters(): void {
  * Uses MutationObserver for efficiency, falls back to polling if needed
  */
 function waitForFormAndFill(): void {
+  // Check if we're on a page with a HubSpot form container
+  const formContainer = document.getElementById('hubspot-form-container');
+  
+  if (!formContainer) {
+    console.log('[Tracking] No HubSpot form container found on this page - skipping form field population');
+    return;
+  }
+
   const maxAttempts = 50; // 10 seconds max (50 * 200ms)
   let attempts = 0;
 
@@ -190,8 +198,6 @@ function waitForFormAndFill(): void {
   }
 
   // Set up MutationObserver to watch for form changes
-  const formContainer = document.getElementById('hubspot-form-container');
-  
   if (formContainer) {
     const observer = new MutationObserver((mutations, obs) => {
       if (fillFormFields()) {
@@ -223,7 +229,7 @@ function waitForFormAndFill(): void {
     }
 
     if (attempts >= maxAttempts) {
-      console.warn('[Tracking] Form fields not found after maximum attempts');
+      console.log('[Tracking] HubSpot form container found but fields not detected - form may use different field names or is still loading. This is normal if the form doesn\'t have hidden tracking fields.');
       clearInterval(pollInterval);
     }
   }, 200);

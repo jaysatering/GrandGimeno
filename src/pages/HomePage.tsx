@@ -302,7 +302,7 @@ export default function HomePage() {
               className="architecture-item"
             >
               <h3>The Suites</h3>
-              <p>Two high-end VIP suites—The Parlor and The Speakeasy—to prepare in style.</p>
+              <p>Two custom-finished suites - The Powder Room and The Parlor. To prepare in luxury, for the moment before the moment.</p>
             </motion.div>
 
             <motion.div
