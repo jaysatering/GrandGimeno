@@ -2,6 +2,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ThankYouPage from './pages/ThankYouPage';
 import PrivatePage from './pages/PrivatePage';
+import GTMDebugger from './components/GTMDebugger';
 // import DevNav from './components/DevNav';
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <HashRouter>
       {/* <DevNav /> */}
+      <GTMDebugger />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
