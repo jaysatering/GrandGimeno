@@ -23,12 +23,22 @@
     <!-- Adobe Fonts - Masqualero -->
     <link rel="stylesheet" href="https://use.typekit.net/dec0qbs.css">
     
-    <!-- Google Tag Manager (Server-Side via Stape) -->
+    <!-- Google Tag Manager -->
+    <!-- OPTION 1: Standard GTM (use this until Stape is fully configured) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJG6R99K');</script>
+    
+    <!-- OPTION 2: Server-Side GTM via Stape (uncomment when Stape is ready) -->
+    <!-- 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://tracking.jayscatering.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TJG6R99K');</script>
+    -->
     <!-- End Google Tag Manager -->
     
     <!-- HubSpot Form Auto-Fill for UTM & Click ID Tracking -->
@@ -70,8 +80,15 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
+    <!-- OPTION 1: Standard GTM -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJG6R99K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- OPTION 2: Server-Side GTM via Stape (uncomment when Stape is ready) -->
+    <!-- 
     <noscript><iframe src="https://tracking.jayscatering.com/ns.html?id=GTM-TJG6R99K"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
     <!-- End Google Tag Manager (noscript) -->
     
     <div id="root"></div>
