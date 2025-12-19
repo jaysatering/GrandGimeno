@@ -87,7 +87,35 @@ export default function HomePage() {
           region: "na2",
           portalId: "48463492",
           formId: "83c1be77-a158-4a0a-9938-e04f79ced417",
-          target: '#hubspot-form-container'
+          target: '#hubspot-form-container',
+          onFormReady: function($form) {
+            console.log('✅ Grand Gimeno Landing Page - Form loaded');
+            // Tracking fields already auto-filled by index.html script
+          },
+          onFormSubmit: function($form) {
+            // 🔥 Fire Meta Pixel custom event (backup tracking before redirect)
+            if (window.fbq) {
+              fbq('trackCustom', 'FormSubmit_GrandGimeno_LP', {
+                content_name: 'Grand Gimeno Landing Page Form',
+                content_category: 'Venue Inquiry',
+                venue: 'Grand Gimeno',
+                source: 'Landing Page'
+              });
+            }
+            
+            // 🔥 Fire GTM dataLayer event
+            if (window.dataLayer) {
+              window.dataLayer.push({
+                'event': 'form_submission',
+                'form_name': 'Grand Gimeno Landing Page',
+                'form_id': '83c1be77-a158-4a0a-9938-e04f79ced417',
+                'venue': 'Grand Gimeno',
+                'form_location': 'Landing Page'
+              });
+            }
+            
+            console.log('✅ Grand Gimeno Landing Page - Form submitted, redirecting to thank you page...');
+          }
         });
       }
     };
@@ -401,5 +429,7 @@ export default function HomePage() {
 declare global {
   interface Window {
     hbspt: any;
+    fbq: any;
+    dataLayer: any;
   }
 }
