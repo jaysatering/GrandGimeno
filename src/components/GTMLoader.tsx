@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { getGTMScriptUrl, TRACKING_CONFIG } from '../config/tracking';
 
 export default function GTMLoader() {
   useEffect(() => {
@@ -6,13 +7,17 @@ export default function GTMLoader() {
     (window as any).dataLayer = (window as any).dataLayer || [];
     console.log('🔵 DataLayer initialized:', (window as any).dataLayer);
 
+    // Get the correct GTM URL (Stape server or standard)
+    const gtmUrl = getGTMScriptUrl();
+    console.log('🔵 Loading GTM from:', gtmUrl);
+
     // Add GTM script to head
     const gtmScript = document.createElement('script');
     gtmScript.innerHTML = `
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      '${gtmUrl}';
       j.onerror=function(){console.error('❌ GTM FAILED TO LOAD! Check network tab.')};
       j.onload=function(){console.log('✅ GTM script loaded successfully!')};
       f.parentNode.insertBefore(j,f);
@@ -24,13 +29,17 @@ export default function GTMLoader() {
     // Add GTM noscript to body (for users with JS disabled)
     const noscript = document.createElement('noscript');
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-TJG6R99K';
+    const noscriptUrl = TRACKING_CONFIG.USE_SERVER_SIDE_TRACKING && TRACKING_CONFIG.STAPE_SERVER_URL
+      ? `${TRACKING_CONFIG.STAPE_SERVER_URL}/ns.html?id=${TRACKING_CONFIG.GTM_CONTAINER_ID}`
+      : `https://www.googletagmanager.com/ns.html?id=${TRACKING_CONFIG.GTM_CONTAINER_ID}`;
+    iframe.src = noscriptUrl;
     iframe.height = '0';
     iframe.width = '0';
     iframe.style.display = 'none';
     iframe.style.visibility = 'hidden';
     noscript.appendChild(iframe);
     document.body.insertBefore(noscript, document.body.firstChild);
+    console.log('🔵 GTM noscript iframe added:', noscriptUrl);
 
     // Check GTM loaded after 2 seconds
     setTimeout(() => {
