@@ -93,16 +93,6 @@ export default function HomePage() {
             // Tracking fields already auto-filled by index.html script
           },
           onFormSubmit: function($form) {
-            // 🔥 Fire Meta Pixel custom event (backup tracking before redirect)
-            if (window.fbq) {
-              fbq('trackCustom', 'FormSubmit_GrandGimeno_LP', {
-                content_name: 'Grand Gimeno Landing Page Form',
-                content_category: 'Venue Inquiry',
-                venue: 'Grand Gimeno',
-                source: 'Landing Page'
-              });
-            }
-            
             // 🔥 Fire GTM dataLayer event
             if (window.dataLayer) {
               window.dataLayer.push({

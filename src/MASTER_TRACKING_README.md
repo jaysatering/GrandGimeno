@@ -1,86 +1,43 @@
 # 🎯 Master Tracking Documentation
 ## Universal Multi-Brand Setup for All 7 Landing Pages
 
-**Last Updated:** December 2024  
+**Last Updated:** December 20, 2024  
 **Status:** ✅ Production Ready  
+**Project:** Vercel Landing Pages (lp.*.com domains)  
 **GTM Container:** GTM-TJG6R99K  
 **Stape Server:** tracking.jayscatering.com
 
 ---
 
-## 📚 Quick Navigation
+## 📚 START HERE
 
-### **🚀 Getting Started**
-- **New to this project?** → Start with [QUICK_START_CHECKLIST.md](./QUICK_START_CHECKLIST.md)
-- **Need step-by-step GTM setup?** → [GTM_SETUP_GUIDE.md](./GTM_SETUP_GUIDE.md)
-- **Want to understand what changed?** → [BEFORE_AFTER_COMPARISON.md](./BEFORE_AFTER_COMPARISON.md)
+### **🚨 OVERWHELMED? READ THIS FIRST:**
+👉 **[WHAT-YOU-ACTUALLY-HAVE.md](./WHAT-YOU-ACTUALLY-HAVE.md)** 👈  
+**Simple, no-BS reference of your exact setup.**
 
-### **📋 Reference Materials**
-- **Brand IDs & Configuration** → [BRAND_IDS_REFERENCE.md](./BRAND_IDS_REFERENCE.md)
-- **Cleanup Summary** → [TRACKING_CLEANUP_SUMMARY.md](./TRACKING_CLEANUP_SUMMARY.md)
-
-### **🔧 Technical Details**
-- **Stape Setup** → [README-STAPE-SETUP.md](./README-STAPE-SETUP.md)
-- **Legacy Docs** → [TRACKING-DOCUMENTATION.md](./TRACKING-DOCUMENTATION.md)
+### **📋 Other Documentation:**
+- **For GTM Setup:** [GTM_EMPIRE_SETUP.md](./GTM_EMPIRE_SETUP.md) - Complete GTM variable/tag configuration
+- **For Brand IDs:** [BRAND_IDS_REFERENCE.md](./BRAND_IDS_REFERENCE.md) - All tracking IDs in one place
+- **For Your Team:** [EMPIRE_QUICK_REFERENCE.md](./EMPIRE_QUICK_REFERENCE.md) - What to tell other teams
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ What This Project Is
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    USER VISITS LANDING PAGE                 │
-│              lp.[brand].com (7 brands total)                │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ↓
-┌─────────────────────────────────────────────────────────────┐
-│                   GTM WEB CONTAINER                         │
-│                    (GTM-TJG6R99K)                           │
-│                                                              │
-│  Variables (Lookup Tables):                                 │
-│  ├─ Brand - GA4 Measurement ID                             │
-│  ├─ Brand - Meta Pixel ID                                  │
-│  └─ Brand - Name                                           │
-│                                                              │
-│  Universal Tags:                                            │
-│  ├─ GA4 Config (dynamic per brand)                         │
-│  ├─ GA4 Pageview Event                                     │
-│  ├─ Meta Pixel Init (dynamic per brand)                    │
-│  └─ Meta Pixel Lead Event                                  │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ↓
-┌─────────────────────────────────────────────────────────────┐
-│                   STAPE SERVER                              │
-│             tracking.jayscatering.com                       │
-│                                                              │
-│  Server Container (Stape):                                  │
-│  ├─ Conversion Linker                                      │
-│  ├─ GA4 Relay to Google                                    │
-│  ├─ Meta CAPI Relay to Facebook                            │
-│  └─ HubSpot Integration                                    │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ↓
-┌─────────────────────────────────────────────────────────────┐
-│               DESTINATION PLATFORMS                         │
-│                                                              │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐                 │
-│  │   GA4    │  │   Meta   │  │ HubSpot  │                 │
-│  │ (Brand)  │  │ (Brand)  │  │ (Shared) │                 │
-│  └──────────┘  └──────────┘  └──────────┘                 │
-└─────────────────────────────────────────────────────────────┘
-```
+**This is a React/Vite app** that serves landing pages for 7 event venue brands:
+- All deployed on **Vercel** as `lp.*.com` domains
+- **NOT the main Webflow sites** (those are separate)
+- **ONE codebase** → 7 different domains
+- GTM automatically detects which brand by hostname
 
 ---
 
-## 📊 7 Brand Configuration
+## 📊 The 7 Brands
 
 | # | Brand | LP Domain | GA4 ID | Meta Pixel | Notes |
 |---|-------|-----------|--------|------------|-------|
 | 1 | Jay's Catering | lp.jayscatering.com | G-MNGQ6T3S7L | 511510642697274 | Shared pixel |
-| 2 | Ellie's Table | lp.elliestable.com | G-H149DE94FR | 1097130558389260 | ⚠️ **Unique pixel** |
+| 2 | Ellie's Table | lp.elliestable.com | G-H149DE94FR | **1097130558389260** | ⚠️ **Unique pixel** |
 | 3 | Grand Gimeno | lp.grandgimeno.com | G-C53EL9R7Z6 | 511510642697274 | Shared pixel |
 | 4 | Serra Plaza | lp.serraplaza.com | G-2GGX4RHXPR | 511510642697274 | Shared pixel |
 | 5 | Hangar 21 | lp.hangar21venue.com | G-Y1WSBF33PJ | 511510642697274 | Shared pixel |
@@ -90,11 +47,11 @@
 **Shared Infrastructure:**
 - **HubSpot Portal:** 48463492 (all brands)
 - **GTM Container:** GTM-TJG6R99K (web)
-- **Stape Server:** tracking.jayscatering.com
+- **Stape Server:** tracking.jayscatering.com (server-side tracking)
 
 ---
 
-## 🎯 What This Setup Does
+## 🎯 How It Works
 
 ### ✅ **Automatic Brand Detection**
 - GTM detects which brand based on hostname (e.g., `lp.grandgimeno.com`)
@@ -152,11 +109,11 @@
 ├─ Overview and navigation
 └─ Quick reference for all tracking docs
 
-/GTM_SETUP_GUIDE.md
+/GTM_EMPIRE_SETUP.md
 ├─ Complete step-by-step GTM configuration
 └─ Variables, tags, triggers setup
 
-/QUICK_START_CHECKLIST.md
+/EMPIRE_QUICK_REFERENCE.md
 ├─ 45-minute implementation checklist
 └─ Checkbox format for easy tracking
 
@@ -189,7 +146,7 @@
 - [x] Complete testing checklist
 
 ### ⏳ **Pending (Your Action Required)**
-- [ ] Follow GTM_SETUP_GUIDE.md to configure GTM
+- [ ] Follow GTM_EMPIRE_SETUP.md to configure GTM
 - [ ] Create 3 lookup table variables in GTM
 - [ ] Create 4 universal tags in GTM
 - [ ] Test in GTM Preview Mode (all 7 brands)
@@ -512,8 +469,8 @@ Recommended solution: OneTrust, Cookiebot, or custom banner
 
 ## 🎯 Next Steps
 
-1. **Read GTM_SETUP_GUIDE.md** for complete instructions
-2. **Use QUICK_START_CHECKLIST.md** to track your progress
+1. **Read GTM_EMPIRE_SETUP.md** for complete instructions
+2. **Use EMPIRE_QUICK_REFERENCE.md** to track your progress
 3. **Reference BRAND_IDS_REFERENCE.md** when creating variables
 4. **Test thoroughly** using GTM Preview Mode
 5. **Verify in production** for all 7 brands
@@ -534,7 +491,7 @@ Recommended solution: OneTrust, Cookiebot, or custom banner
 ## 💬 Questions?
 
 If you have questions about:
-- **GTM Setup** → See GTM_SETUP_GUIDE.md
+- **GTM Setup** → See GTM_EMPIRE_SETUP.md
 - **Brand Configuration** → See BRAND_IDS_REFERENCE.md
 - **Troubleshooting** → See "Troubleshooting" section above
 - **Before/After** → See BEFORE_AFTER_COMPARISON.md
@@ -543,4 +500,4 @@ If you have questions about:
 
 ---
 
-**🎉 You're all set! Follow the QUICK_START_CHECKLIST.md to implement this setup!**
+**🎉 You're all set! Follow the EMPIRE_QUICK_REFERENCE.md to implement this setup!**

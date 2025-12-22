@@ -1,6 +1,24 @@
 # 📋 Brand IDs Quick Reference
 ## All 7 Brands - Copy/Paste Ready for GTM
 
+**Last Updated:** December 20, 2024  
+**Purpose:** Reference for configuring GTM lookup table variables
+
+---
+
+## ⚠️ WHAT THIS IS
+
+This document contains all tracking IDs for the 7 brands in copy-paste format.
+
+**Use this when:**
+- Configuring GTM lookup table variables
+- Verifying tracking IDs are correct
+- Sharing IDs with team members
+
+**This is NOT:**
+- Implementation code (see EMPIRE_QUICK_REFERENCE.md for that)
+- GTM setup instructions (see GTM_EMPIRE_SETUP.md for that)
+
 ---
 
 ## 🎯 For GTM Variable: "Brand - GA4 Measurement ID"

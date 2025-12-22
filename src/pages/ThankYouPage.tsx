@@ -9,14 +9,6 @@ export default function ThankYouPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Generate unique event ID for deduplication between browser pixel and CAPI
-    const eventID = 'lead_' + Date.now() + '_' + Math.random().toString(36).substring(7);
-    
-    // Fire conversion events
-    if (window.fbq) {
-      window.fbq('track', 'Lead', {}, { eventID: eventID });
-    }
-    
     if (window.gtag) {
       window.gtag('event', 'conversion', {
         event_category: 'Form',

@@ -1,131 +1,22 @@
-# 🔥 EMPIRE QUICK REFERENCE
-## Copy/Paste Ready for GTM Variables
+# 🚀 Quick Reference for Your Team
+## "Just give me what I need to add to my project"
+
+**Last Updated:** December 20, 2024
 
 ---
 
-## 📋 VARIABLE 1: Brand - GA4 Measurement ID
+## 🎯 FOR TEAMS BUILDING OTHER LANDING PAGES
 
-**Variable Type:** Lookup Table  
-**Input Variable:** `{{Page Hostname}}`
-
-```
-jayscatering.com          G-MNGQ6T3S7L
-lp.jayscatering.com       G-MNGQ6T3S7L
-elliestable.com           G-H149DE94FR
-lp.elliestable.com        G-H149DE94FR
-grandgimeno.com           G-C53EL9R7Z6
-lp.grandgimeno.com        G-C53EL9R7Z6
-serraplazaevents.com      G-2GGX4RHXPR
-lp.serraplaza.com         G-2GGX4RHXPR
-hangar21venue.com         G-Y1WSBF33PJ
-lp.hangar21venue.com      G-Y1WSBF33PJ
-estateonsecond.com        G-HDX153V4FB
-lp.estateonsecond.com     G-HDX153V4FB
-thecasinosc.com           G-6BSN49J27D
-lp.thecasinosc.com        G-6BSN49J27D
-```
-
-**Default Value:** `G-MNGQ6T3S7L` (Jay's Catering - Master Brand)
-
-**Total Rows:** 14
+If you're building landing pages for any of these 7 brands in a **different project** (not the main React codebase), here's what you need:
 
 ---
 
-## 📋 VARIABLE 2: Brand - Meta Pixel ID
+## ✅ WHAT TO ADD TO YOUR HTML
 
-**Variable Type:** Lookup Table  
-**Input Variable:** `{{Page Hostname}}`
-
-```
-jayscatering.com          511510642697274
-lp.jayscatering.com       511510642697274
-elliestable.com           1097130558389260
-lp.elliestable.com        1097130558389260
-grandgimeno.com           511510642697274
-lp.grandgimeno.com        511510642697274
-serraplazaevents.com      511510642697274
-lp.serraplaza.com         511510642697274
-hangar21venue.com         511510642697274
-lp.hangar21venue.com      511510642697274
-estateonsecond.com        511510642697274
-lp.estateonsecond.com     511510642697274
-thecasinosc.com           511510642697274
-lp.thecasinosc.com        511510642697274
-```
-
-**Default Value:** `511510642697274`
-
-**Total Rows:** 14
-
----
-
-## 📋 VARIABLE 3: Brand - Name
-
-**Variable Type:** Lookup Table  
-**Input Variable:** `{{Page Hostname}}`
-
-```
-jayscatering.com          Jay's Catering
-lp.jayscatering.com       Jay's Catering
-elliestable.com           Ellie's Table
-lp.elliestable.com        Ellie's Table
-grandgimeno.com           Grand Gimeno
-lp.grandgimeno.com        Grand Gimeno
-serraplazaevents.com      Serra Plaza
-lp.serraplaza.com         Serra Plaza
-hangar21venue.com         Hangar 21
-lp.hangar21venue.com      Hangar 21
-estateonsecond.com        Estate on Second
-lp.estateonsecond.com     Estate on Second
-thecasinosc.com           The Casino
-lp.thecasinosc.com        The Casino
-```
-
-**Default Value:** `Jay's Catering` (Master Brand)
-
-**Total Rows:** 14
-
----
-
-## 🔗 CROSS-DOMAIN LINKER TAG
-
-**Tag Name:** Cross-Domain Linker  
-**Tag Type:** Custom HTML  
-**Trigger:** All Pages  
-**Firing Priority:** 999
+### **Step 1: Add to `<head>` tag (right after opening `<head>`)**
 
 ```html
-<script>
-// Cross-domain tracking for all brands
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-
-// Configure cross-domain linking
-gtag('set', 'linker', {
-  'domains': [
-    'jayscatering.com', 'lp.jayscatering.com',
-    'elliestable.com', 'lp.elliestable.com',
-    'grandgimeno.com', 'lp.grandgimeno.com',
-    'serraplazaevents.com', 'lp.serraplaza.com',
-    'hangar21venue.com', 'lp.hangar21venue.com',
-    'estateonsecond.com', 'lp.estateonsecond.com',
-    'thecasinosc.com', 'lp.thecasinosc.com'
-  ],
-  'decorate_forms': true
-});
-
-console.log('Cross-domain tracking enabled for ' + '{{Brand - Name}}');
-</script>
-```
-
----
-
-## 🎯 GTM CONTAINER CODE (FOR WEBFLOW)
-
-### Add to `<head>`:
-
-```html
-<!-- Google Tag Manager (Server-Side via Stape) -->
+<!-- Google Tag Manager via Stape Server -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -134,7 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 ```
 
-### Add to `<body>` (immediately after opening tag):
+### **Step 2: Add to `<body>` tag (immediately after opening `<body>`)**
 
 ```html
 <!-- Google Tag Manager (noscript) -->
@@ -143,101 +34,198 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 ```
 
----
+### **Step 3 (Optional): Add HubSpot Form Auto-Fill**
 
-## 📊 THE EMPIRE (14 DOMAINS)
+If you're using HubSpot forms and want to capture UTM parameters and click IDs:
 
-### Jay's Catering
-- ✅ jayscatering.com
-- ✅ lp.jayscatering.com
-- **GA4:** G-MNGQ6T3S7L
-- **Meta Pixel:** 511510642697274
+```html
+<!-- HubSpot Form Auto-Fill for UTM & Click ID Tracking -->
+<script>
+window.addEventListener('message', function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+        var form = document.querySelector('form[data-form-id="' + event.data.id + '"]');
+        
+        function getCookie(name) {
+            var match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return match ? match.pop() : '';
+        }
 
-### Ellie's Table ⚠️
-- ✅ elliestable.com
-- ✅ lp.elliestable.com
-- **GA4:** G-H149DE94FR
-- **Meta Pixel:** 1097130558389260 (unique!)
+        var urlParams = new URLSearchParams(window.location.search);
+        
+        var tracking = {
+            'utm_source': urlParams.get('utm_source'),
+            'utm_medium': urlParams.get('utm_medium'),
+            'utm_campaign': urlParams.get('utm_campaign'),
+            'utm_content': urlParams.get('utm_content'),
+            'utm_term': urlParams.get('utm_term'),
+            'gclid': urlParams.get('gclid'),
+            'fbc': getCookie('_fbc') || (urlParams.get('fbclid') ? 'fb.1.' + Date.now() + '.' + urlParams.get('fbclid') : ''),
+            'fbp': getCookie('_fbp')
+        };
 
-### Grand Gimeno
-- ✅ grandgimeno.com
-- ✅ lp.grandgimeno.com
-- **GA4:** G-C53EL9R7Z6
-- **Meta Pixel:** 511510642697274
+        for (var key in tracking) {
+            if (tracking[key]) {
+                var input = form.querySelector('input[name="' + key + '"]');
+                if (input) {
+                    input.value = tracking[key];
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                }
+            }
+        }
+    }
+});
+</script>
+```
 
-### Serra Plaza
-- ✅ serraplazaevents.com
-- ✅ lp.serraplaza.com
-- **GA4:** G-2GGX4RHXPR
-- **Meta Pixel:** 511510642697274
-
-### Hangar 21
-- ✅ hangar21venue.com
-- ✅ lp.hangar21venue.com
-- **GA4:** G-Y1WSBF33PJ
-- **Meta Pixel:** 511510642697274
-
-### Estate on Second
-- ✅ estateonsecond.com
-- ✅ lp.estateonsecond.com
-- **GA4:** G-HDX153V4FB
-- **Meta Pixel:** 511510642697274
-
-### The Casino
-- ✅ thecasinosc.com
-- ✅ lp.thecasinosc.com
-- **GA4:** G-6BSN49J27D
-- **Meta Pixel:** 511510642697274
-
----
-
-## ✅ IMPLEMENTATION CHECKLIST
-
-### GTM Setup:
-- [ ] Create Variable: Brand - GA4 Measurement ID (14 rows)
-- [ ] Create Variable: Brand - Meta Pixel ID (14 rows)
-- [ ] Create Variable: Brand - Name (14 rows)
-- [ ] Create Tag: GA4 - Config - Universal
-- [ ] Create Tag: GA4 - Event - Pageview
-- [ ] Create Tag: Meta Pixel - Universal
-- [ ] Create Tag: Meta Pixel - Lead Event
-- [ ] Create Tag: GA4 - Form Submit
-- [ ] Create Tag: Cross-Domain Linker
-
-### Webflow Deployment (7 sites):
-- [ ] jayscatering.com → Add GTM code
-- [ ] elliestable.com → Add GTM code
-- [ ] grandgimeno.com → Add GTM code
-- [ ] serraplazaevents.com → Add GTM code
-- [ ] hangar21venue.com → Add GTM code
-- [ ] estateonsecond.com → Add GTM code
-- [ ] thecasinosc.com → Add GTM code
-
-### Vercel Deployment (7 sites):
-- [ ] Already done! (GTM in /index.html)
-
-### Testing (14 domains):
-- [ ] Test all 14 domains in GTM Preview Mode
-- [ ] Verify variables load correctly for each
-- [ ] Verify tags fire for each
-- [ ] Test cross-domain tracking (lp → main site)
-- [ ] Test form submissions
-- [ ] Check GA4 Real-Time for each brand
-- [ ] Check Meta Pixel Helper for each brand
-
-### Publish:
-- [ ] Publish GTM container
-- [ ] Verify production tracking on all 14 domains
+**⚠️ Add this script to `<head>` BEFORE the closing `</head>` tag.**
 
 ---
 
-## 🔥 TOTAL COVERAGE
+## ❌ WHAT NOT TO ADD
 
-**Domains:** 14  
-**Brands:** 7  
-**GTM Containers:** 1  
-**Variables:** 3  
-**Tags:** 6  
-**Code Changes:** 0 (after initial GTM install)  
+**DO NOT add:**
+- ❌ Separate Meta Pixel code
+- ❌ Separate GA4 code
+- ❌ Brand-specific tracking IDs
+- ❌ Any other GTM container
+- ❌ HubSpot tracking pixel (GTM handles this)
 
-**ONE CONTAINER TO RULE THEM ALL.** 👑
+**WHY?** 
+GTM automatically detects which brand you are based on your domain and loads the correct tracking IDs.
+
+---
+
+## 🎯 HOW IT WORKS
+
+When someone visits your site:
+
+1. **GTM loads** from `tracking.jayscatering.com`
+2. **GTM detects your domain** (e.g., `lp.grandgimeno.com`)
+3. **GTM looks up the brand** in its lookup table
+4. **GTM loads the correct:**
+   - GA4 Measurement ID
+   - Meta Pixel ID
+   - Brand name for events
+5. **Tracking starts automatically** - you do nothing else!
+
+---
+
+## 📊 THE 7 BRANDS & THEIR DOMAINS
+
+| Brand | Your Domain | What GTM Loads |
+|-------|-------------|----------------|
+| **Jay's Catering** | lp.jayscatering.com | GA4: G-MNGQ6T3S7L<br>Meta: 511510642697274 |
+| **Ellie's Table** | lp.elliestable.com | GA4: G-H149DE94FR<br>Meta: **1097130558389260** ⚠️ |
+| **Grand Gimeno** | lp.grandgimeno.com | GA4: G-C53EL9R7Z6<br>Meta: 511510642697274 |
+| **Serra Plaza** | lp.serraplaza.com | GA4: G-2GGX4RHXPR<br>Meta: 511510642697274 |
+| **Hangar 21** | lp.hangar21venue.com | GA4: G-Y1WSBF33PJ<br>Meta: 511510642697274 |
+| **Estate on Second** | lp.estateonsecond.com | GA4: G-HDX153V4FB<br>Meta: 511510642697274 |
+| **The Casino** | lp.thecasinosc.com | GA4: G-6BSN49J27D<br>Meta: 511510642697274 |
+
+**Note:** Ellie's Table has a unique Meta Pixel. All others share one.
+
+---
+
+## 🧪 HOW TO TEST
+
+### **1. Check GTM Loaded:**
+1. Open your site in browser
+2. Press `F12` to open DevTools
+3. Go to **Console** tab
+4. Look for: `✅ GTM is active and running!`
+
+### **2. Check Tags Fire:**
+1. Install [Meta Pixel Helper](https://chrome.google.com/webstore/detail/meta-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc)
+2. Visit your page
+3. Should show: **PageView event** with correct Pixel ID
+4. Submit form
+5. Should show: **Lead event**
+
+### **3. Check GA4:**
+1. Go to your brand's GA4 property
+2. Navigate to **Reports → Realtime**
+3. Visit your page
+4. Should see your pageview appear within 30 seconds
+
+---
+
+## 🚨 COMMON ISSUES
+
+### **Issue: "GTM not loading"**
+**Fix:**
+- Check you added BOTH scripts (head + body)
+- Check you're using the exact code above (no typos)
+- Check Network tab in DevTools for blocked requests
+
+### **Issue: "Wrong tracking IDs firing"**
+**Fix:**
+- Verify your domain is EXACTLY: `lp.brandname.com`
+- No `www.`, no extra subdomains
+- Contact the GTM admin to add your domain to lookup tables
+
+### **Issue: "Meta Pixel fires twice"**
+**Fix:**
+- Remove any separate Meta Pixel code from your project
+- Only use the GTM script above
+
+### **Issue: "GA4 shows wrong property"**
+**Fix:**
+- Verify your domain matches the lookup table
+- Contact GTM admin to verify GA4 ID is correct
+
+---
+
+## 📞 WHO TO CONTACT
+
+### **For GTM Issues:**
+Contact the GTM container admin to:
+- Add new domains to lookup tables
+- Update tracking IDs
+- Verify GTM configuration
+
+### **For GA4 Issues:**
+Check with GA4 property owner for your brand.
+
+### **For Meta Pixel Issues:**
+- **6 brands:** Use shared pixel `511510642697274`
+- **Ellie's Table:** Has unique pixel `1097130558389260`
+
+---
+
+## ✅ DEPLOYMENT CHECKLIST
+
+Before launching your site:
+
+- [ ] Added GTM script to `<head>`
+- [ ] Added GTM noscript to `<body>`
+- [ ] Added HubSpot auto-fill script (if using HubSpot forms)
+- [ ] Tested GTM loads (check console)
+- [ ] Tested Meta Pixel fires (use Pixel Helper)
+- [ ] Tested GA4 tracks (check Realtime report)
+- [ ] Tested form submission (check Lead event)
+- [ ] Removed any duplicate tracking code
+- [ ] Verified correct domain: `lp.brandname.com`
+
+---
+
+## 🎯 SUMMARY
+
+**What you add:**
+- 2 GTM scripts (head + body)
+- 1 HubSpot auto-fill script (optional)
+
+**What GTM does automatically:**
+- Detects your brand
+- Loads correct GA4 ID
+- Loads correct Meta Pixel
+- Tracks pageviews
+- Tracks conversions
+
+**What you DON'T add:**
+- Separate Meta Pixel code
+- Separate GA4 code
+- Brand-specific IDs
+
+---
+
+**Questions? Check [WHAT-YOU-ACTUALLY-HAVE.md](./WHAT-YOU-ACTUALLY-HAVE.md) for full details.** 🚀

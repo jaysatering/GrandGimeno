@@ -1,0 +1,56 @@
+<script>
+// Initialize Meta Pixel via Stape Server-Side
+!function(f,b,e,v,n,t,s) {
+  if(f.fbq) return;
+  n=f.fbq=function(){
+    n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+  };
+  if(!f._fbq) f._fbq=n;
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+  t=b.createElement(e);
+  t.async=!0;
+  t.src='https://tracking.jayscatering.com/fbevents.js';
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}(window, document, 'script');
+
+// Helper function to get cookies
+function getCookie(name) {
+  var value = '; ' + document.cookie;
+  var parts = value.split('; ' + name + '=');
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return '';
+}
+
+// Generate unique event ID for deduplication
+var eventId = 'evt_' + Date.now() + '_' + Math.random().toString(36).substring(2, 11);
+
+// Initialize with DYNAMIC Pixel ID from lookup table
+fbq('init', '{{Brand - Meta Pixel ID}}');
+fbq('track', 'PageView', {}, {eventID: eventId});
+
+// Send to GTM Server via dataLayer
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'meta_server_event',
+  'event_name': 'PageView',
+  'event_id': eventId,
+  'pixel_id': '{{Brand - Meta Pixel ID}}',
+  'event_source_url': '{{Page URL}}',
+  'user_data': {
+    'client_ip_address': '',
+    'client_user_agent': navigator.userAgent,
+    'fbp': getCookie('_fbp'),
+    'fbc': getCookie('_fbc')
+  }
+});
+
+console.log('✅ Meta PageView - Pixel: ' + '{{Brand - Meta Pixel ID}}' + ' | Event ID: ' + eventId);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id={{Brand - Meta Pixel ID}}&ev=PageView&noscript=1"/>
+</noscript>

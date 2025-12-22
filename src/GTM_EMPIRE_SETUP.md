@@ -3,12 +3,27 @@
 
 **Container:** GTM-TJG6R99K  
 **Stape Server:** tracking.jayscatering.com  
-**Domains Covered:** 14 total (7 Webflow + 7 Vercel)  
-**Brands:** 7  
+**Purpose:** Universal tracking for all 7 brands  
+**Last Updated:** December 20, 2024
+
+---
+
+## ⚠️ IMPORTANT NOTE
+
+**This document describes the GTM CONTAINER configuration.**
+
+- The GTM container works for BOTH Vercel landing pages AND Webflow main sites
+- **Vercel landing pages (this React project):** GTM loads via React component - DO NOT add HTML script
+- **Webflow main sites (separate):** Add GTM HTML script to Webflow Custom Code section
+- **Other projects:** Add GTM HTML script to their HTML (see EMPIRE_QUICK_REFERENCE.md)
+
+**For Vercel React project:** GTM is already installed via `/components/GTMLoader.tsx` - nothing to add!
 
 ---
 
 ## 🎯 THE EMPIRE AT A GLANCE
+
+**This GTM container covers 14 domains across 7 brands:**
 
 | Brand | Webflow Domain | Vercel LP Domain | GA4 | Meta Pixel | HubSpot |
 |-------|----------------|------------------|-----|------------|---------|
@@ -20,7 +35,7 @@
 | Estate on Second | estateonsecond.com | lp.estateonsecond.com | G-HDX153V4FB | 511510642697274 | 48463492 |
 | The Casino | thecasinosc.com | lp.thecasinosc.com | G-6BSN49J27D | 511510642697274 | 48463492 |
 
-**Total Domains:** 14  
+**Total Domains Supported:** 14  
 **Shared Meta Pixel:** 511510642697274 (6 brands)  
 **Unique Meta Pixel:** 1097130558389260 (Ellie's Table only)  
 **Shared HubSpot:** 48463492 (all brands)
