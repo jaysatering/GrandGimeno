@@ -3,14 +3,12 @@ import HomePage from './pages/HomePage';
 import ThankYouPage from './pages/ThankYouPage';
 import PrivatePage from './pages/PrivatePage';
 import GTMLoader from './components/GTMLoader';
-import DevNav from './components/DevNav';
 
 export default function App() {
   return (
     <>
       <GTMLoader />
       <Router>
-        <DevNav />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
