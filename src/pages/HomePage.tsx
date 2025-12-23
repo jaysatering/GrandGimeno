@@ -75,6 +75,9 @@ export default function HomePage() {
   }, [hasScrolled]);
 
   useEffect(() => {
+    // 1. Generate the Unique "Receipt Number" (Event ID)
+    const masterEventId = 'lead_' + new Date().getTime() + '_' + Math.floor(Math.random() * 10000);
+
     const script = document.createElement('script');
     script.src = '//js-na2.hsforms.net/forms/embed/v2.js';
     script.charset = 'utf-8';
@@ -86,25 +89,93 @@ export default function HomePage() {
         window.hbspt.forms.create({
           region: "na2",
           portalId: "48463492",
-          formId: "83c1be77-a158-4a0a-9938-e04f79ced417",
+          formId: "83c1be77-a158-4a0a-9938-e04f79ced417", // ✅ Verified Landing Page Form ID
           target: '#hubspot-form-container',
+          
           onFormReady: function($form) {
-            console.log('✅ Grand Gimeno Landing Page - Form loaded');
-            // Tracking fields already auto-filled by index.html script
+            console.log('✅ Grand Gimeno LP - Form Loaded with ID:', masterEventId);
+
+            // --- A. GET TRACKING DATA (URL or Session Storage) ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionData = JSON.parse(sessionStorage.getItem('hubspot_tracking_data') || '{}');
+
+            const getVal = (paramName, sessionKey) => {
+              return urlParams.get(paramName) || sessionData[sessionKey || paramName] || '';
+            };
+
+            const getCookie = (name) => {
+              const match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+              return match ? match.pop() : '';
+            };
+
+            // --- B. BUILD DATA OBJECT ---
+            const trackingData = {
+              'utm_source':   getVal('utm_source'),
+              'utm_medium':   getVal('utm_medium'),
+              'utm_campaign': getVal('utm_campaign'),
+              'utm_content':  getVal('utm_content', 'custom_utm_content'),
+              'utm_term':     getVal('utm_term', 'custom_utm_term'),
+              'gclid':        getVal('gclid'),
+              'fbc':          getCookie('_fbc') || getVal('meta_fbc'),
+              'fbp':          getCookie('_fbp') || getVal('meta_fbp'),
+              'event_id':     masterEventId,
+              'landing_page': window.location.href,
+              'referrer_url': document.referrer
+            };
+
+            // --- C. SAVE TO SESSION (Persist if they refresh) ---
+            sessionStorage.setItem('hubspot_tracking_data', JSON.stringify({
+              utm_source: trackingData.utm_source,
+              utm_medium: trackingData.utm_medium,
+              utm_campaign: trackingData.utm_campaign,
+              custom_utm_content: trackingData.utm_content,
+              custom_utm_term: trackingData.utm_term,
+              gclid: trackingData.gclid,
+              meta_fbc: trackingData.fbc,
+              meta_fbp: trackingData.fbp
+            }));
+
+            // --- D. FILL HIDDEN FIELDS (For Server/CAPI) ---
+            const mapping = {
+              'utm_source':   trackingData.utm_source,
+              'utm_medium':   trackingData.utm_medium,
+              'utm_campaign': trackingData.utm_campaign,
+              'custom_utm_content': trackingData.utm_content,
+              'custom_utm_term':    trackingData.utm_term,
+              'gclid':        trackingData.gclid,
+              'meta_fbc':     trackingData.fbc,
+              'meta_fbp':     trackingData.fbp,
+              'event_id':     trackingData.event_id,
+              'landing_page': trackingData.landing_page,
+              'referrer_url': trackingData.referrer_url
+            };
+
+            for (const key in mapping) {
+              if (mapping[key]) {
+                const input = $form.querySelector('input[name="' + key + '"]');
+                if (input) {
+                  input.value = mapping[key];
+                  input.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+              }
+            }
           },
+
           onFormSubmit: function($form) {
-            // 🔥 Fire GTM dataLayer event
+            const emailInput = $form.querySelector('input[name="email"]');
+            const emailVal = emailInput ? emailInput.value : '';
+            
+            // 🔥 Fire GTM event with MASTER ID
             if (window.dataLayer) {
               window.dataLayer.push({
-                'event': 'form_submission',
+                'event': 'hubspot_form_success', // Matches GTM Trigger
                 'form_name': 'Grand Gimeno Landing Page',
                 'form_id': '83c1be77-a158-4a0a-9938-e04f79ced417',
-                'venue': 'Grand Gimeno',
-                'form_location': 'Landing Page'
+                'hs-form-email': emailVal,
+                'lead_event_id': masterEventId // <--- The Deduplication Key
               });
             }
-            
-            console.log('✅ Grand Gimeno Landing Page - Form submitted, redirecting to thank you page...');
+            console.log('✅ Grand Gimeno LP - Form submitted. Event ID:', masterEventId);
           }
         });
       }
