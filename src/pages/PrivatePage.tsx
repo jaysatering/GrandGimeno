@@ -6,6 +6,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export default function PrivatePage() {
   useEffect(() => {
+    document.title = "Grand Gimeno | Private Access";
     window.scrollTo(0, 0);
   }, []);
 

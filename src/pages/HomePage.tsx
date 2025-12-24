@@ -15,6 +15,11 @@ export default function HomePage() {
   const formRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
+  // Set page title for HubSpot tracking
+  useEffect(() => {
+    document.title = "Grand Gimeno | Inquiry";
+  }, []);
+
   // Show CTA after user scrolls
   useEffect(() => {
     const handleScroll = () => {

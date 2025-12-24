@@ -7,6 +7,7 @@ export default function ThankYouPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Grand Gimeno | Thank You";
     window.scrollTo(0, 0);
     
     if (window.gtag) {
