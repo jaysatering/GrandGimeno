@@ -1267,6 +1267,12 @@ p {
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+
+.final-slider-wrapper {
+  width: 100%;
+  position: relative;
 }
 
 .final-image {
@@ -1282,6 +1288,87 @@ p {
     min-height: 100vh;
     max-height: 100vh;
   }
+}
+
+/* ===== SLIDER ARROWS ===== */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-ivory);
+  opacity: 0.6;
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-arrow:hover {
+  opacity: 1 !important;
+}
+
+.slider-arrow-prev {
+  left: 24px;
+}
+
+.slider-arrow-next {
+  right: 24px;
+}
+
+@media (min-width: 1024px) {
+  .slider-arrow-prev {
+    left: 48px;
+  }
+  
+  .slider-arrow-next {
+    right: 48px;
+  }
+}
+
+/* Override react-slick default styles */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+
+.slick-slide.slick-active {
+  display: block;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
 }
 
 /* ===== THREE TALL PHOTOS GRID ===== */

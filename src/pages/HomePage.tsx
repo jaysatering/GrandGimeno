@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import { motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import GgLogo from '../components/GgLogo';
 import { initializeTracking } from '../utils/tracking';
 
@@ -8,12 +8,52 @@ const oliveGroveAerial = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v176
 const pizzaOven = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780827/_AJB3193_turfsf.jpg";
 const oliveCeremony = "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765780355/3J4A0229_cpnpow.jpg";
 
+// Slider images
+const sliderImages = [
+  {
+    type: 'image',
+    src: oliveCeremony,
+    alt: "Olive grove ceremony at Grand Gimeno"
+  },
+  {
+    type: 'video',
+    src: "https://res.cloudinary.com/dr9hlxnbp/video/upload/v1766643603/TOJPizza_csjtqg.mp4",
+    alt: "Grand Gimeno pizza oven"
+  }
+];
+
+// Center tall photo slider images
+const centerSliderImages = [
+  {
+    src: "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846212/Jennifer_Michael_Wedding_Day_1011_smkp1z.jpg",
+    alt: "Grand Gimeno interior"
+  },
+  {
+    src: "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1766644028/Gimeno_Selects_40_qflh1j.jpg",
+    alt: "Grand Gimeno detail"
+  },
+  {
+    src: "https://res.cloudinary.com/dr9hlxnbp/image/upload/v1766644027/cerwinkatitusandjo-47_ezllbs.png",
+    alt: "Grand Gimeno event"
+  }
+];
+
 export default function HomePage() {
   const [showCTA, setShowCTA] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [heroInView, setHeroInView] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [centerSlide, setCenterSlide] = useState(0);
+  const [centerSliderInView, setCenterSliderInView] = useState(false);
+  const [footerSliderInView, setFooterSliderInView] = useState(false);
+  const [centerSliderPaused, setCenterSliderPaused] = useState(false);
+  const [footerSliderPaused, setFooterSliderPaused] = useState(false);
+  const [centerScrollProgress, setCenterScrollProgress] = useState(0);
+  const [footerScrollProgress, setFooterScrollProgress] = useState(0);
   const formRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
+  const centerSliderRef = useRef<HTMLDivElement>(null);
+  const footerSliderRef = useRef<HTMLDivElement>(null);
 
   // Set page title for HubSpot tracking
   useEffect(() => {
@@ -198,6 +238,119 @@ export default function HomePage() {
   useEffect(() => {
     initializeTracking();
   }, []);
+
+  // Track center slider visibility - start auto-play when 50% visible
+  useEffect(() => {
+    if (!centerSliderRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setCenterSliderInView(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: '0px'
+      }
+    );
+
+    observer.observe(centerSliderRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Track footer slider visibility - start auto-play when 50% visible
+  useEffect(() => {
+    if (!footerSliderRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setFooterSliderInView(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: '0px'
+      }
+    );
+
+    observer.observe(footerSliderRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Scroll-driven animation for center slider
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!centerSliderRef.current) return;
+
+      const rect = centerSliderRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Start tracking when element enters viewport
+      // Progress from 0 (just entering) to 1 (centered in viewport)
+      const scrollStart = windowHeight;
+      const scrollEnd = windowHeight / 2;
+      
+      if (rect.top <= scrollStart && rect.bottom >= 0) {
+        const progress = Math.max(0, Math.min(1, (scrollStart - rect.top) / (scrollStart - scrollEnd)));
+        setCenterScrollProgress(progress);
+        
+        // Update slide based on scroll progress
+        const totalSlides = centerSliderImages.length;
+        const slideProgress = progress * (totalSlides - 1);
+        const targetSlide = Math.floor(slideProgress);
+        
+        if (targetSlide !== centerSlide && !centerSliderPaused) {
+          setCenterSlide(targetSlide);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [centerSlide, centerSliderPaused]);
+
+  // Scroll-driven animation for footer slider
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!footerSliderRef.current) return;
+
+      const rect = footerSliderRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Start tracking when element enters viewport
+      const scrollStart = windowHeight;
+      const scrollEnd = windowHeight / 2;
+      
+      if (rect.top <= scrollStart && rect.bottom >= 0) {
+        const progress = Math.max(0, Math.min(1, (scrollStart - rect.top) / (scrollStart - scrollEnd)));
+        setFooterScrollProgress(progress);
+        
+        // Update slide based on scroll progress
+        const totalSlides = sliderImages.length;
+        const slideProgress = progress * (totalSlides - 1);
+        const targetSlide = Math.floor(slideProgress);
+        
+        if (targetSlide !== currentSlide && !footerSliderPaused) {
+          setCurrentSlide(targetSlide);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [currentSlide, footerSliderPaused]);
 
   const scrollToForm = () => {
     const formSection = document.getElementById('inquiry-form');
@@ -457,12 +610,41 @@ export default function HomePage() {
               className="tall-photo-img"
             />
           </div>
-          <div className="tall-photo-item">
-            <img 
-              src="https://res.cloudinary.com/dr9hlxnbp/image/upload/v1765846212/Jennifer_Michael_Wedding_Day_1011_smkp1z.jpg"
-              alt="Grand Gimeno interior"
-              className="tall-photo-img"
-            />
+          <div className="tall-photo-item" style={{ position: 'relative' }}>
+            <div
+              ref={centerSliderRef}
+              onMouseEnter={() => setCenterSliderPaused(true)}
+              onMouseLeave={() => setCenterSliderPaused(false)}
+            >
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={centerSlide}
+                  src={centerSliderImages[centerSlide].src}
+                  alt={centerSliderImages[centerSlide].alt}
+                  className="tall-photo-img"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+                />
+              </AnimatePresence>
+              <button
+                className="slider-arrow slider-arrow-prev"
+                onClick={() => setCenterSlide((prev) => (prev > 0 ? prev - 1 : centerSliderImages.length - 1))}
+                aria-label="Previous image"
+                style={{ position: 'absolute' }}
+              >
+                <ChevronLeft size={32} strokeWidth={1} />
+              </button>
+              <button
+                className="slider-arrow slider-arrow-next"
+                onClick={() => setCenterSlide((prev) => (prev < centerSliderImages.length - 1 ? prev + 1 : 0))}
+                aria-label="Next image"
+                style={{ position: 'absolute' }}
+              >
+                <ChevronRight size={32} strokeWidth={1} />
+              </button>
+            </div>
           </div>
           <div className="tall-photo-item">
             <img 
@@ -480,12 +662,51 @@ export default function HomePage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
+          className="final-slider-wrapper"
+          ref={footerSliderRef}
+          onMouseEnter={() => setFooterSliderPaused(true)}
+          onMouseLeave={() => setFooterSliderPaused(false)}
         >
-          <img 
-            src={oliveCeremony}
-            alt="Olive grove ceremony at Grand Gimeno"
-            className="final-image"
-          />
+          <AnimatePresence>
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+            >
+              {sliderImages[currentSlide].type === 'video' ? (
+                <video 
+                  src={sliderImages[currentSlide].src}
+                  className="final-image"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img 
+                  src={sliderImages[currentSlide].src}
+                  alt={sliderImages[currentSlide].alt}
+                  className="final-image"
+                />
+              )}
+            </motion.div>
+          </AnimatePresence>
+          <button
+            className="slider-arrow slider-arrow-prev"
+            onClick={() => setCurrentSlide((prev) => (prev > 0 ? prev - 1 : sliderImages.length - 1))}
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={32} strokeWidth={1} />
+          </button>
+          <button
+            className="slider-arrow slider-arrow-next"
+            onClick={() => setCurrentSlide((prev) => (prev < sliderImages.length - 1 ? prev + 1 : 0))}
+            aria-label="Next image"
+          >
+            <ChevronRight size={32} strokeWidth={1} />
+          </button>
         </motion.div>
       </section>
     </div>
